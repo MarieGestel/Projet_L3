@@ -1,0 +1,23 @@
+ConditionPrescriptionDélivrance: Code CIS, Condition de prescription ou de délivrance
+CONCERNE, 1N ConditionPrescriptionDélivrance, 1N FichierSpécialité
+EST COMPOSÉ DE, 1N Composition, 1N FichierSpécialité
+Composition: Code de la substance, Code CIS, Désignation de l'élément pharmaceutique, Dénomination de la substance, Dosage de la substance, Référence de ce dosage, Nature du composant, Numéro de liaison SA/FT
+:
+
+FichierPrésentation: Code CIS, Code CIP7, Libellé de la présentation, Statut administratif de la présentation, Etat de commercialisation, Date de la déclaration de commercialisation, Code CIP13, Agrément aux collectivités, Taux de remboursement, Prix du médicament en euro
+INFORME SUR, 11 FichierSpécialité, 1N FichierPrésentation
+FichierSpécialité: Code CIS, Dénomination du médicament, Forme pharmaceutique, Voies d'administration, Statut administratif de l’AMM, Type de procédure d'AMM, Etat de commercialisation, Date d’AMM (format JJ/MM/AAAA), StatutBdm : «Alerte»/ «disponibilité », Titulaire(s), Surveillance renforcée (triangle noir) Oui/Non
+DONNER AVIS ASMR SUR, 1N FichierSpécialité, 1N AvisAméliorationSMR
+AvisAméliorationSMR: Id, Code de dossier HAS, Motif d’évaluation, Date de l’avis de la Commission de la transparence, Valeur de l'ASMR, Libelle de l'ASMR
+
+InfoImportantes: Code CIS, Date de début de l’information de sécurité, Date de fin de l’information de sécurité, Texte à afficher et lien vers l’information de sécurité
+DONNE INFO IMPORTANTES, 1N FichierSpécialité, 11 InfoImportantes
+ÊTRE LE GÉNÉRIQUE DE, 1N FichierSpécialité, 1N GroupesGénériques
+DONNE AVIS SMR SUR, 1N FichierSpécialité, 1N AvisServiceMédicalRendu
+ÊTRE SOURCE DE, 1N AvisServiceMédicalRendu, 1N AvisAméliorationSMR, 1N LienAvisCommissionTransparence
+
+Utilisateur: IdUtilisateur, Nom, Prénom, Âge, Allergies, Mail
+A ACCÈS À, 1N FichierSpécialité, 1N Utilisateur
+GroupesGénériques: Identifiant du groupe générique, Libellé du groupe générique, Code CIS, Type de générique, Numéro de tri
+AvisServiceMédicalRendu: Identifiant, Code de dossier HAS, Motif d’évaluation, Date de l’avis de la Commission de la transparence, Valeur du SMR, Libelle du SMR
+LienAvisCommissionTransparence: Id_lien, Lien vers les pages d’avis de la CT
