@@ -4,16 +4,17 @@
 		<meta http-equiv="Content-Type"
 		content="text/html; charset=UTF-8" />
 		
+		<link rel="stylesheet" href="styles.css"
+		type="text/css" media="screen" />
 		
 		
 		<title>Medic'Info</title>
 	</head>
 	
 	<body>
+
 	
-	<h1> Medic'Info </h1>
-	
-	<p>
+	<p id="inscriptionConnexion">
 	<a 	href="inscription.php" >
 			S'inscrire 
 		</a>
@@ -22,6 +23,8 @@
 			Se connecter
 		</a>
 	</p>
+	
+		<h1> Medic'Info </h1>
 	
 	<h2>
 	<a 	href="rechercheNom.php" >
@@ -37,23 +40,23 @@
 		</a>
 	</h2>
 	
-	<form action="rechercheNom.php" method="get" autocomplete="off">
+	<form id='recherche' action="rechercheNom.php" method="get" autocomplete="off">
 	<p>
 		
 		<input type="text" name="n" value="Doliprane, Advil..." />
 	</p>
 	</form>
 	
-	
+	<div id='imagesIndex'>
 	<img src="médicament1.jpeg" 
 		alt ="Image accueil1" />
 		
 	<img src="médicament2.jpg" 
 		alt ="Image accueil2" />
 	
+	</div>
 	
-	
-	<p>
+	<p id='liensBas'>
 	<a 	href="quiSommesNous.php" >
 			Qui sommes-nous ?
 		</a>
