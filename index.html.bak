@@ -6,7 +6,7 @@
 		
 		
 		
-		<title>Accueil</title>
+		<title>Medic'Info</title>
 	</head>
 	
 	<body>
@@ -43,6 +43,13 @@
 		<input type="text" name="n" value="Doliprane, Advil..." />
 	</p>
 	</form>
+	
+	
+	<img src="medicament1.jpeg" 
+		alt ="Image accueil1" />
+		
+	<img src="medicament2.jpg" 
+		alt ="Image accueil2" />
 	
 	
 	
