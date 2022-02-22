@@ -3,7 +3,7 @@ html {
 }
 
 h1 {
-	color : white;
+	color : red;
 	text-align : center;
 	font-size : 4em;
 	background-color : #5ca678;
@@ -40,3 +40,12 @@ a{
 	margin-right : 15px;
 	color : #5ca678;
 }
+
+p{
+	text-align : center;
+}
+
+form{
+	text-align : center;
+}	
+	
