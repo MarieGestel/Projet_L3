@@ -33,7 +33,6 @@ form{
 }
 
 #liensBas{
-	margin-top : 75px;
 	text-align : center;
 }
 
@@ -52,30 +51,12 @@ a{
 	color : #5ca678;
 }
 
-<<<<<<< HEAD
-p span.cat{
-	font-size : 1.75em;
-	font-weight : bold;
-	color : #5ca678;
-	margin-left : 15px;
-	margin-right : 15px;
-	background-color : white;	
-}
 
-p span.info{
-	font-weight : bold;
-	margin-left : 35px;
-	margin-right : 35px;	
-	font-size : 1.2em;
-}
-
-#medicament{
+#id{
 	text-align : center;
-}
-=======
+	}
 
 <<<<<<< HEAD:styles.css.bak
 =======
 
 >>>>>>> b3e14b804306436faabef921769f9290ed0ebd2f:Code site/styles.css.bak
->>>>>>> a2f475dda1ec14439edc7eed435dc234b55c2a16

@@ -3,6 +3,8 @@
 	<head>
 		<meta http-equiv="Content-Type"
 		content="text/html; charset=UTF-8" />
+		<link rel="stylesheet" href="styles.css"
+		type="text/css" media="screen" />
 		
 		
 		
@@ -37,7 +39,7 @@
 			 Recherche par code CIS
 		</a>
 	
-	<form action="rechercheNom.php" method="get" autocomplete="off">
+	<form action="MotDePase.php" method="get" autocomplete="off">
 	</form>
 
 <p>	
@@ -51,13 +53,12 @@
 		
 		<input type="text" name="n" value="Email" />
 		</p>
-	</form>
 	
-		<input type="text" name="n" value="Mot de passe" />
+		<input type="password" name="n" value="Mot de passe" />
 		</p>
 	</form>
 	<p>
-	Je ne possède pas encore de compte
+	<strong>Je ne possède pas encore de compte </strong>
 	</p>
 	
 	
