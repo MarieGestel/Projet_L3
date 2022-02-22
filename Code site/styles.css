@@ -52,3 +52,22 @@ a{
 	color : #5ca678;
 }
 
+.cat{
+	font-size : 1.75em;
+	font-weight : bold;
+	color : #5ca678;
+	margin-left : 15px;
+	margin-right : 15px;
+	background-color : white;	
+}
+
+.info{
+	font-weight : bold;
+	margin-left : 35px;
+	margin-right : 35px;	
+	font-size : 1.2em;
+}
+
+#medicament{
+	text-align : center;
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type"
+		content="text/html; charset=UTF-8" />
+		
+		<link rel="stylesheet" href="styles.css"
+		type="text/css" media="screen" />
+		
+		<?php 
+		//$medicament$_GET['medicament'];
+		echo "<title>".$medicament."</title>";
+		?>
+		
+	</head>
+	
+	<body>
+	
+	<h1>Medic'Info</h1>
+
+	<?php 
+	
+		echo "<h2>".$medicament."</h2>";
+		$bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', 'root');
+
+		//require('bd.php');
+		//$bdd = getBD() ;
+	
+		//$CodeCIS=$_GET['CodeCIS'];				
+		$CodeCIS=123;
+		$repSpe = $bdd->query("SELECT * FROM spécialité WHERE CodeCIS='{$CodeCIS}'");
+		$repPres = $bdd->query("SELECT * FROM presentation WHERE CodeCIS='{$CodeCIS}'");
+		while ($matSpe=$repSpe->fetch()){	
+			echo "<h3> Code CIS </h3> <h3> Dénomination </h3> <h3> Titulaire </h3>";
+			echo "<p> </br>". $matSpe['CodeCIS'] . "</p> <p>". $matSpe['Denomination_medicament'] . "</p><p>".$matSpe['Titulaire']."</br> </p>";
+			echo "<h3> Voie d'administration </h3> <h3> Forme pharmaceutique </h3>";
+			echo "<p> </br>". $matSpe['Voie_administration'] . "</p> <p>". $matSpe['Forme_pharmaceutique'] . "</br> </p>";
+			echo "<h3> Type de procédure </h3> <h3> Date de mise sur le marché </h3>";
+			echo "<p> </br>". $matSpe['Type_procédure_AMM'] . "</p> <p>". $matSpe['Date_AMM'] . "</br> </p>";
+	}		
+	while ($matPres=$repPres->fetch()){	
+			echo "<div id='bulle'> <h3> Prix </h3> </br> <p> Min ".$matPres['prix_min']."| Max". $matPres['Prix_max']."</br> </p> <p> Taux de remboursement </br>".$matPres['Taux_remboursement']."</p>";
+			echo "<img src='".$matPres['url_photo']. "' alt ='Image médicament ".$CodeCIS."' />";
+		}
+					
+		$repSpe ->closeCursor();
+		$repPres ->closeCursor();
+					
+	?>
+	
+	
+	<p class='retour'>
+	<a 	href="index.php" >
+			Retour
+		</a>
+	</p>
+	
+	
+	<p id='liensBas'>
+	<a 	href="quiSommesNous.php" >
+			Qui sommes-nous ?
+		</a>
+	
+	<a 	href="contact.php" >
+			Contact
+		</a>
+	
+	<a 	href="mentionLegales.php" >
+			Mentions légales
+		</a>
+	
+	<a 	href="donneesPersonnelles.php" >
+			Données personnelles
+		</a>
+	
+	<a 	href="baseDeDonnees.php" >
+			Base de données
+		</a>
+	</p>
+	
+	</body>
+	
+	
+	
+	
+</html>

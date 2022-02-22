@@ -19,7 +19,7 @@
 			S'inscrire 
 		</a>
 	
-	<a 	href="connexion.php" >
+	<a 	href="connexion.html" >
 			Se connecter
 		</a>
 	</p>
@@ -49,7 +49,7 @@
 	
 	<div id='imagesIndex'>
 	<img src="médicament1.jpeg" 
-		alt ="Image accueil1" width='366' height='4994 />
+		alt ="Image accueil1" height='366px' width='499px' />
 		
 	<img src="médicament2.jpg" 
 		alt ="Image accueil2" />
