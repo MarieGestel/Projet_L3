@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="Content-Type"
 		content="text/html; charset=UTF-8" />
-		<link rel="stylesheet" href="styles.css.bak"
+		<link rel="stylesheet" href="styles.css"
 		type="text/css" media="screen" />
 		
 		
@@ -53,13 +53,12 @@
 		
 		<input type="text" name="n" value="Email" />
 		</p>
-	</form>
 	
 		<input type="password" name="n" value="Mot de passe" />
 		</p>
 	</form>
 	<p>
-	Je ne possède pas encore de compte
+	<strong>Je ne possède pas encore de compte </strong>
 	</p>
 	
 	

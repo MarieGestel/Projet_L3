@@ -52,6 +52,10 @@ a{
 }
 
 
+#id{
+	text-align : center;
+	}
+
 <<<<<<< HEAD:styles.css.bak
 =======
 
