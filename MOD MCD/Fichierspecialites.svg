@@ -1,0 +1,309 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg width="1454" height="713" view_box="0 0 1454 713"
+xmlns="http://www.w3.org/2000/svg"
+xmlns:link="http://www.w3.org/1999/xlink">\n\n<desc>Généré par Mocodo 2.3.7 le Mon, 21 Feb 2022 04:34:22</desc>
+
+<rect id="frame" x="0" y="0" width="1454" height="713" fill="#ffffbf" stroke="none" stroke-width="0"/>
+
+<!-- Association DONNE AVIS SMR SUR -->
+<line x1="689" y1="314" x2="983" y2="492" stroke="#66c2a5" stroke-width="2"/>
+<text x="838" y="397.868087367" fill="#d53e4f" font-family="Verdana" font-size="12">1,N</text>
+<line x1="983" y1="636" x2="983" y2="492" stroke="#66c2a5" stroke-width="2"/>
+<text x="956.0" y="560" fill="#d53e4f" font-family="Verdana" font-size="12">1,N</text>
+<g id="association-DONNE AVIS SMR SUR">
+	<path d="M 1046 467 a 14 14 90 0 1 14 14 V 492 h -154 V 481 a 14 14 90 0 1 14 -14" fill="#abdda4" stroke="#abdda4" stroke-width="0"/>
+	<path d="M 1060 492.0 v 11 a 14 14 90 0 1 -14 14 H 920 a 14 14 90 0 1 -14 -14 V 492.0 H 154" fill="#e6f598" stroke="#e6f598" stroke-width="0"/>
+	<rect x="906" y="467" width="154" height="50" fill="none" rx="14" stroke="#66c2a5" stroke-width="2"/>
+	<line x1="906" y1="492" x2="1060" y2="492" stroke="#66c2a5" stroke-width="1"/>
+	<text x="913" y="484.7" fill="#000000" font-family="Verdana" font-size="12">DONNE AVIS SMR SUR</text>
+</g>
+
+<!-- Association CONCERNE -->
+<line x1="173" y1="94" x2="462" y2="94" stroke="#66c2a5" stroke-width="2"/>
+<text x="311" y="111.0" fill="#d53e4f" font-family="Verdana" font-size="12">1,N</text>
+<line x1="689" y1="314" x2="462" y2="94" stroke="#66c2a5" stroke-width="2"/>
+<text x="573.585578853" y="196" fill="#d53e4f" font-family="Verdana" font-size="12">1,N</text>
+<g id="association-CONCERNE">
+	<path d="M 490 69 a 14 14 90 0 1 14 14 V 94 h -84 V 83 a 14 14 90 0 1 14 -14" fill="#abdda4" stroke="#abdda4" stroke-width="0"/>
+	<path d="M 504 94.0 v 11 a 14 14 90 0 1 -14 14 H 434 a 14 14 90 0 1 -14 -14 V 94.0 H 84" fill="#e6f598" stroke="#e6f598" stroke-width="0"/>
+	<rect x="420" y="69" width="84" height="50" fill="none" rx="14" stroke="#66c2a5" stroke-width="2"/>
+	<line x1="420" y1="94" x2="504" y2="94" stroke="#66c2a5" stroke-width="1"/>
+	<text x="427" y="86.7" fill="#000000" font-family="Verdana" font-size="12">CONCERNE</text>
+</g>
+
+<!-- Association DONNE INFO IMPORTANTES -->
+<line x1="689" y1="314" x2="462" y2="492" stroke="#66c2a5" stroke-width="2"/>
+<text x="547.849207099" y="441" fill="#d53e4f" font-family="Verdana" font-size="12">1,N</text>
+<line x1="173" y1="492" x2="462" y2="492" stroke="#66c2a5" stroke-width="2"/>
+<text x="342" y="509.0" fill="#d53e4f" font-family="Verdana" font-size="12">1,1</text>
+<g id="association-DONNE INFO IMPORTANTES">
+	<path d="M 541 467 a 14 14 90 0 1 14 14 V 492 h -186 V 481 a 14 14 90 0 1 14 -14" fill="#abdda4" stroke="#abdda4" stroke-width="0"/>
+	<path d="M 555 492.0 v 11 a 14 14 90 0 1 -14 14 H 383 a 14 14 90 0 1 -14 -14 V 492.0 H 186" fill="#e6f598" stroke="#e6f598" stroke-width="0"/>
+	<rect x="369" y="467" width="186" height="50" fill="none" rx="14" stroke="#66c2a5" stroke-width="2"/>
+	<line x1="369" y1="492" x2="555" y2="492" stroke="#66c2a5" stroke-width="1"/>
+	<text x="376" y="484.7" fill="#000000" font-family="Verdana" font-size="12">DONNE INFO IMPORTANTES</text>
+</g>
+
+<!-- Association ÊTRE LE GÉNÉRIQUE DE -->
+<line x1="689" y1="314" x2="689" y2="492" stroke="#66c2a5" stroke-width="2"/>
+<text x="694.0" y="441" fill="#d53e4f" font-family="Verdana" font-size="12">1,N</text>
+<line x1="689" y1="636" x2="689" y2="492" stroke="#66c2a5" stroke-width="2"/>
+<text x="694.0" y="569" fill="#d53e4f" font-family="Verdana" font-size="12">1,N</text>
+<g id="association-ÊTRE LE GÉNÉRIQUE DE">
+	<path d="M 756 467 a 14 14 90 0 1 14 14 V 492 h -162 V 481 a 14 14 90 0 1 14 -14" fill="#abdda4" stroke="#abdda4" stroke-width="0"/>
+	<path d="M 770 492.0 v 11 a 14 14 90 0 1 -14 14 H 622 a 14 14 90 0 1 -14 -14 V 492.0 H 162" fill="#e6f598" stroke="#e6f598" stroke-width="0"/>
+	<rect x="608" y="467" width="162" height="50" fill="none" rx="14" stroke="#66c2a5" stroke-width="2"/>
+	<line x1="608" y1="492" x2="770" y2="492" stroke="#66c2a5" stroke-width="1"/>
+	<text x="615" y="484.7" fill="#000000" font-family="Verdana" font-size="12">ÊTRE LE GÉNÉRIQUE DE</text>
+</g>
+
+<!-- Association EST COMPOSÉ DE -->
+<line x1="983" y1="94" x2="689" y2="94" stroke="#66c2a5" stroke-width="2"/>
+<text x="825" y="111.0" fill="#d53e4f" font-family="Verdana" font-size="12">1,N</text>
+<line x1="689" y1="314" x2="689" y2="94" stroke="#66c2a5" stroke-width="2"/>
+<text x="694.0" y="196" fill="#d53e4f" font-family="Verdana" font-size="12">1,N</text>
+<g id="association-EST COMPOSÉ DE">
+	<path d="M 737 69 a 14 14 90 0 1 14 14 V 94 h -124 V 83 a 14 14 90 0 1 14 -14" fill="#abdda4" stroke="#abdda4" stroke-width="0"/>
+	<path d="M 751 94.0 v 11 a 14 14 90 0 1 -14 14 H 641 a 14 14 90 0 1 -14 -14 V 94.0 H 124" fill="#e6f598" stroke="#e6f598" stroke-width="0"/>
+	<rect x="627" y="69" width="124" height="50" fill="none" rx="14" stroke="#66c2a5" stroke-width="2"/>
+	<line x1="627" y1="94" x2="751" y2="94" stroke="#66c2a5" stroke-width="1"/>
+	<text x="634" y="86.7" fill="#000000" font-family="Verdana" font-size="12">EST COMPOSÉ DE</text>
+</g>
+
+<!-- Association ÊTRE SOURCE DE -->
+<line x1="983" y1="636" x2="1285" y2="492" stroke="#66c2a5" stroke-width="2"/>
+<text x="1102.34288927" y="560" fill="#d53e4f" font-family="Verdana" font-size="12">1,N</text>
+<line x1="1285" y1="314" x2="1285" y2="492" stroke="#66c2a5" stroke-width="2"/>
+<text x="1290.0" y="399" fill="#d53e4f" font-family="Verdana" font-size="12">1,N</text>
+<line x1="1285" y1="636" x2="1285" y2="492" stroke="#66c2a5" stroke-width="2"/>
+<text x="1290.0" y="594" fill="#d53e4f" font-family="Verdana" font-size="12">1,N</text>
+<g id="association-ÊTRE SOURCE DE">
+	<path d="M 1332 467 a 14 14 90 0 1 14 14 V 492 h -122 V 481 a 14 14 90 0 1 14 -14" fill="#abdda4" stroke="#abdda4" stroke-width="0"/>
+	<path d="M 1346 492.0 v 11 a 14 14 90 0 1 -14 14 H 1238 a 14 14 90 0 1 -14 -14 V 492.0 H 122" fill="#e6f598" stroke="#e6f598" stroke-width="0"/>
+	<rect x="1224" y="467" width="122" height="50" fill="none" rx="14" stroke="#66c2a5" stroke-width="2"/>
+	<line x1="1224" y1="492" x2="1346" y2="492" stroke="#66c2a5" stroke-width="1"/>
+	<text x="1231" y="484.7" fill="#000000" font-family="Verdana" font-size="12">ÊTRE SOURCE DE</text>
+</g>
+
+<!-- Association DONNER AVIS ASMR SUR -->
+<line x1="689" y1="314" x2="983" y2="314" stroke="#66c2a5" stroke-width="2"/>
+<text x="838" y="306.0" fill="#d53e4f" font-family="Verdana" font-size="12">1,N</text>
+<line x1="1285" y1="314" x2="983" y2="314" stroke="#66c2a5" stroke-width="2"/>
+<text x="1098" y="331.0" fill="#d53e4f" font-family="Verdana" font-size="12">1,N</text>
+<g id="association-DONNER AVIS ASMR SUR">
+	<path d="M 1054 289 a 14 14 90 0 1 14 14 V 314 h -170 V 303 a 14 14 90 0 1 14 -14" fill="#abdda4" stroke="#abdda4" stroke-width="0"/>
+	<path d="M 1068 314.0 v 11 a 14 14 90 0 1 -14 14 H 912 a 14 14 90 0 1 -14 -14 V 314.0 H 170" fill="#e6f598" stroke="#e6f598" stroke-width="0"/>
+	<rect x="898" y="289" width="170" height="50" fill="none" rx="14" stroke="#66c2a5" stroke-width="2"/>
+	<line x1="898" y1="314" x2="1068" y2="314" stroke="#66c2a5" stroke-width="1"/>
+	<text x="905" y="306.7" fill="#000000" font-family="Verdana" font-size="12">DONNER AVIS ASMR SUR</text>
+</g>
+
+<!-- Association A ACCÈS À -->
+<line x1="689" y1="314" x2="462" y2="636" stroke="#66c2a5" stroke-width="2"/>
+<text x="611.087479014" y="441" fill="#d53e4f" font-family="Verdana" font-size="12">1,N</text>
+<line x1="173" y1="636" x2="462" y2="636" stroke="#66c2a5" stroke-width="2"/>
+<text x="221" y="653.0" fill="#d53e4f" font-family="Verdana" font-size="12">1,N</text>
+<g id="association-A ACCÈS À">
+	<path d="M 489 611 a 14 14 90 0 1 14 14 V 636 h -82 V 625 a 14 14 90 0 1 14 -14" fill="#abdda4" stroke="#abdda4" stroke-width="0"/>
+	<path d="M 503 636.0 v 11 a 14 14 90 0 1 -14 14 H 435 a 14 14 90 0 1 -14 -14 V 636.0 H 82" fill="#e6f598" stroke="#e6f598" stroke-width="0"/>
+	<rect x="421" y="611" width="82" height="50" fill="none" rx="14" stroke="#66c2a5" stroke-width="2"/>
+	<line x1="421" y1="636" x2="503" y2="636" stroke="#66c2a5" stroke-width="1"/>
+	<text x="428" y="628.7" fill="#000000" font-family="Verdana" font-size="12">A ACCÈS À</text>
+</g>
+
+<!-- Association INFORME SUR -->
+<line x1="689" y1="314" x2="462" y2="314" stroke="#66c2a5" stroke-width="2"/>
+<text x="519" y="331.0" fill="#d53e4f" font-family="Verdana" font-size="12">1,1</text>
+<line x1="173" y1="314" x2="462" y2="314" stroke="#66c2a5" stroke-width="2"/>
+<text x="316" y="331.0" fill="#d53e4f" font-family="Verdana" font-size="12">1,N</text>
+<g id="association-INFORME SUR">
+	<path d="M 499 289 a 14 14 90 0 1 14 14 V 314 h -102 V 303 a 14 14 90 0 1 14 -14" fill="#abdda4" stroke="#abdda4" stroke-width="0"/>
+	<path d="M 513 314.0 v 11 a 14 14 90 0 1 -14 14 H 425 a 14 14 90 0 1 -14 -14 V 314.0 H 102" fill="#e6f598" stroke="#e6f598" stroke-width="0"/>
+	<rect x="411" y="289" width="102" height="50" fill="none" rx="14" stroke="#66c2a5" stroke-width="2"/>
+	<line x1="411" y1="314" x2="513" y2="314" stroke="#66c2a5" stroke-width="1"/>
+	<text x="418" y="306.7" fill="#000000" font-family="Verdana" font-size="12">INFORME SUR</text>
+</g>
+
+<!-- Entity FichierSpécialité -->
+<g id="entity-FichierSpécialité">
+	<g id="frame-FichierSpécialité">
+		<rect x="545" y="204" width="288" height="25" fill="#fdae61" stroke="#fdae61" stroke-width="0"/>
+		<rect x="545" y="229.0" width="288" height="195" fill="#fee08b" stroke="#fee08b" stroke-width="0"/>
+		<rect x="545" y="204" width="288" height="220" fill="none" stroke="#f46d43" stroke-width="2"/>
+		<line x1="545" y1="229" x2="833" y2="229" stroke="#f46d43" stroke-width="1"/>
+	</g>
+	<text x="639" y="221.7" fill="#000000" font-family="Verdana" font-size="12">FichierSpécialité</text>
+	<text x="550" y="246.7" fill="#000000" font-family="Verdana" font-size="12">Code CIS</text>
+	<line x1="550" y1="249" x2="607" y2="249" stroke="#000000" stroke-width="1"/>
+	<text x="550" y="263.7" fill="#000000" font-family="Verdana" font-size="12">Dénomination du médicament</text>
+	<text x="550" y="280.7" fill="#000000" font-family="Verdana" font-size="12">Forme pharmaceutique</text>
+	<text x="550" y="297.7" fill="#000000" font-family="Verdana" font-size="12">Voies d'administration</text>
+	<text x="550" y="314.8" fill="#000000" font-family="Verdana" font-size="12">Statut administratif de l’AMM</text>
+	<text x="550" y="331.8" fill="#000000" font-family="Verdana" font-size="12">Type de procédure d'AMM</text>
+	<text x="550" y="348.8" fill="#000000" font-family="Verdana" font-size="12">Etat de commercialisation</text>
+	<text x="550" y="365.8" fill="#000000" font-family="Verdana" font-size="12">Date d’AMM (format JJ/MM/AAAA)</text>
+	<text x="550" y="382.8" fill="#000000" font-family="Verdana" font-size="12">StatutBdm : «Alerte»/ «disponibilité »</text>
+	<text x="550" y="399.8" fill="#000000" font-family="Verdana" font-size="12">Titulaire(s)</text>
+	<text x="550" y="416.8" fill="#000000" font-family="Verdana" font-size="12">Surveillance renforcée (triangle noir) Oui/Non</text>
+</g>
+
+<!-- Entity InfoImportantes -->
+<g id="entity-InfoImportantes">
+	<g id="frame-InfoImportantes">
+		<rect x="9" y="441" width="328" height="25" fill="#fdae61" stroke="#fdae61" stroke-width="0"/>
+		<rect x="9" y="466.0" width="328" height="77" fill="#fee08b" stroke="#fee08b" stroke-width="0"/>
+		<rect x="9" y="441" width="328" height="102" fill="none" stroke="#f46d43" stroke-width="2"/>
+		<line x1="9" y1="466" x2="337" y2="466" stroke="#f46d43" stroke-width="1"/>
+	</g>
+	<text x="123" y="458.7" fill="#000000" font-family="Verdana" font-size="12">InfoImportantes</text>
+	<text x="14" y="483.7" fill="#000000" font-family="Verdana" font-size="12">Code CIS</text>
+	<line x1="14" y1="486" x2="71" y2="486" stroke="#000000" stroke-width="1"/>
+	<text x="14" y="500.8" fill="#000000" font-family="Verdana" font-size="12">Date de début de l’information de sécurité</text>
+	<text x="14" y="517.8" fill="#000000" font-family="Verdana" font-size="12">Date de fin de l’information de sécurité</text>
+	<text x="14" y="534.8" fill="#000000" font-family="Verdana" font-size="12">Texte à afficher et lien vers l’information de sécurité</text>
+</g>
+
+<!-- Entity Utilisateur -->
+<g id="entity-Utilisateur">
+	<g id="frame-Utilisateur">
+		<rect x="130" y="568" width="86" height="25" fill="#fdae61" stroke="#fdae61" stroke-width="0"/>
+		<rect x="130" y="593.0" width="86" height="111" fill="#fee08b" stroke="#fee08b" stroke-width="0"/>
+		<rect x="130" y="568" width="86" height="136" fill="none" stroke="#f46d43" stroke-width="2"/>
+		<line x1="130" y1="593" x2="216" y2="593" stroke="#f46d43" stroke-width="1"/>
+	</g>
+	<text x="142" y="585.7" fill="#000000" font-family="Verdana" font-size="12">Utilisateur</text>
+	<text x="135" y="610.7" fill="#000000" font-family="Verdana" font-size="12">IdUtilisateur</text>
+	<line x1="135" y1="613" x2="210" y2="613" stroke="#000000" stroke-width="1"/>
+	<text x="135" y="627.7" fill="#000000" font-family="Verdana" font-size="12">Nom</text>
+	<text x="135" y="644.8" fill="#000000" font-family="Verdana" font-size="12">Prénom</text>
+	<text x="135" y="661.8" fill="#000000" font-family="Verdana" font-size="12">Âge</text>
+	<text x="135" y="678.8" fill="#000000" font-family="Verdana" font-size="12">Allergies</text>
+	<text x="135" y="695.8" fill="#000000" font-family="Verdana" font-size="12">Mail</text>
+</g>
+
+<!-- Entity GroupesGénériques -->
+<g id="entity-GroupesGénériques">
+	<g id="frame-GroupesGénériques">
+		<rect x="587" y="577" width="204" height="25" fill="#fdae61" stroke="#fdae61" stroke-width="0"/>
+		<rect x="587" y="602.0" width="204" height="93" fill="#fee08b" stroke="#fee08b" stroke-width="0"/>
+		<rect x="587" y="577" width="204" height="118" fill="none" stroke="#f46d43" stroke-width="2"/>
+		<line x1="587" y1="602" x2="791" y2="602" stroke="#f46d43" stroke-width="1"/>
+	</g>
+	<text x="629" y="594.7" fill="#000000" font-family="Verdana" font-size="12">GroupesGénériques</text>
+	<text x="592" y="619.7" fill="#000000" font-family="Verdana" font-size="12">Identifiant du groupe générique</text>
+	<line x1="592" y1="622" x2="785" y2="622" stroke="#000000" stroke-width="1"/>
+	<text x="592" y="636.8" fill="#000000" font-family="Verdana" font-size="12">Libellé du groupe générique</text>
+	<text x="592" y="653.8" fill="#000000" font-family="Verdana" font-size="12">Code CIS</text>
+	<text x="592" y="670.8" fill="#000000" font-family="Verdana" font-size="12">Type de générique</text>
+	<text x="592" y="687.8" fill="#000000" font-family="Verdana" font-size="12">Numéro de tri</text>
+</g>
+
+<!-- Entity ConditionPrescriptionDélivrance -->
+<g id="entity-ConditionPrescriptionDélivrance">
+	<g id="frame-ConditionPrescriptionDélivrance">
+		<rect x="40" y="60" width="266" height="25" fill="#fdae61" stroke="#fdae61" stroke-width="0"/>
+		<rect x="40" y="85.0" width="266" height="43" fill="#fee08b" stroke="#fee08b" stroke-width="0"/>
+		<rect x="40" y="60" width="266" height="68" fill="none" stroke="#f46d43" stroke-width="2"/>
+		<line x1="40" y1="85" x2="306" y2="85" stroke="#f46d43" stroke-width="1"/>
+	</g>
+	<text x="77" y="77.7" fill="#000000" font-family="Verdana" font-size="12">ConditionPrescriptionDélivrance</text>
+	<text x="45" y="102.8" fill="#000000" font-family="Verdana" font-size="12">Code CIS</text>
+	<line x1="45" y1="105" x2="102" y2="105" stroke="#000000" stroke-width="1"/>
+	<text x="45" y="119.8" fill="#000000" font-family="Verdana" font-size="12">Condition de prescription ou de délivrance</text>
+</g>
+
+<!-- Entity AvisAméliorationSMR -->
+<g id="entity-AvisAméliorationSMR">
+	<g id="frame-AvisAméliorationSMR">
+		<rect x="1125" y="246" width="320" height="25" fill="#fdae61" stroke="#fdae61" stroke-width="0"/>
+		<rect x="1125" y="271.0" width="320" height="111" fill="#fee08b" stroke="#fee08b" stroke-width="0"/>
+		<rect x="1125" y="246" width="320" height="136" fill="none" stroke="#f46d43" stroke-width="2"/>
+		<line x1="1125" y1="271" x2="1445" y2="271" stroke="#f46d43" stroke-width="1"/>
+	</g>
+	<text x="1220" y="263.7" fill="#000000" font-family="Verdana" font-size="12">AvisAméliorationSMR</text>
+	<text x="1130" y="288.7" fill="#000000" font-family="Verdana" font-size="12">Id</text>
+	<line x1="1130" y1="291" x2="1144" y2="291" stroke="#000000" stroke-width="1"/>
+	<text x="1130" y="305.7" fill="#000000" font-family="Verdana" font-size="12">Code de dossier HAS</text>
+	<text x="1130" y="322.8" fill="#000000" font-family="Verdana" font-size="12">Motif d’évaluation</text>
+	<text x="1130" y="339.8" fill="#000000" font-family="Verdana" font-size="12">Date de l’avis de la Commission de la transparence</text>
+	<text x="1130" y="356.8" fill="#000000" font-family="Verdana" font-size="12">Valeur de l'ASMR</text>
+	<text x="1130" y="373.8" fill="#000000" font-family="Verdana" font-size="12">Libelle de l'ASMR</text>
+</g>
+
+<!-- Entity FichierPrésentation -->
+<g id="entity-FichierPrésentation">
+	<g id="frame-FichierPrésentation">
+		<rect x="35" y="212" width="276" height="25" fill="#fdae61" stroke="#fdae61" stroke-width="0"/>
+		<rect x="35" y="237.0" width="276" height="179" fill="#fee08b" stroke="#fee08b" stroke-width="0"/>
+		<rect x="35" y="212" width="276" height="204" fill="none" stroke="#f46d43" stroke-width="2"/>
+		<line x1="35" y1="237" x2="311" y2="237" stroke="#f46d43" stroke-width="1"/>
+	</g>
+	<text x="115" y="229.7" fill="#000000" font-family="Verdana" font-size="12">FichierPrésentation</text>
+	<text x="40" y="254.7" fill="#000000" font-family="Verdana" font-size="12">Code CIS</text>
+	<line x1="40" y1="257" x2="97" y2="257" stroke="#000000" stroke-width="1"/>
+	<text x="40" y="271.7" fill="#000000" font-family="Verdana" font-size="12">Code CIP7</text>
+	<text x="40" y="288.7" fill="#000000" font-family="Verdana" font-size="12">Libellé de la présentation</text>
+	<text x="40" y="305.7" fill="#000000" font-family="Verdana" font-size="12">Statut administratif de la présentation</text>
+	<text x="40" y="322.8" fill="#000000" font-family="Verdana" font-size="12">Etat de commercialisation</text>
+	<text x="40" y="339.8" fill="#000000" font-family="Verdana" font-size="12">Date de la déclaration de commercialisation</text>
+	<text x="40" y="356.8" fill="#000000" font-family="Verdana" font-size="12">Code CIP13</text>
+	<text x="40" y="373.8" fill="#000000" font-family="Verdana" font-size="12">Agrément aux collectivités</text>
+	<text x="40" y="390.8" fill="#000000" font-family="Verdana" font-size="12">Taux de remboursement</text>
+	<text x="40" y="407.8" fill="#000000" font-family="Verdana" font-size="12">Prix du médicament en euro</text>
+</g>
+
+<!-- Entity LienAvisCommissionTransparence -->
+<g id="entity-LienAvisCommissionTransparence">
+	<g id="frame-LienAvisCommissionTransparence">
+		<rect x="1175" y="602" width="220" height="25" fill="#fdae61" stroke="#fdae61" stroke-width="0"/>
+		<rect x="1175" y="627.0" width="220" height="43" fill="#fee08b" stroke="#fee08b" stroke-width="0"/>
+		<rect x="1175" y="602" width="220" height="68" fill="none" stroke="#f46d43" stroke-width="2"/>
+		<line x1="1175" y1="627" x2="1395" y2="627" stroke="#f46d43" stroke-width="1"/>
+	</g>
+	<text x="1182" y="619.7" fill="#000000" font-family="Verdana" font-size="12">LienAvisCommissionTransparence</text>
+	<text x="1180" y="644.8" fill="#000000" font-family="Verdana" font-size="12">Id_lien</text>
+	<line x1="1180" y1="647" x2="1223" y2="647" stroke="#000000" stroke-width="1"/>
+	<text x="1180" y="661.8" fill="#000000" font-family="Verdana" font-size="12">Lien vers les pages d’avis de la CT</text>
+</g>
+
+<!-- Entity AvisServiceMédicalRendu -->
+<g id="entity-AvisServiceMédicalRendu">
+	<g id="frame-AvisServiceMédicalRendu">
+		<rect x="823" y="568" width="320" height="25" fill="#fdae61" stroke="#fdae61" stroke-width="0"/>
+		<rect x="823" y="593.0" width="320" height="111" fill="#fee08b" stroke="#fee08b" stroke-width="0"/>
+		<rect x="823" y="568" width="320" height="136" fill="none" stroke="#f46d43" stroke-width="2"/>
+		<line x1="823" y1="593" x2="1143" y2="593" stroke="#f46d43" stroke-width="1"/>
+	</g>
+	<text x="906" y="585.7" fill="#000000" font-family="Verdana" font-size="12">AvisServiceMédicalRendu</text>
+	<text x="828" y="610.7" fill="#000000" font-family="Verdana" font-size="12">Identifiant</text>
+	<line x1="828" y1="613" x2="891" y2="613" stroke="#000000" stroke-width="1"/>
+	<text x="828" y="627.7" fill="#000000" font-family="Verdana" font-size="12">Code de dossier HAS</text>
+	<text x="828" y="644.8" fill="#000000" font-family="Verdana" font-size="12">Motif d’évaluation</text>
+	<text x="828" y="661.8" fill="#000000" font-family="Verdana" font-size="12">Date de l’avis de la Commission de la transparence</text>
+	<text x="828" y="678.8" fill="#000000" font-family="Verdana" font-size="12">Valeur du SMR</text>
+	<text x="828" y="695.8" fill="#000000" font-family="Verdana" font-size="12">Libelle du SMR</text>
+</g>
+
+<!-- Entity Composition -->
+<g id="entity-Composition">
+	<g id="frame-Composition">
+		<rect x="852" y="9" width="262" height="25" fill="#fdae61" stroke="#fdae61" stroke-width="0"/>
+		<rect x="852" y="34.0" width="262" height="145" fill="#fee08b" stroke="#fee08b" stroke-width="0"/>
+		<rect x="852" y="9" width="262" height="170" fill="none" stroke="#f46d43" stroke-width="2"/>
+		<line x1="852" y1="34" x2="1114" y2="34" stroke="#f46d43" stroke-width="1"/>
+	</g>
+	<text x="945" y="26.7" fill="#000000" font-family="Verdana" font-size="12">Composition</text>
+	<text x="857" y="51.7" fill="#000000" font-family="Verdana" font-size="12">Code de la substance</text>
+	<line x1="857" y1="54" x2="987" y2="54" stroke="#000000" stroke-width="1"/>
+	<text x="857" y="68.7" fill="#000000" font-family="Verdana" font-size="12">Code CIS</text>
+	<text x="857" y="85.7" fill="#000000" font-family="Verdana" font-size="12">Désignation de l'élément pharmaceutique</text>
+	<text x="857" y="102.8" fill="#000000" font-family="Verdana" font-size="12">Dénomination de la substance</text>
+	<text x="857" y="119.8" fill="#000000" font-family="Verdana" font-size="12">Dosage de la substance</text>
+	<text x="857" y="136.8" fill="#000000" font-family="Verdana" font-size="12">Référence de ce dosage</text>
+	<text x="857" y="153.8" fill="#000000" font-family="Verdana" font-size="12">Nature du composant</text>
+	<text x="857" y="170.8" fill="#000000" font-family="Verdana" font-size="12">Numéro de liaison SA/FT</text>
+</g>
+</svg>
