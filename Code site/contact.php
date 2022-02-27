@@ -8,7 +8,18 @@
 	</head>
 
 	<body>
-		<form method="get" action="enregistrement.php"  autocomplete="off">
+	<h1> Medic'Info </h1>
+		<p>
+			<a 	href="inscription.php" >
+					S'inscrire 
+				</a>
+			
+			<a 	href="connexion.php" >
+					Se connecter
+				</a>
+		</p>
+
+		<form method="get" action="message.php"  autocomplete="off">
 			<p> Nom <INPUT type="text" name="n" value=""> </p>
 			<p> Prenom <INPUT type="text" name="p" value=""> </p>
 			<p> mail <INPUT type="text" name="mail" value=""> </p>
