@@ -24,7 +24,7 @@
 			<p> Prenom <INPUT type="text" name="p" value=""> </p>
 			<p> mail <INPUT type="text" name="mail" value=""> </p>
 			<p> Sujet <INPUT type="text" name="sujet" value=""> </p>
-			<p> Commentaires <TEXTAREA rows="3" name="commentaires"> Tapez ici vos commentaire </TEXTAREA>
+			<p> Commentaires <TEXTAREA rows="3" name="commentaires"> Votre commentaire </TEXTAREA>
 			<p><INPUT  type="submit" value="Envoyer"> </p>
 		</form>
 	</body>
