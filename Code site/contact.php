@@ -32,7 +32,7 @@
 		</a>
 	</h2>
 
-		<h1> Medic'Info </h1>
+		<h1> 	<a 	id="contact"href="index.html" > Medic'Info </a>  </h1>
 
 		<form method="get" action="message.php"  autocomplete="off">
 			<p> Nom <INPUT type="text" name="n" value=""> </p>
