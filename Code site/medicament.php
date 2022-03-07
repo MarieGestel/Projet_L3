@@ -9,7 +9,7 @@
 		
 		<?php 
 		//$medicament$_GET['medicament'];
-		echo "<title>".$medicament."</title>";
+		//echo "<title>".$medicament."</title>";
 		?>
 		
 	</head>
@@ -19,33 +19,39 @@
 	<h1>Medic'Info</h1>
 
 	<?php 
-	
-		echo "<h2>".$medicament."</h2>";
-		$bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', 'root');
+
+		
+		$bdd = new PDO('mysql:host=localhost;dbname=bdd_medicament;charset=utf8', 'root', 'root');
 
 		//require('bd.php');
 		//$bdd = getBD() ;
 	
 		//$CodeCIS=$_GET['CodeCIS'];				
-		$CodeCIS='123';
-		$repSpe = $bdd->query("SELECT * FROM spécialité WHERE CodeCIS='{$CodeCIS}'");
+		$CodeCIS='60022275';
+		$repSpe = $bdd->query("SELECT * FROM specialite WHERE CodeCIS='{$CodeCIS}'");
 		$repPres = $bdd->query("SELECT * FROM presentation WHERE CodeCIS='{$CodeCIS}'");
+
+		
 		while ($matSpe=$repSpe->fetch()){	
 			echo "<p>  <span class='cat'>  Code CIS </span> <span class='cat'> Dénomination </span> <span class='cat'> Titulaire </span> </p>";
-			echo "<p> </br> <span class='info'>". $matSpe['CodeCIS'] . "</span><span class='info'> ". $matSpe['Denomination_medicament'] . "</span><span class='info'>".$matSpe['Titulaire']."</span></br> </p>";
+			echo "<p> </br> <span class='info'>". $matSpe['CodeCIS'] . "</span><span class='info'> ". $matSpe['Denomination_medicament'] . "</span><span class='info'>".$matSpe['Titulaire(s)']."</span></br> </p>";
 			echo "<p><span class='cat'> Voie d'administration </span> <span class='cat'> Forme pharmaceutique </span></p>";
 			echo "<p> </br><span class='info'>". $matSpe['Voie_administration'] . "</span><span class='info'>". $matSpe['Forme_pharmaceutique'] . "</span><span class='info'></br> </p>";
 			echo "<p><span class='cat'> Type de procédure </span> <span class='cat'> Date de mise sur le marché </span></p>";
-			echo "<p> </br><span class='info'>". $matSpe['Type_procédure_AMM'] . "</span><span class='info'>". $matSpe['Date_AMM'] . "</span></br> </p>";
-	}		
+			echo "<p> </br><span class='info'>". $matSpe['Type_procedure_AMM'] . "</span><span class='info'>". $matSpe['Date_AMM'] . "</span></br> </p>";
+	}	
+
+	
 	while ($matPres=$repPres->fetch()){	
-			echo "<div id='bulle'> <p class='cat'>Prix </p>  <p class='info'> Min ".$matPres['prix_min']."€ | Max". $matPres['Prix_max']."€ </br> </p> <p class='cat'> Taux de remboursement </br></p> <p class='info'>".$matPres['Taux_remboursement']."%</p>";
+			echo "<div id='bulle'> <p class='cat'>Prix </p>  <p class='info'> Min ".$matPres['prix_min']." € | Max ". $matPres['Prix_max']." € </br> </p> <p class='cat'> Taux de remboursement </br></p> <p class='info'>".$matPres['Taux_remboursement']."</p>";
 			//echo "<img src='".$matPres['url_photo']. "' alt ='Image médicament ".$CodeCIS."' />";
 		}
 					
 		$repSpe ->closeCursor();
 		$repPres ->closeCursor();
-					
+		
+
+		
 	?>
 	
 	
@@ -57,7 +63,7 @@
 	
 	
 	<p id='liensBas'>
-	<a 	href="quiSommesNous.php" >
+	<a 	href="quisommesnous.html" >
 			Qui sommes-nous ?
 		</a>
 	
