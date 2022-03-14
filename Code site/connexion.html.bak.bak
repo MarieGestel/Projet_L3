@@ -13,14 +13,14 @@
 	
 	<body>
 	
-	<h1> Medic'Info </h1>
+	<h1> <a id='titre' href='index.html'> Medic'Info </a> </h1>
 	
-	<p>
-	<a 	href="inscription.php" >
+	<p id="inscriptionConnexion">
+	<a 	href="inscription.html" >
 			S'inscrire 
 		</a>
 	
-	<a 	href="connexion.php" >
+	<a 	href="connexion.html" >
 			Se connecter
 		</a>
 	</p>
@@ -39,31 +39,26 @@
 			 Recherche par code CIS
 		</a>
 	
-	<form action="MotDePase.php" method="get" autocomplete="off">
-	</form>
+	
 
-<p>	
-		Page de Connexion
-		</p>
+
 	
 	</h2>
-	
-	<form 
-	<p>
-		
-		<input type="text" name="n" value="Email" />
+	<p>	
+		<strong>Page de Connexion</strong>
 		</p>
+	<form action="index.html" method="get" autocomplete="off">
+	<p> <input type="text" name="n" value="Email" > </p>
 	
-		<input type="password" name="n" value="Mot de passe" />
-		</p>
+	<p> <input type="password" name="n" value="Mot de passe" > </p>
 	</form>
-	<p>
-	<strong>Je ne possède pas encore de compte </strong>
-	</p>
+	
+	<a 	href="inscripton.html" >
+			Je ne possède pas encore de compte		
+			</a>
 	
 	
-	
-<p>
+<p id='liensBas'>
 	<a 	href="quiSommesNous.php" >
 			Qui sommes-nous ?
 		</a>

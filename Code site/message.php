@@ -10,7 +10,18 @@
 	</head>
 
 	<body>
-		<h1> Medic'Info </h1>
+		<h1> 	<a 	id="contact"href="index.html" > Medic'Info </a>  </h1>
+		
+		<p id="inscriptionConnexion">
+	<a 	href="inscripton.html" >
+			S'inscrire 
+		</a>
+	
+	<a 	href="connexion.html" >
+			Se connecter
+		</a>
+	</p>
+	
         <?php
                include('bd.php');
                $n=$_GET['n'];
@@ -21,7 +32,7 @@
 
                 function enregistrer($n, $p,$mail,$sujet,$comm)
                 {
-                    $seconnecter=getBD();
+                    $seconnecter=getBDMarie();
                      if (!$seconnecter){
                          $MessageConnexion = die (" la connection impossible");
                      }
@@ -42,6 +53,31 @@
                 ?>
 
 
-        <p> votre message a bien été envoyé, nous le traiterons au plus vite.</p>
+        <p> Votre message a bien été envoyé, nous le traiterons au plus vite.</p>
+		
+		
+			
+<p id='liensBas'>
+	<a 	href="quiSommesNous.php" >
+			Qui sommes-nous ?
+		</a>
+	
+	<a 	href="contact.php" >
+			Contact
+		</a>
+	
+	<a 	href="mentionLegales.php" >
+			Mentions légales
+		</a>
+	
+	<a 	href="donneesPersonnelles.php" >
+			Données personnelles
+		</a>
+	
+	<a 	href="baseDeDonnees.php" >
+			Base de données
+		</a>
+	</p>
+	
     </body>
     </html>

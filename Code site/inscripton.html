@@ -6,8 +6,9 @@
        
 </head>
    <body>
-       <h1> Medic'Info </h1>
-       <p>
+       <h1> 	<a 	id="contact"href="index.html" > Medic'Info </a>  </h1>
+	   
+       <p id="inscriptionConnexion">
 
 	<a 	href="connexion.html" >
 			Se connecter
@@ -27,35 +28,59 @@
 	<a 	href="rechercheCodeCIS.php" >
 			 Recherche par code CIS
 		</a>
+	
+	<form action="MotDePase.php" method="get" autocomplete="off">
+	</form>
+
+<p>	
+    Page d'inscription
+      
+	</p>
+    </h2>
+ 
+    <p>
+         <label>Nom</label>
+         <input type="text" name="nom">
+     </p>
+     <p>
+         <label>Prenom</label>
+         <input type="text" name="prenom">
+    </p>
+     <p>
+         <label>Sexe : </label>
+         
+         Homme:<input type="radio" name="sexe" value="M">
+         Femme:<input type="radio" name="sexe" value="F">
         
-         <?php
-include('bd.php');
-    
- $bdd = getBD();
-        
-        while ($ligne = $rep ->fetch() ) {
-            echo $ligne['mail']."<br/>";
-            echo $ligne['mdp'];
-            
-        }
-        
-        session_start();
-        
- $_SESSION['mail'] = $_GET['mail'];
- $_SESSION['mdp'] = $_GET['mdp'];
-        
-        
-        if($ligne[ 'mail'])==$ post[ 'mail'] & $ligne ['mdp']==$ post[ 'mdp']) {
-            echo '<meta http-equiv="refresh conetent="3;url=index.php"/>;
-                
-            
-        }
-        
-        
-        ?>
+     </p>
+     <p>
+        <label>Date de naissance</label>
+        <input type="date">
+         </p>
+     <p>
+         <label>Email</label>
+        <input type="email">
+     </p>
+     <p>
+         <label>Confirmation email</label>
+          <input type="email">
+     </p>
+     <p>
+         <label>Mot de passe</label>
+         <input type="password" name="pass">
+    </p>
+     <p>
+         <label>Confirmation mot de passe</label>
+         <input type="password" name="pass">
+       </p>
+
     
        <p>
 	<a 	href="quiSommesNous.php" >
+
+   
+       <p id='liensBas'>
+	<a 	href="quisommenous.html" >
 			Qui sommes-nous ?
 		</a>
 	
