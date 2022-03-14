@@ -4,7 +4,7 @@
 		<meta http-equiv="Content-Type"
 		content="text/html; charset=UTF-8" />
 		
-		<link rel="stylesheet" href="style.css"
+		<link rel="stylesheet" href="styles.css"
 		type="text/css" media="screen" />
 		
 		
@@ -12,10 +12,9 @@
 	</head>
 	
 	<body>
-
 	
 	<p id="inscriptionConnexion">
-	<a 	href="inscription.php" >
+	<a 	href="inscripton.html" >
 			S'inscrire 
 		</a>
 	
@@ -24,7 +23,7 @@
 		</a>
 	</p>
 	
-		<h1> Medic'Info </h1>
+		<h1> <a id='titre' href='index.html'> Medic'Info </a> </h1>
 	
 	<h2>
 	<a 	href="rechercheNom.php" >
@@ -48,16 +47,16 @@
 	</form>
 	
 	<div id='imagesIndex'>
-	<img src="médicament1.jpeg" 
+	<img src="Images/médicament1.jpeg" 
 		alt ="Image accueil1" height='366px' width='499px' />
 		
-	<img src="médicament2.jpg" 
+	<img src="Images/médicament2.jpg" 
 		alt ="Image accueil2" />
 	
 	</div>
 	
 	<p id='liensBas'>
-	<a 	href="quiSommesNous.php" >
+	<a 	href="quisommenous.html" >
 			Qui sommes-nous ?
 		</a>
 	

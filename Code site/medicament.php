@@ -16,7 +16,17 @@
 	
 	<body id='medicament'>
 	
-	<h1>Medic'Info</h1>
+	<h1> 	<a 	id="contact"href="index.html" > Medic'Info </a>  </h1>
+	
+	<p id="inscriptionConnexion">
+	<a 	href="inscripton.html" >
+			S'inscrire 
+		</a>
+	
+	<a 	href="connexion.html" >
+			Se connecter
+		</a>
+	</p>
 
 	<?php 
 
@@ -63,7 +73,7 @@
 	
 	
 	<p id='liensBas'>
-	<a 	href="quisommesnous.html" >
+	<a 	href="quisommenous.html" >
 			Qui sommes-nous ?
 		</a>
 	
