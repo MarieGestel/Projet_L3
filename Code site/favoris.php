@@ -34,7 +34,7 @@ include('bd.php');
         <table>
                 <tr>
                     <th> CodeCIS</th>
-                    <th> Denomination Méedicament </th>
+                    <th> Denomination Médicament </th>
                     <th> Forme pharmaceutique </th>
                     <th> Voie d'administration  </th>
                 </tr>  

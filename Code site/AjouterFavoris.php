@@ -24,11 +24,11 @@ include('bd.php');
                 }
             }
            
-            //$id_client=$_SESSION['id_client'];
-            //ajouterfavoris($_POST["CodeCIS"], $id_client);
-            ajouterfavoris(12,10);
+            $CodeCIS=$_POST['codeCIS'];
+            //ajouterfavoris($CodeCIS, $id_client);
+            ajouterfavoris($CodeCIS,1);
         ?>
-        <!-- <meta http-equiv="refresh" content="0; url=../index.html"> -->
+        <meta http-equiv="refresh" content="0; url=index.html">
 
 	</head>
     </html>
