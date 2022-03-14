@@ -24,6 +24,7 @@
 	
 	<h1> 	<a 	id="contact"href="index.html" > Medic'Info </a>  </h1>
 	
+
 	
 	
 	<form action='recherche.php' method='get' autocomplete='on'>
@@ -36,11 +37,15 @@
 	</form>
 
 	<?php 
-
+	
 		
 		require('bd.php');
 	
-		$CodeCIS=$_GET['CodeCIS'];		
+		$CodeCIS=$_GET['CodeCIS'];	
+		$nom=$_GET['nom'];
+		$voieAdm=$_GET['voieAdm'];
+		$code=$_GET['code'];
+		
 		$repSpe = $bdd->query("SELECT * FROM specialite WHERE CodeCIS='{$CodeCIS}'");
 		$repPres = $bdd->query("SELECT * FROM presentation WHERE CodeCIS='{$CodeCIS}'");
 
@@ -57,7 +62,6 @@
 	
 	while ($matPres=$repPres->fetch()){	
 			echo "<div id='bulle'> <p class='cat'>Prix </p>  <p class='info'> Min ".$matPres['prix_min']." € | Max ". $matPres['Prix_max']." € </br> </p> <p class='cat'> Taux de remboursement </br></p> <p class='info'>".$matPres['Taux_remboursement']."</p>";
-			//echo "<img src='".$matPres['url_photo']. "' alt ='Image médicament ".$CodeCIS."' />";
 		}
 					
 		$repSpe ->closeCursor();
@@ -69,16 +73,21 @@
 	<input class='recherche' type='submit' value='Ajouter aux favoris'>
 	</p>
 	</form>
-	"
+	";
 		
+		
+	echo"
+	
+	<p class='retour'>
+	<a 	href='recherche.php?nom=".$nom."&codeCIS=".$code."&voieAdm=".$voieAdm."' >
+			Retour
+		</a>
+	</p>";
+	
 	?>
 	
 	
-	<p class='retour'>
-	<a 	href="recherche.php" >
-			Retour
-		</a>
-	</p>
+	
 	
 	
 	<p id='liensBas'>

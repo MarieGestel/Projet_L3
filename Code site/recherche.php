@@ -24,17 +24,9 @@
 	</p>
 		<h1> 	<a 	id="contact"href="index.html" > Medic'Info </a>  </h1>
 		
-		<form action='recherche.php' method='get' autocomplete='on'>
-	<p>
-	<input class='recherche' type='text' name='nom' value='' placeholder='Nom'/>
-	<input class='recherche' type='text' name='voieAdm' value='' placeholder="Voie d'administration"/>
-	<input  class='recherche'type='text' name='codeCIS' value=''placeholder='Code CIS'/>
-	<input class='recherche' type="submit" value="Rechercher">
-	</p>
-	</form>
-
-<?php
-if(isset($_GET['nom'])){
+		
+	<?php
+	if(isset($_GET['nom'])){
 	$nom=$_GET['nom'];	
 }
 else{
@@ -55,7 +47,19 @@ else{
 	$codeCIS=""	;
 }
 
+echo"
 
+<form action='recherche.php?nom=".$nom."&voieAdm=".$voieAdm."&codeCIS=".$codeCIS." method='get' autocomplete='on'>
+	<p>
+	<input class='recherche' type='text' name='nom' value='".$nom."' placeholder='Nom'/>
+	<input class='recherche' type='text' name='voieAdm' value='".$voieAdm."' placeholder='Voie d'administration'/>
+	<input  class='recherche'type='text' name='codeCIS' value='".$codeCIS."'placeholder='Code CIS'/>
+	<input class='recherche' type='submit' value='Rechercher'>
+	</p>
+	</form>
+	";
+	
+	
 		require('bd.php');
 		
 
@@ -63,49 +67,49 @@ else{
 if($nom!="" && $voieAdm!="" && $codeCIS!=""){
 	$rep = $bdd->query("SELECT CodeCIS, denomination_medicament  FROM specialite WHERE denomination_medicament LIKE '%".$nom."%' AND CodeCIS=".$codeCIS." AND Voie_administration LIKE '%".$voieAdm."%' ");
 	while ($mat=$rep->fetch()){
-	echo "<p class='resultatRecherche'> Code CIS : <a href='medicament.php?CodeCIS=".$mat['CodeCIS']."'>".$mat['CodeCIS']."</a> |  Nom du médicament : ".$mat['denomination_medicament']." </br> </p>";
+	echo "<p class='resultatRecherche'> Code CIS : <a href='medicament.php?CodeCIS=".$mat['CodeCIS']."&nom=".$nom."&voieAdm=".$voieAdm."&code=".$codeCIS."'>".$mat['CodeCIS']."</a> |  Nom du médicament : ".$mat['denomination_medicament']." </br> </p>";
 	}
 	$rep->closeCursor();
 }
 elseif($nom!="" && $voieAdm=="" && $codeCIS!=""){
 	$rep = $bdd->query("SELECT CodeCIS, denomination_medicament  FROM specialite WHERE denomination_medicament LIKE '%".$nom."%' AND CodeCIS=".$codeCIS." ");
 	while ($mat=$rep->fetch()){
-	echo "<p class='resultatRecherche'> Code CIS : <a href='medicament.php?CodeCIS=".$mat['CodeCIS']."'>".$mat['CodeCIS']."</a>  |  Nom du médicament : ".$mat['denomination_medicament']." </br> </p>";
+	echo "<p class='resultatRecherche'> Code CIS : <a href='medicament.php?CodeCIS=".$mat['CodeCIS']."&nom=".$nom."&voieAdm=".$voieAdm."&code=".$codeCIS."'>".$mat['CodeCIS']."</a> |   Nom du médicament : ".$mat['denomination_medicament']." </br> </p>";
 	}
 	$rep->closeCursor();
 }
 elseif($nom!="" && $voieAdm=="" && $codeCIS==""){
 	$rep = $bdd->query("SELECT CodeCIS, denomination_medicament  FROM specialite WHERE denomination_medicament LIKE '%".$nom."%' ");
 	while ($mat=$rep->fetch()){
-	echo "<p class='resultatRecherche'> Code CIS : <a href='medicament.php?CodeCIS=".$mat['CodeCIS']."'>".$mat['CodeCIS']."</a>  |  Nom du médicament : ".$mat['denomination_medicament']." </br> </p>";
+	echo "<p class='resultatRecherche'> Code CIS : <a href='medicament.php?CodeCIS=".$mat['CodeCIS']."&nom=".$nom."&voieAdm=".$voieAdm."&code=".$codeCIS."'>".$mat['CodeCIS']."</a> |   Nom du médicament : ".$mat['denomination_medicament']." </br> </p>";
 	}
 	$rep->closeCursor();
 }
 elseif($nom!="" && $voieAdm!="" && $codeCIS==""){
 	$rep = $bdd->query("SELECT CodeCIS, denomination_medicament  FROM specialite WHERE denomination_medicament LIKE '%".$nom."%' AND Voie_administration LIKE '%".$voieAdm."%'  ");
 	while ($mat=$rep->fetch()){
-	echo "<p class='resultatRecherche'> Code CIS : <a href='medicament.php?CodeCIS=".$mat['CodeCIS']."'>".$mat['CodeCIS']."</a>  |  Nom du médicament : ".$mat['denomination_medicament']." </br> </p>";
+	echo "<p class='resultatRecherche'> Code CIS : <a href='medicament.php?CodeCIS=".$mat['CodeCIS']."&nom=".$nom."&voieAdm=".$voieAdm."&code=".$codeCIS."'>".$mat['CodeCIS']."</a> |   Nom du médicament : ".$mat['denomination_medicament']." </br> </p>";
 	}
 	$rep->closeCursor();
 }
 elseif($nom=="" && $voieAdm!="" && $codeCIS!=""){
 	$rep = $bdd->query("SELECT CodeCIS, denomination_medicament  FROM specialite WHERE CodeCIS=".$codeCIS." AND Voie_administration LIKE '%".$voieAdm."%' ");
 	while ($mat=$rep->fetch()){
-	echo "<p class='resultatRecherche'> Code CIS : <a href='medicament.php?CodeCIS=".$mat['CodeCIS']."'>".$mat['CodeCIS']."</a>  |  Nom du médicament : ".$mat['denomination_medicament']." </br> </p>";
+	echo "<p class='resultatRecherche'> Code CIS : <a href='medicament.php?CodeCIS=".$mat['CodeCIS']."&nom=".$nom."&voieAdm=".$voieAdm."&code=".$codeCIS."'>".$mat['CodeCIS']."</a> |   Nom du médicament : ".$mat['denomination_medicament']." </br> </p>";
 	}
 	$rep->closeCursor();
 }
 elseif($nom=="" && $voieAdm=="" && $codeCIS!=""){
 	$rep = $bdd->query("SELECT CodeCIS, denomination_medicament  FROM specialite WHERE  CodeCIS=".$codeCIS."  ");
 	while ($mat=$rep->fetch()){
-	echo "<p class='resultatRecherche'> Code CIS : <a href='medicament.php?CodeCIS=".$mat['CodeCIS']."'>".$mat['CodeCIS']."</a>  |  Nom du médicament : ".$mat['denomination_medicament']." </br> </p>";
+	echo "<p class='resultatRecherche'> Code CIS : <a href='medicament.php?CodeCIS=".$mat['CodeCIS']."&nom=".$nom."&voieAdm=".$voieAdm."&code=".$codeCIS."'>".$mat['CodeCIS']."</a> |   Nom du médicament : ".$mat['denomination_medicament']." </br> </p>";
 	}
 	$rep->closeCursor();
 }
 elseif($nom=="" && $voieAdm!="" && $codeCIS==""){
 	$rep = $bdd->query("SELECT CodeCIS, denomination_medicament  FROM specialite WHERE Voie_administration LIKE '%".$voieAdm."%' ");
 	while ($mat=$rep->fetch()){
-	echo "<p class='resultatRecherche'> Code CIS : <a href='medicament.php?CodeCIS=".$mat['CodeCIS']."'>".$mat['CodeCIS']."</a>  |  Nom du médicament : ".$mat['denomination_medicament']." </br> </p>";
+	echo "<p class='resultatRecherche'> Code CIS : <a href='medicament.php?CodeCIS=".$mat['CodeCIS']."&nom=".$nom."&voieAdm=".$voieAdm."&code=".$codeCIS."'>".$mat['CodeCIS']."</a> |   Nom du médicament : ".$mat['denomination_medicament']." </br> </p>";
 	}
 	$rep->closeCursor();
 }
