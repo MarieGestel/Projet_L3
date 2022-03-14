@@ -1,7 +1,7 @@
 <?php
  require('bd.php');
-	$bdd = getBD() ; 
-
+	$bdd = getBDMarie() ; 
+	
 	if($_POST['mail']=="" || $_POST['motdepasse']==""){
 		echo '<meta http-equiv="refresh" content="0; url=connexion.php?mail='.$_POST["mail"].'"/>';
 	}
