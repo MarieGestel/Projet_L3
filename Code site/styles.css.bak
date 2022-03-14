@@ -32,7 +32,7 @@ form{
 
 .recherche{
 	text-align : center;
-	margin-bottom : 45px;
+	margin-bottom : 55px;
 	margin-top : 35px;
 	border-radius : 35px;
 	font-size : 1.5em;
@@ -81,4 +81,13 @@ b {
     margin-left: auto;
     margin-right: auto;
     width: 6em
+}
+
+.resultatRecherche{
+	text-align : center;
+	margin-left : auto;
+	margin-right : auto;
+	font-weight : bold;
+	font-size : 1.2em;
+	color : white;
 }

@@ -7,16 +7,10 @@
 		<link rel="stylesheet" href="styles.css"
 		type="text/css" media="screen" />
 		
-		<?php 
-		//$medicament$_GET['medicament'];
-		//echo "<title>".$medicament."</title>";
-		?>
-		
+		<title>Medic'Info</title>
 	</head>
 	
 	<body id='medicament'>
-	
-	<h1> 	<a 	id="contact"href="index.html" > Medic'Info </a>  </h1>
 	
 	<p id="inscriptionConnexion">
 	<a 	href="inscripton.html" >
@@ -27,17 +21,26 @@
 			Se connecter
 		</a>
 	</p>
+	
+	<h1> 	<a 	id="contact"href="index.html" > Medic'Info </a>  </h1>
+	
+	
+	
+	<form action='recherche.php' method='get' autocomplete='on'>
+	<p>
+	<input class='recherche' type='text' name='nom' value='' placeholder='Nom'/>
+	<input class='recherche' type='text' name='voieAdm' value='' placeholder="Voie d'administration"/>
+	<input  class='recherche'type='text' name='codeCIS' value=''placeholder='Code CIS'/>
+	<input class='recherche' type="submit" value="Rechercher">
+	</p>
+	</form>
 
 	<?php 
 
 		
-		$bdd = new PDO('mysql:host=localhost;dbname=bdd_medicament;charset=utf8', 'root', 'root');
-
-		//require('bd.php');
-		//$bdd = getBD() ;
+		require('bd.php');
 	
-		//$CodeCIS=$_GET['CodeCIS'];				
-		$CodeCIS='60022275';
+		$CodeCIS=$_GET['CodeCIS'];		
 		$repSpe = $bdd->query("SELECT * FROM specialite WHERE CodeCIS='{$CodeCIS}'");
 		$repPres = $bdd->query("SELECT * FROM presentation WHERE CodeCIS='{$CodeCIS}'");
 
@@ -66,7 +69,7 @@
 	
 	
 	<p class='retour'>
-	<a 	href="index.html" >
+	<a 	href="recherche.php" >
 			Retour
 		</a>
 	</p>

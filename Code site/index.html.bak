@@ -29,9 +29,9 @@
 	<form action='recherche.php' method='get' autocomplete='on'>
 	<p>
 	<input class='recherche' type='text' name='nom' value='' placeholder='Nom'/>
-	<input type='text' name='voieAdm' value='' placeholder="Voie d'administration"/>
-	<input type='text' name='codeCIS' value=''placeholder='Code CIS'/>
-	<input type="submit" value="Rechercher">
+	<input class='recherche' type='text' name='voieAdm' value='' placeholder="Voie d'administration"/>
+	<input  class='recherche'type='text' name='codeCIS' value=''placeholder='Code CIS'/>
+	<input class='recherche' type="submit" value="Rechercher">
 	</p>
 	</form>
 	
