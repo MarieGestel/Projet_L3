@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta http-equiv="Content-Type"
-		content="text/html; charset=UTF-8" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<link rel="stylesheet" href="styles.css" type="text/css" media="screen" /> 
 		
 		<title>Nous contacter</title>
 	</head>
@@ -25,6 +25,7 @@
 			<p> mail <INPUT type="text" name="mail" value=""> </p>
 			<p> Sujet <INPUT type="text" name="sujet" value=""> </p>
 			<p> Commentaires <TEXTAREA rows="3" name="commentaires"> Tapez ici vos commentaire </TEXTAREA>
+			<p><INPUT  type="submit" value="Envoyer"> </p>
 		</form>
 	</body>
 </html>

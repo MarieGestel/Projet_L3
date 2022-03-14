@@ -27,59 +27,33 @@
 	<a 	href="rechercheCodeCIS.php" >
 			 Recherche par code CIS
 		</a>
-	
-	<form action="MotDePase.php" method="get" autocomplete="off">
-	</form>
-
-<p>	
-    page d'inscription
-      
-	</p>
+        
+         <?php
+include('bd.php');
     
-    </h2>
-       <center>
- 
-    <p>
-         <label>nom</label>
-         <input type="text" name="nom">
-     </p>
-     <p>
-         <label>prenom</label>
-         <input type="text" name="prenom">
-    </p>
-     <p>
-         <label>sexe:</label>
-         
-         Homme:<input type="radio" name="sexe" value="M">
-         Femme:<input type="radio" name="sexe" value="F">
+ $bdd = getBD();
         
-     </p>
-     <p>
-        <label>date de naissance</label>
-        <input type="date">
-         </p>
-     <p>
-         <label>emain</label>
-        <input type="email">
-     </p>
-     <p>
-         <label>Confirmation email</label>
-          <input type="email">
-     </p>
-     <p>
-         <label>mot de passe</label>
-         <input type="password" name="pass">
-    </p>
-     <p>
-         <label>Confirmation mot de passe</label>
-         <input type="password" name="pass">
-         </p>
-    </center>
-     
-      
-             <input type="submit" value="s'inscrire">
+        while ($ligne = $rep ->fetch() ) {
+            echo $ligne['mail']."<br/>";
+            echo $ligne['mdp'];
+            
+        }
         
-   
+        session_start();
+        
+ $_SESSION['mail'] = $_GET['mail'];
+ $_SESSION['mdp'] = $_GET['mdp'];
+        
+        
+        if($ligne[ 'mail'])==$ post[ 'mail'] & $ligne ['mdp']==$ post[ 'mdp']) {
+            echo '<meta http-equiv="refresh conetent="3;url=index.php"/>;
+                
+            
+        }
+        
+        
+        ?>
+    
        <p>
 	<a 	href="quiSommesNous.php" >
 			Qui sommes-nous ?
