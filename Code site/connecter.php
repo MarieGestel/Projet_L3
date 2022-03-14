@@ -8,7 +8,7 @@
 
 	else{
 	
-		$var=$bdd->query('select count(*) from clients where mail="'.$_POST['mail'].'" AND mdp="'.$_POST['motdepasse'].'"');
+		$var=$bdd->query('select count(*) from clients where mail="'.$_POST['mail'].'" AND motdepasse="'.$_POST['motdepasse'].'"');
 		
 		$result=0;
 		while ($ligne = $var ->fetch()){
@@ -21,14 +21,14 @@
 		}
 
 		else{
-				$rep = $bdd->query('select * from clients WHERE mail="'.$_POST['mail'].'" AND mdp="'.$_POST['motdepasse'].'"');
+				$rep = $bdd->query('select * from clients WHERE mail="'.$_POST['mail'].'" AND motdepasse="'.$_POST['motdepasse'].'"');
 				while ($ligne = $rep ->fetch()){
 					session_start();
 					$_SESSION['clients']=array($ligne['id_clients'], $ligne['nom'], $ligne['prenom'], $ligne['mail'], $ligne['sexe'],$ligne['adresse'], $ligne['numero'], $ligne['motdepasse']);
 				}
 				$rep->closeCursor();
-				echo '<meta http-equiv="refresh" content="0; url=index.php"/>';
+				echo '<meta http-equiv="refresh" content="0; url=index.html"/>';
 				
 			}
-		}
+	}
 ?>
