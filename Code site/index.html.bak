@@ -4,7 +4,7 @@
 		<meta http-equiv="Content-Type"
 		content="text/html; charset=UTF-8" />
 		
-		<link rel="stylesheet" href="style.css"
+		<link rel="stylesheet" href="styles.css"
 		type="text/css" media="screen" />
 		
 		
@@ -12,10 +12,9 @@
 	</head>
 	
 	<body>
-
 	
 	<p id="inscriptionConnexion">
-	<a 	href="inscription.php" >
+	<a 	href="inscripton.html" >
 			S'inscrire 
 		</a>
 	
@@ -24,40 +23,39 @@
 		</a>
 	</p>
 	
-		<h1> Medic'Info </h1>
+		<h1> 	<a 	id="contact"href="index.html" > Medic'Info </a>  </h1>
+
 	
-	<h2>
-	<a 	href="rechercheNom.php" >
-			Recherche par nom 
-		</a>
+	<form action='recherche.php' method='get' autocomplete='on'>
+	<p>
+	<input class='recherche' type='text' name='nom' value='' placeholder='Nom'/>
+	<input class='recherche' type='text' name='voieAdm' value='' placeholder="Voie d'administration"/>
+	<input  class='recherche'type='text' name='codeCIS' value=''placeholder='Code CIS'/>
+	<input class='recherche' type="submit" value="Rechercher">
+	</p>
+	</form>
 	
-	<a 	href="rechercheVoieAdm.php" >
-			 Recherche par voie d'administration 
-		</a>
 	
-	<a 	href="rechercheCodeCIS.php" >
-			 Recherche par code CIS
-		</a>
-	</h2>
-	
+	<!--
 	<form action="rechercheNom.php" method="get" autocomplete="off">
 	<p>
 		
 		<input id='recherche' type="text" name="n" value="Doliprane, Advil..."  size="55" />
 	</p>
 	</form>
+	-->
 	
 	<div id='imagesIndex'>
-	<img src="médicament1.jpeg" 
+	<img src="Images/médicament1.jpeg" 
 		alt ="Image accueil1" height='366px' width='499px' />
 		
-	<img src="médicament2.jpg" 
+	<img src="Images/médicament2.jpg" 
 		alt ="Image accueil2" />
 	
 	</div>
 	
 	<p id='liensBas'>
-	<a 	href="quiSommesNous.php" >
+	<a 	href="quisommenous.html" >
 			Qui sommes-nous ?
 		</a>
 	

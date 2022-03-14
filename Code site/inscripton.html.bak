@@ -6,8 +6,7 @@
        
 </head>
    <body>
-       <h1> 	<a 	id="contact"href="index.html" > Medic'Info </a>  </h1>
-	   
+       <h1> Medic'Info </h1>
        <p id="inscriptionConnexion">
 
 	<a 	href="connexion.html" >

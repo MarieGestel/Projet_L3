@@ -8,6 +8,12 @@ h1 {
 	font-size : 4em;
 	background-color : #5ca678;
 }
+#contact{
+	color : white;
+	text-align : center;
+	font-size : 1em;
+	background-color : #5ca678;
+}
 
 h2{
 	text-align : center;
@@ -24,12 +30,12 @@ form{
 	
 }
 
-#recherche{
+.recherche{
 	text-align : center;
-	margin-bottom : 65px;
-	margin-top : 65px;
+	margin-bottom : 55px;
+	margin-top : 35px;
 	border-radius : 35px;
-	font-size : 1.7em;
+	font-size : 1.5em;
 }
 
 #liensBas{
@@ -52,8 +58,7 @@ a{
 	color : #5ca678;
 }
 
-<<<<<<< HEAD
-p span.cat{
+.cat{
 	font-size : 1.75em;
 	font-weight : bold;
 	color : #5ca678;
@@ -62,7 +67,7 @@ p span.cat{
 	background-color : white;	
 }
 
-p span.info{
+.info{
 	font-weight : bold;
 	margin-left : 35px;
 	margin-right : 35px;	
@@ -72,10 +77,17 @@ p span.info{
 #medicament{
 	text-align : center;
 }
-=======
+b {
+    margin-left: auto;
+    margin-right: auto;
+    width: 6em
+}
 
-<<<<<<< HEAD:styles.css.bak
-=======
-
->>>>>>> b3e14b804306436faabef921769f9290ed0ebd2f:Code site/styles.css.bak
->>>>>>> a2f475dda1ec14439edc7eed435dc234b55c2a16
+.resultatRecherche{
+	text-align : center;
+	margin-left : auto;
+	margin-right : auto;
+	font-weight : bold;
+	font-size : 1.2em;
+	color : white;
+}

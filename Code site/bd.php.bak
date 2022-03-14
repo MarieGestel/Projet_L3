@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html >
     <head> 
@@ -9,16 +8,14 @@
 
     <body>
         <?php
-            function getBDMarie(){
-=======
-<?php
             function getBD(){
->>>>>>> e67daed4eef8a1f44abd5c9851b5488f9dc32ec0
                 $bdd = new PDO('mysql:host=localhost:8889;dbname=BDD_medicament;charset=utf8', 'root', 'root');
                 return $bdd;
             }
 
-            $bdd = getBDMarie();
+            $bdd = getBD();
 
             
         ?>
+    </body>
+</html>
