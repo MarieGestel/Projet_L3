@@ -15,8 +15,13 @@
 	
 	<h1> <a id='titre' href='index.html'> Medic'Info </a> </h1>
 	
+<<<<<<< HEAD
 	<p id="inscriptionConnexion">
 	<a 	href="inscription.html" >
+=======
+	<p>
+	<a 	href="inscripton.html" >
+>>>>>>> 152855c332fbdc246727f950e917ef705af9ca5f
 			S'inscrire 
 		</a>
 	
