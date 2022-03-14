@@ -81,6 +81,13 @@ elseif($nom!="" && $voieAdm=="" && $codeCIS==""){
 	}
 	$rep->closeCursor();
 }
+elseif($nom!="" && $voieAdm!="" && $codeCIS==""){
+	$rep = $bdd->query("SELECT CodeCIS, denomination_medicament  FROM specialite WHERE denomination_medicament LIKE '%".$nom."%' AND Voie_administration LIKE '%".$voieAdm."%'  ");
+	while ($mat=$rep->fetch()){
+	echo "<p class='resultatRecherche'> Code CIS : <a href='medicament.php?CodeCIS=".$mat['CodeCIS']."'>".$mat['CodeCIS']."</a>  |  Nom du médicament : ".$mat['denomination_medicament']." </br> </p>";
+	}
+	$rep->closeCursor();
+}
 elseif($nom=="" && $voieAdm!="" && $codeCIS!=""){
 	$rep = $bdd->query("SELECT CodeCIS, denomination_medicament  FROM specialite WHERE CodeCIS=".$codeCIS." AND Voie_administration LIKE '%".$voieAdm."%' ");
 	while ($mat=$rep->fetch()){

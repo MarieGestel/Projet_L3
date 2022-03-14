@@ -63,7 +63,13 @@
 		$repSpe ->closeCursor();
 		$repPres ->closeCursor();
 		
-
+	echo "<form action='AjouterFavoris.php' method='post' autocomplete='on'>
+	<p>
+	<input  type='hidden' name='codeCIS' value='".$CodeCIS."'/>
+	<input class='recherche' type='submit' value='Ajouter aux favoris'>
+	</p>
+	</form>
+	"
 		
 	?>
 	

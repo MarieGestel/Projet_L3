@@ -32,7 +32,7 @@
 
                 function enregistrer($n, $p,$mail,$sujet,$comm)
                 {
-                    $seconnecter=getBD();
+                    $seconnecter=getBDMarie();
                      if (!$seconnecter){
                          $MessageConnexion = die (" la connection impossible");
                      }
