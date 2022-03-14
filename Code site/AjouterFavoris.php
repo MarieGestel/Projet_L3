@@ -29,6 +29,6 @@ include('bd.php');
             ajouterfavoris(12,10);
         ?>
 
-        <meta http-equiv="refresh" content="0; url=../index.php">
+        <meta http-equiv="refresh" content="0; url=index.html">
 	</head>
     </html>
