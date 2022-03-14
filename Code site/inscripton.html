@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
    <head>
-       <link rel="stylesheet" href="styles.css"
-		type="text/css" media="screen" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+       <link rel="stylesheet" href="styles.css" type="text/css" media="screen" />
+       <title>Medic'Info</title>
        
 </head>
    <body>
@@ -29,53 +30,27 @@
 			 Recherche par code CIS
 		</a>
 	
-	<form action="MotDePase.php" method="get" autocomplete="off">
-	</form>
-
-<p>	
-    Page d'inscription
-      
-	</p>
+	<form action="NouvelleInscription.php" method="get" autocomplete="off">
+    <p> Page d'inscription </p>
     </h2>
- 
+    <p> Nom<input type="text" name="nom"></p>
+    <p>Prenom <input type="text" name="prenom"></p>
     <p>
-         <label>Nom</label>
-         <input type="text" name="nom">
-     </p>
-     <p>
-         <label>Prenom</label>
-         <input type="text" name="prenom">
+        <label>Sexe : </label>
+        Homme:<input type="radio" name="sexe" value="M">
+        Femme:<input type="radio" name="sexe" value="F">
     </p>
-     <p>
-         <label>Sexe : </label>
-         
-         Homme:<input type="radio" name="sexe" value="M">
-         Femme:<input type="radio" name="sexe" value="F">
-        
-     </p>
-     <p>
-        <label>Date de naissance</label>
-        <input type="date">
-         </p>
-     <p>
-         <label>Email</label>
-        <input type="email">
-     </p>
-     <p>
-         <label>Confirmation email</label>
-          <input type="email">
-     </p>
-     <p>
-         <label>Mot de passe</label>
-         <input type="password" name="pass">
-    </p>
-     <p>
-         <label>Confirmation mot de passe</label>
-         <input type="password" name="pass">
-       </p>
+    <p><label>Date de naissance<input type="date" name="date"> </p>
+    <p> Numero <input type="text" name="num"></p>
+    <p> adresse <input type="text" name="adr"></p>
+    <p> Email<input type="text" name="mail1"></p>
+    <p> Confirmation email <input type="text" name="mail2"></p>
+    <p> Mot de passe <input type="password" name="pass1"></p>
+    <p> Confirmation mot de passe <input type="password" name="pass2"> </p>
+    <p> <INPUT id="bouton" type="submit" value="Envoyer"> </p>
+    </form>
 
-    
-       <p>
+    <p>
 	<a 	href="quiSommesNous.php" >
 
    

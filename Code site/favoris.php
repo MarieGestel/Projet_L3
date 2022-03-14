@@ -21,14 +21,37 @@ include('bd.php');
 
 	<?php
 
-	 if (isset($_SESSION['client'])){
-        
-        $result = $bdd->query("select id_commandes, Commandes.id_art, articles.nom as nom_article, articles.prix,
-        Commandes.quantite,envoi from Commandes,Clients,articles Where Clients.id_client=Commandes.id_client and 
-        Commandes.id_art=articles.id_art and Commandes.id_client='".$_SESSION['id_client']."'");
+	 //if (isset($_SESSION['client'])){
+       	// $result = $bdd->query("select Denomination_medicament, forme pharmaceutique, Voie_administration from Specialite,Clients,favoris Where Clients.id_client=favoris.id_client and 
+        //favoris.CodeCIS=aSpecialite.CodeCIS and Clients.id_client='".$_SESSION['id_client']."'");
+		$result = $bdd->query("select specialite.CodeCIS as CodeCIS,specialite.Denomination_medicament as Denomination_medicament, specialite.forme_pharmaceutique as forme_pharmaceutique , 
+		Specialite.Voie_administration as Voie_administration from specialite,Clients,favoris Where Clients.id_client=favoris.id_client and favoris.CodeCIS=specialite.CodeCIS and Clients.id_client=1");
 
-        $commande = $result->fetchAll();
-	 ?>
+        $favoris= $result->fetchAll();
+		?>
+
+		<p> <strong> Récapitulatif de vos favoris: </strong> </p>
+        <table>
+                <tr>
+                    <th> CodeCIS</th>
+                    <th> Denomination Méedicament </th>
+                    <th> Forme pharmaceutique </th>
+                    <th> Voie d'administration  </th>
+                </tr>  
+        <?php
+                foreach ($favoris as $favoris) {
+                    echo "<tr>";
+                    echo '<td>' . $favoris['CodeCIS']. '</td>';
+                    echo "<td>" . $favoris['Denomination_medicament']. "</td>";
+                    echo "<td>" . $favoris['forme_pharmaceutique']. "</td>";
+                    echo "<td>" . $favoris['Voie_administration']. "</td>";
+                    echo "</tr>"; 
+                }
+            //}
+            ?>
+            </table>
+            <a href="index.html"> Retour </a>
+
 
     </body>
 	
