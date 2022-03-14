@@ -52,7 +52,7 @@ echo"
 <form action='recherche.php?nom=".$nom."&voieAdm=".$voieAdm."&codeCIS=".$codeCIS." method='get' autocomplete='on'>
 	<p>
 	<input class='recherche' type='text' name='nom' value='".$nom."' placeholder='Nom'/>
-	<input class='recherche' type='text' name='voieAdm' value='".$voieAdm."' placeholder='Voie d'administration'/>
+	<input class='recherche' type='text' name='voieAdm' value='".$voieAdm."' placeholder='Voie Administration'/>
 	<input  class='recherche'type='text' name='codeCIS' value='".$codeCIS."'placeholder='Code CIS'/>
 	<input class='recherche' type='submit' value='Rechercher'>
 	</p>
@@ -113,7 +113,9 @@ elseif($nom=="" && $voieAdm!="" && $codeCIS==""){
 	}
 	$rep->closeCursor();
 }
-
+else{
+	echo "<p class='resultatRecherche'> Aucun médicament ne correspond a votre recherche </p>";
+}
 
 ?>
 
