@@ -16,11 +16,11 @@
 	<h1> <a id='titre' href='index.html'> Medic'Info </a> </h1>
 	
 	<p id="inscriptionConnexion">
-	<a 	href="inscription.html" >
+	<a 	href="inscripton.html" >
 			S'inscrire 
 		</a>
 	
-	<a 	href="connexion.html" >
+	<a 	href="connexion.php" >
 			Se connecter
 		</a>
 	</p>
@@ -47,10 +47,21 @@
 	<p>	
 		<strong>Page de Connexion</strong>
 		</p>
-	<form action="index.html" method="get" autocomplete="off">
-	<p> <input type="text" name="n" value="Email" > </p>
+		
+<?php
+if(isset($_GET['mail']))
+	$mail=$_GET['mail'];
+else
+	$mail="";
+?>		
+		
+	<form action="connecter.php" method="post" autocomplete="off">
+	<p> <input type="text" name="mail" value="Email" > </p>
 	
-	<p> <input type="password" name="n" value="Mot de passe" > </p>
+	<p> <input type="password" name="motdepasse" value="Mot de passe" > </p>
+	
+	<p><input type="submit" value="Se connecter"></p>
+
 	</form>
 	
 	<a 	href="inscripton.html" >
