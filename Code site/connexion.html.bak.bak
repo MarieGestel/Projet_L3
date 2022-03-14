@@ -13,14 +13,14 @@
 	
 	<body>
 	
-	<h1> Medic'Info </h1>
+	<h1> <a id='titre' href='index.html'> Medic'Info </a> </h1>
 	
-	<p>
-	<a 	href="inscripton.php" >
+	<p id="inscriptionConnexion">
+	<a 	href="inscription.html" >
 			S'inscrire 
 		</a>
 	
-	<a 	href="connexion.php" >
+	<a 	href="connexion.html" >
 			Se connecter
 		</a>
 	</p>
@@ -53,12 +53,12 @@
 	<p> <input type="password" name="n" value="Mot de passe" > </p>
 	</form>
 	
-	<a 	href="inscription.html" >
+	<a 	href="inscripton.html" >
 			Je ne possède pas encore de compte		
 			</a>
 	
 	
-<p>
+<p id='liensBas'>
 	<a 	href="quiSommesNous.php" >
 			Qui sommes-nous ?
 		</a>
