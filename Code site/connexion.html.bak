@@ -47,10 +47,10 @@
 	<p>	
 		<strong>Page de Connexion</strong>
 		</p>
-	<form action="connecter.php" method="post" autocomplete="off">
+	<form action="connecter.php" method="get" autocomplete="off">
 	<p> <input type="text" name="mail" value="Email" > </p>
 	
-	<p> <input type="password" name="motdepasse" value="Mot de passe" > </p>
+	<p> <input type="password" name="mptdepasse" value="Mot de passe" > </p>
 	
 	<p><input type="submit" value="Se connecter"></p>
 	</form>
