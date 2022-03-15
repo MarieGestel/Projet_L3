@@ -1,3 +1,9 @@
+<?php
+	session_start();
+ 	require('bd.php');
+	$bdd = getBDMarie() ; 
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -12,8 +18,18 @@
 	</head>
 	
 	<body>
-	
-	<p id="inscriptionConnexion">
+    <p id="inscriptionConnexion">
+    <?php 
+        if (isset($_SESSION['client'])){
+            echo "Bonjour M. ".$_SESSION['nom']." ".$_SESSION['prenom'];
+            echo "<br />";''
+   ?>	
+    <a 	href="favoris.php" > favoris </a>
+    <a href="deconnexion.php"> Déconnexion </a>
+    <a href="profil.php"> Votre profil </a>
+    <?php 
+    } else {
+    ?>
 	<a 	href="inscripton.html" >
 			S'inscrire 
 		</a>
@@ -21,13 +37,14 @@
 	<a 	href="connexion.php" >
 			Se connecter
 		</a>
+
+    <?php 
+    } 
+    ?>
 	</p>
-	
-	<a 	href="favoris.php" >
-		favoris
-	</a>
-</p>
-		<h1> 	<a 	id="contact"href="index.html" > Medic'Info </a>  </h1>
+
+
+		<h1> 	<a 	id="contact"href="index.php" > Medic'Info </a>  </h1>
 
 	
 	<form action='recherche.php' method='get' autocomplete='on'>
@@ -53,7 +70,7 @@
 	
 	<p id='liensBas'>
 		
-	<a 	href="quisommenous.html" >Qui sommes-nous ? </a>
+	<a 	href="quisommenous.php" >Qui sommes-nous ? </a>
 	
 	<a 	href="contact.php" > Contact </a>
 	

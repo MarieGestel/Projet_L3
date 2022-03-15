@@ -16,9 +16,8 @@ include('bd.php');
 	
 	<body id='medicament'>
 	<p id="inscriptionConnexion">
-	<a 	href="deconnexion.html" > Se déconnecter </a>
+	<a 	href="deconnexion.php" > Se déconnecter </a>
 	<h1> <a id="contact"href="index.html" > Medic'Info </a>  </h1>
-
 	<?php
 
 	 //if (isset($_SESSION['client'])){
