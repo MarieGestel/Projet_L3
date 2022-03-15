@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -11,18 +15,31 @@
 	</head>
 	
 	<body id='medicament'>
-	
 	<p id="inscriptionConnexion">
-	<a 	href="inscripton.html" >
+	<?php 
+        if (isset($_SESSION['client'])){
+            echo "Bonjour M. ".$_SESSION['nom']." ".$_SESSION['prenom'];
+            echo "<br />";''
+   ?>	
+   <a 	href="favoris.php" > favoris </a>
+    <a href="deconnexion.php"> Déconnexion </a>
+    <a href="profil.php"> Votre profil </a>
+    <?php 
+    } else {
+    ?>
+	<a 	href="inscription.php" >
 			S'inscrire 
 		</a>
 	
-	<a 	href="connexion.html" >
+	<a 	href="connexion.php" >
 			Se connecter
 		</a>
-	</p>
+
+    <?php 
+    } 
+    ?>
 	
-	<h1> 	<a 	id="contact"href="index.html" > Medic'Info </a>  </h1>
+	<h1> 	<a 	id="contact"href="index.php" > Medic'Info </a>  </h1>
 	
 
 	
@@ -44,7 +61,7 @@
 		$CodeCIS=$_GET['CodeCIS'];	
 		$nom=$_GET['nom'];
 		$voieAdm=$_GET['voieAdm'];
-		$code=$_GET['code'];
+		//$code=$_GET['code'];
 		
 		$repSpe = $bdd->query("SELECT * FROM specialite WHERE CodeCIS='{$CodeCIS}'");
 		$repPres = $bdd->query("SELECT * FROM presentation WHERE CodeCIS='{$CodeCIS}'");
@@ -79,19 +96,15 @@
 	echo"
 	
 	<p class='retour'>
-	<a 	href='recherche.php?nom=".$nom."&codeCIS=".$code."&voieAdm=".$voieAdm."' >
-			Retour
+	<a 	href='recherche.php?nom=".$nom."&codeCIS=".$CodeCIS."&voieAdm=".$voieAdm."' >
+			Retour vers la recherche
 		</a>
 	</p>";
 	
 	?>
 	
-	
-	
-	
-	
 	<p id='liensBas'>
-	<a 	href="quisommenous.html" >
+	<a 	href="quisommenous.php" >
 			Qui sommes-nous ?
 		</a>
 	

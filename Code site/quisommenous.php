@@ -27,7 +27,7 @@
     <?php 
     } else {
     ?>
-	<a 	href="inscripton.html" >
+	<a 	href="inscription.html" >
 			S'inscrire 
 		</a>
 	

@@ -1,3 +1,7 @@
+<?php
+	session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -12,17 +16,30 @@
 	</head>
 	
 	<body>
-	
 	<p id="inscriptionConnexion">
-	<a 	href="inscripton.html" >
+	<?php 
+        if (isset($_SESSION['client'])){
+            echo "Bonjour M. ".$_SESSION['nom']." ".$_SESSION['prenom'];
+            echo "<br />";''
+   ?>	
+   <a 	href="favoris.php" > favoris </a>
+    <a href="deconnexion.php"> Déconnexion </a>
+    <a href="profil.php"> Votre profil </a>
+    <?php 
+    } else {
+    ?>
+	<a 	href="inscription.php" >
 			S'inscrire 
 		</a>
 	
-	<a 	href="connexion.html" >
+	<a 	href="connexion.php" >
 			Se connecter
 		</a>
-	</p>
-		<h1> 	<a 	id="contact"href="index.html" > Medic'Info </a>  </h1>
+
+    <?php 
+    } 
+    ?>
+		<h1> 	<a 	id="contact"href="index.php" > Medic'Info </a>  </h1>
 		
 		
 	<?php

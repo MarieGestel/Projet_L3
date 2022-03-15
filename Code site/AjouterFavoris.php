@@ -23,12 +23,13 @@ include('bd.php');
                 
                 }
             }
-           
             $CodeCIS=$_POST['codeCIS'];
-            //ajouterfavoris($CodeCIS, $id_client);
-            ajouterfavoris($CodeCIS,1);
+            if (isset($_SESSION['client'])){
+                $id_client=$_SESSION['id_client'];
+                ajouterfavoris($CodeCIS, $id_client);
+            }
         ?>
-        <meta http-equiv="refresh" content="0; url=index.html">
+        <meta http-equiv="refresh" content="0; url=index.php">
 
 	</head>
     </html>

@@ -91,3 +91,72 @@ b {
 	font-size : 1.2em;
 	color : #5ca678;
 }
+
+#formulaire{
+margin: 0 auto;
+margin-top: 10%;
+width: 70%;
+padding: 1em;
+border: 1px solid black;
+border-radius: 1em;
+}
+
+#formulaire input{
+    font: 1em sans-serif;
+    width: 250px;
+    border: 1px solid #999;
+    margin-left: 10px;;
+
+}
+  
+#formulaire #bouton {
+    margin-top: 20px;
+    padding-left: 0px;
+    background-color: aliceblue;
+    width: 150px;
+    
+  }
+
+#inscription  {
+	margin: 0 auto;
+	margin-top: 2%;
+	width: 60%;
+	padding: 1em;
+	border: 1px solid black;
+	border-radius: 1em;
+}
+
+#inscription input{
+    font: 1em sans-serif;
+    width: 200px;
+    border: 1px solid #999;
+    margin-left: 10px;
+}
+#inscription label~input{
+	width: 20px;
+
+}
+
+#inscription #boutonInscription {
+    margin-top: 20px;
+    padding-left: 0px;
+    background-color: aliceblue;
+    width: 200px;
+}
+
+#favoris{
+	border: 1px solid black;
+	margin-left: auto;
+	margin-right: auto;
+}
+#favoris tr th{
+	border: 1px solid black;
+	height: 40px;
+	margin:auto;
+
+}
+#favoris tr td{
+	border: 1px solid black;
+	height: 20px;
+
+}
