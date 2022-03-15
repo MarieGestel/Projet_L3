@@ -78,7 +78,7 @@ session_start();
 	}	
 
 	while ($matPres=$repPres->fetch()){	
-		echo "<div id='bulle'> <p class='cat'> Substance </p>  <p class='info'> Min ".$matPres['prix_min']." € | Max ". $matPres['Prix_max']." € </br> </p> <p class='cat'> Taux de remboursement </br></p> <p class='info'>".$matPres['Taux_remboursement']."</p>";
+		echo "<div id='bulle'> <p class='cat'> Prix </p>  <p class='info'> Min ".$matPres['prix_min']." € | Max ". $matPres['Prix_max']." € </br> </p> <p class='cat'> Taux de remboursement </br></p> <p class='info'>".$matPres['Taux_remboursement']."</p>";
 	}
 
 	while ($matSub=$repSub->fetch()){	

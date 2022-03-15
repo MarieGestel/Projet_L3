@@ -24,7 +24,6 @@ include('bd.php');
        	$result = $bdd->query("select specialite.CodeCIS as CodeCIS, specialite.Denomination_medicament as Denomination_medicament, specialite.forme_pharmaceutique as forme_pharmaceutique, specialite.Voie_administration as Voie_administration from specialite,Clients,favoris Where Clients.id_client=favoris.id_client and 
         favoris.CodeCIS=specialite.CodeCIS and Clients.id_client='".$_SESSION['id_client']."'");
         $favoris= $result->fetchAll();
-        print_r ($_SESSION['id_client']);
 		?>
 
 		<h2> <strong> Récapitulatif de vos favoris: </strong> </h2>

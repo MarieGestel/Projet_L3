@@ -10,18 +10,8 @@
 	</head>
 
 	<body>
-		<h1> 	<a 	id="contact"href="index.html" > Medic'Info </a>  </h1>
-		
-		<p id="inscriptionConnexion">
-	<a 	href="inscripton.html" >
-			S'inscrire 
-		</a>
-	
-	<a 	href="connexion.html" >
-			Se connecter
-		</a>
-	</p>
-	
+		<h1> 	<a 	id="contact" href="index.php" > Medic'Info </a>  </h1>
+
         <?php
                include('bd.php');
                $n=$_GET['n'];
@@ -43,10 +33,7 @@
                          }
                      }
                  }
-                 if($n=="" || $p==""|| $mail==""|| $sujet==""|| $comm=="") {
-                ?>
-                    <!-- <meta http-equiv="refresh" content="0; url=http://localhost:8888/Gestel/nouveau.php?n="> -->
-                <?php        
+                 if($n=="" || $p==""|| $mail==""|| $sujet==""|| $comm=="") {      
                 } else{
                     enregistrer($n, $p,$mail,$sujet,$comm);
                 }
