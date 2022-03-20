@@ -17,6 +17,7 @@ include('bd.php');
 	<body >
 	<p id="inscriptionConnexion">
 	<a 	href="deconnexion.php" > Se déconnecter </a>
+    <a 	href="profil.php" > Mon profil </a>
 	<h1> <a id="contact"href="index.php" > Medic'Info </a>  </h1>
 	<?php
 

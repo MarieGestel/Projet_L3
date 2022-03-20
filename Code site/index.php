@@ -25,9 +25,10 @@
             echo "<br />";''
    ?>	
     <a 	href="favoris.php" > favoris </a>
-    <a href="deconnexion.php"> Déconnexion </a>
     <a href="profil.php"> Votre profil </a>
+	<a href="deconnexion.php"> Déconnexion </a>
     <?php 
+	echo "<a href='profil.php ?id_client=".$_SESSION['id_client']."> Votre profil </a>";
     } else {
     ?>
 	<a 	href="inscription.php" >
