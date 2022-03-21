@@ -24,7 +24,7 @@
             echo "Bonjour M. ".$_SESSION['nom']." ".$_SESSION['prenom'];
             echo "<br />";''
    ?>	
-    <a 	href="favoris.php" > Favoris </a>
+    <a 	href="favoris.php" > favoris </a>
     <a href="profil.php"> Votre profil </a>
 	<a href="deconnexion.php"> Déconnexion </a>
     <?php 
