@@ -34,20 +34,15 @@
 	<a 	href="inscription.php" >
 			S'inscrire 
 		</a>
-	
 	<a 	href="connexion.php" >
 			Se connecter
 		</a>
-
     <?php 
     } 
     ?>
 	</p>
+	<h1> <a id="contact"href="index.php" > Medic'Info </a>  </h1>
 
-
-		<h1> 	<a 	id="contact"href="index.php" > Medic'Info </a>  </h1>
-
-	
 	<form action='recherche.php' method='get' autocomplete='on'>
 	<p>
 	<input class='recherche' type='text' name='nom' value='' placeholder='Nom'/>
@@ -56,8 +51,6 @@
 	<input class='recherche' type="submit" value="Rechercher">
 	</p>
 	</form>
-	
-	
 	
 	
 	<div id='imagesIndex'>

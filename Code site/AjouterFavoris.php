@@ -31,16 +31,22 @@ include('bd.php');
                 array_push($tableau,$favoris['CodeCIS']);
             }
             $result->closeCursor();
-            
+
+            $j=0;
+            $codeCIS=$_POST['codeCIS'];
+
             for($i=0; $i<count($tableau); $i++){
-                $codeCIS=$_POST['codeCIS'];
                 if($tableau[$i]!=$codeCIS){
-                    ajouterfavoris($codeCIS, $_SESSION['id_client']);
+                    $j+=1;
                 }
+            } 
+
+            if($j==count($tableau)){
+                ajouterfavoris($codeCIS, $_SESSION['id_client']);
             }
         }
         ?>
-        <meta http-equiv="refresh" content="0; url=index.php">
+        <meta http-equiv="refresh" content="0; url=favoris.php">
 
 	</head>
     </html>

@@ -76,25 +76,31 @@ session_start();
 			echo "<p><span class='cat'> Type de procédure </span> <span class='cat'> Date de mise sur le marché </span></p>";
 			echo "<p> </br><span class='info'>". $matSpe['Type_procedure_AMM'] . "</span><span class='info'>". $matSpe['Date_AMM'] . "</span></br> </p>";
 	}	
+	echo "</div> ";
 
 	while ($matPres=$repPres->fetch()){	
 		echo "<div id='bulle'> <p class='cat'> Prix </p>  <p class='info'> Min ".$matPres['prix_min']." € | Max ". $matPres['Prix_max']." € </br> </p> <p class='cat'> Taux de remboursement </br></p> <p class='info'>".$matPres['Taux_remboursement']."</p>";
 	}
+	echo "</div> ";
 
+	
+	echo "<p class='cat'> Substances Utilisées : </p>" ; 
 	while ($matSub=$repSub->fetch()){	
-			echo "<div id='bulle'> 
-			<p class='cat'> Substances Utilisées : </p>  
-			<p class='info'> substance : ".$matSub['substance']." | dose : ". $matSub['dose']." </br> </p>";
-		}
+		echo "<div id='bulle'> <p class='info'> substance : ".$matSub['substance']." | dose : ". $matSub['dose']." </br> </p>";
+	}
+	echo "</div> ";
 
+	echo "<p class='cat'>Generique </p>";  
 	while ($matGene=$repgene->fetch()){	
 			echo "<div id='bulle'> 
-			<p class='cat'>Generique </p>  
 			<p class='info'> Nom du Generique : ".$matGene['libelle_generique']." | type de generique : ". $matGene['type_generique']." </br> </p> ";
-	}		
+	}	
+	echo "</div> ";	
+	
 		$repSpe ->closeCursor();
 		$repPres ->closeCursor();
 		$repgene ->closeCursor();
+		$repSub ->closeCursor();
 		
 		if (isset($_SESSION['client'])){
 
