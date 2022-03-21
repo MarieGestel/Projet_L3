@@ -1,3 +1,7 @@
+<?php
+       $bdd = new PDO('mysql:host=localhost;dbname=bd_manel;charset=utf8', 'root', 'root');
+?>
+
 <!DOCTYPE html>
 <html>
    <head>
@@ -9,7 +13,12 @@
        
 </head>
    <body>
-       <h1> 	<a 	id="contact"href="index.html" > Medic'Info </a>  </h1>
+       <?php
+       $bdd = new PDO('mysql:host=localhost;dbname=bd_manel;charset=utf8', 'root', 'root');
+
+       <h1> 	
+           <a 	id="contact"href="index.html" > Medic'Info </a> 
+           </h1>
 	   
        <p id="inscriptionConnexion">
 
@@ -31,52 +40,32 @@
 	<a 	href="rechercheCodeCIS.php" >
 			 Recherche par code CIS
 		</a>
+           <?php
+       $bdd = new PDO('mysql:host=localhost;dbname=bd_manel;charset=utf8', 'root', 'root');
+?>
+
 	
-	<form action="MotDePase.php" method="get" autocomplete="off">
+	<form action="connexion.php" method="get" autocomplete="off">
 	</form>
 
 <p>	
     Page d'inscription
       
 	</p>
-    </h2>
- 
-    <p>
-         <label>Nom</label>
-         <input type="text" name="nom">
-     </p>
-     <p>
-         <label>Prenom</label>
-         <input type="text" name="prenom">
-    </p>
-     <p>
-         <label>Sexe : </label>
-         
-         Homme:<input type="radio" name="sexe" value="M">
-         Femme:<input type="radio" name="sexe" value="F">
-        
-     </p>
-     <p>
-        <label>Date de naissance</label>
-        <input type="date">
-         </p>
-     <p>
-         <label>Email</label>
-        <input type="email">
-     </p>
-     <p>
-         <label>Confirmation email</label>
-          <input type="email">
-     </p>
-     <p>
-         <label>Mot de passe</label>
-         <input type="password" name="pass">
-    </p>
-     <p>
-         <label>Confirmation mot de passe</label>
-         <input type="password" name="pass">
-       </p>
-
+   
+    <?php
+         $nom=$_GET['nom'];
+         $pre=$_GET['prenom'];
+         $sexe=$_GET['sexe'];
+         $date=$_GET['date'];
+         $EML=$_GET['eml'];
+         $mail=$_GET['email'];
+         $pws=$_GET['pwd'];
+         $mdp=$_GET['pass'];
+       
+    $req="inser into inscription (nom,prenom,sexe,date de naissance,email,confirmation email,mot de passe,confirmation mot de passe) values ('$nom','$pre','$sexe',$date,'$EML','$mail','$pws','$mdp')";
+       $res=mysql_query($conn,$res);
+?>
     
        <p>
 	<a 	href="quiSommesNous.php" >
@@ -85,7 +74,7 @@
        <p id='liensBas'>
 	<a 	href="quisommenous.html" >
 			Qui sommes-nous ?
-		</a>
+		</a>s
 	
 	<a 	href="contact.php" >
 			Contact
