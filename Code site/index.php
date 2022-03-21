@@ -23,8 +23,8 @@
         if (isset($_SESSION['client'])){
             echo "Bonjour M. ".$_SESSION['nom']." ".$_SESSION['prenom'];
             echo "<br />";
-   		 	echo '<a 	href="favoris.php" > Favoris </a>';
-			echo "<a href='profil.php ?id_client=".$_SESSION['id_client']."'> Votre profil </a>";
+   		 	echo '<a href="favoris.php" > Favoris </a>';
+			echo "<a href='profil.php'> Votre profil </a>";
 			echo '<a href="deconnexion.php"> Déconnexion </a>';
     } else {
     ?>
