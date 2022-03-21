@@ -24,7 +24,6 @@ include('bd.php');
 	 if (isset($_SESSION['client'])){
        	$result = $bdd->query("select specialite.CodeCIS as CodeCIS, specialite.Denomination_medicament as Denomination_medicament, specialite.forme_pharmaceutique as forme_pharmaceutique, specialite.Voie_administration as Voie_administration from specialite,Clients,favoris Where Clients.id_client=favoris.id_client and 
         favoris.CodeCIS=specialite.CodeCIS and Clients.id_client='".$_SESSION['id_client']."'");
-        $favoris= $result->fetchAll();
 		?>
 
 		<h2> <strong> Récapitulatif de vos favoris: </strong> </h2>
@@ -36,7 +35,7 @@ include('bd.php');
                     <th> Voie d'administration  </th>
                 </tr>  
         <?php
-                foreach ($favoris as $favoris) {
+                while($favoris = $result->fetch()) {
                     echo "<tr>";
                     echo "<td> <a href='medicament.php?CodeCIS=".$favoris['CodeCIS'].'&nom='.$favoris['Denomination_medicament'].'&voieAdm='.$favoris['Voie_administration']."'>". $favoris['CodeCIS'].  '</td>';
                     echo "<td>" . $favoris['Denomination_medicament']. "</td>";
@@ -44,6 +43,7 @@ include('bd.php');
                     echo "<td>" . $favoris['Voie_administration']. "</td>";
                     echo "</tr>"; 
                 }
+                $result->closeCursor();
         }else{
             echo "Vous n'avez pas de favoris";
         }
