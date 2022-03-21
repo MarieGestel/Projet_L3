@@ -10,24 +10,35 @@ include('bd.php');
 		<title>Medic'Info</title>
 
         <?php
-            function ajouterfavoris($CodeCIS, $id_client) {
-                $seconnecter=getBDMarie();
-                if (!$seconnecter){
-                    $MessageConnexion = die (" la connection impossible");
-                }
-                else {
-                    $res="INSERT INTO favoris(CodeCIS,id_client) VALUES ('".$CodeCIS."','".$id_client."')";
-                    if($seconnecter->exec($res)!= false){
-                        echo 'La table favoris a été mise à jour.'.'<br/>';
+                function ajouterfavoris($CodeCIS, $id_client) {
+                    $seconnecter=getBDMarie();
+                    if (!$seconnecter){
+                        $MessageConnexion = die (" la connection impossible");
                     }
-                
+                    else {
+                        $res="INSERT INTO favoris(CodeCIS,id_client) VALUES ('".$CodeCIS."','".$id_client."')";
+                        if($seconnecter->exec($res)!= false){
+                            echo 'La table favoris a été mise à jour.'.'<br/>';
+                    }
+                            
                 }
             }
-            $CodeCIS=$_POST['codeCIS'];
-            if (isset($_SESSION['client'])){
-                $id_client=$_SESSION['id_client'];
-                ajouterfavoris($CodeCIS, $id_client);
+	    if (isset($_SESSION['client'])){
+            $tableau=array();
+            $result = $bdd->query("select CodeCIS from favoris Where favoris.id_client='".$_SESSION['id_client']."'");
+            
+            while($favoris = $result->fetch()) {
+                array_push($tableau,$favoris['CodeCIS']);
             }
+            $result->closeCursor();
+            
+            for($i=0; $i<count($tableau); $i++){
+                $codeCIS=$_POST['codeCIS'];
+                if($tableau[$i]!=$codeCIS){
+                    ajouterfavoris($codeCIS, $_SESSION['id_client']);
+                }
+            }
+        }
         ?>
         <meta http-equiv="refresh" content="0; url=index.php">
 
