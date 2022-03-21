@@ -137,7 +137,7 @@ else{
 ?>
 
 <p id='liensBas'>
-	<a 	href="quisommenous.html" >
+	<a 	href="quisommenous.php" >
 			Qui sommes-nous ?
 		</a>
 	

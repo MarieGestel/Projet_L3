@@ -21,36 +21,9 @@ include('bd.php');
 	<h1> <a id="contact"href="index.php" > Medic'Info </a>  </h1>
 
 	<?php
-/*         function ajouterfavoris($CodeCIS, $id_client) {
-            $seconnecter=getBDMarie();
-            if (!$seconnecter){
-                $MessageConnexion = die (" la connection impossible");
-            }
-            else {
-                $res="INSERT INTO favoris(CodeCIS,id_client) VALUES ('".$CodeCIS."','".$id_client."')";
-                if($seconnecter->exec($res)!= false){
-                    echo 'La table favoris a été mise à jour.'.'<br/>';
-                }
-                    
-            }
-        } */
             
 	    if (isset($_SESSION['client'])){
-/*             $tableau=array();
-            $result = $bdd->query("select CodeCIS from favoris Where favoris.id_client='".$_SESSION['id_client']."'");
-            
-            while($favoris = $result->fetch()) {
-                array_push($tableau,$favoris['CodeCIS']);
-            }
-            $result->closeCursor();
-            
-            for($i=0; $i<count($tableau); $i++){
-                if($tableau[$i]!=$_POST['codeCIS']){
-                    ajouterfavoris($_POST['codeCIS'], $_SESSION['id_client']);
-                }
-            } */
         
-
        	$result = $bdd->query("select specialite.CodeCIS as CodeCIS, specialite.Denomination_medicament as Denomination_medicament, specialite.forme_pharmaceutique as forme_pharmaceutique, specialite.Voie_administration as Voie_administration from specialite,Clients,favoris Where Clients.id_client=favoris.id_client and 
         favoris.CodeCIS=specialite.CodeCIS and Clients.id_client='".$_SESSION['id_client']."'");
 		?>
@@ -79,7 +52,20 @@ include('bd.php');
             
             ?>
             </table>
-
+            <p id='liensBas'>
+		
+        <a 	href="quisommenous.php" >Qui sommes-nous ? </a>
+        
+        <a 	href="contact.php" > Contact </a>
+        
+        <a 	href="mentionLegales.php" >	Mentions légales </a>
+        
+        <a 	href="donneesPersonnelles.php" > Données personnelles </a>
+        
+        <a 	href="baseDeDonnees.php" > Base de données </a>
+        </p>
+        
+        </body>
 
     </body>
 	
