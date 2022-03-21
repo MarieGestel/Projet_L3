@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -11,18 +15,31 @@
 	</head>
 	
 	<body id='medicament'>
-	
 	<p id="inscriptionConnexion">
-	<a 	href="inscripton.html" >
+	<?php 
+        if (isset($_SESSION['client'])){
+            echo "Bonjour M. ".$_SESSION['nom']." ".$_SESSION['prenom'];
+            echo "<br />";''
+   ?>	
+   <a 	href="favoris.php" > favoris </a>
+    <a href="deconnexion.php"> Déconnexion </a>
+    <a href="profil.php"> Votre profil </a>
+    <?php 
+    } else {
+    ?>
+	<a 	href="inscription.php" >
 			S'inscrire 
 		</a>
 	
-	<a 	href="connexion.html" >
+	<a 	href="connexion.php" >
 			Se connecter
 		</a>
-	</p>
+
+    <?php 
+    } 
+    ?>
 	
-	<h1> 	<a 	id="contact"href="index.html" > Medic'Info </a>  </h1>
+	<h1> 	<a 	id="contact"href="index.php" > Medic'Info </a>  </h1>
 	
 
 	
@@ -44,11 +61,12 @@
 		$CodeCIS=$_GET['CodeCIS'];	
 		$nom=$_GET['nom'];
 		$voieAdm=$_GET['voieAdm'];
-		$code=$_GET['code'];
+		//$code=$_GET['code'];
 		
 		$repSpe = $bdd->query("SELECT * FROM specialite WHERE CodeCIS='{$CodeCIS}'");
 		$repPres = $bdd->query("SELECT * FROM presentation WHERE CodeCIS='{$CodeCIS}'");
-
+		$repgene = $bdd->query("SELECT generique_medicament.libelle_gp_gen as libelle_generique,generique_medicament.type_generique as type_generique FROM generique_medicament,specialite,est_le_generique_de WHERE specialite.CodeCIS=est_le_generique_de.CodeCIS And generique_medicament.ID_grp_generique=est_le_generique_de.ID_gp_gen And specialite.CodeCIS='{$CodeCIS}'");
+		$repSub = $bdd->query("SELECT composants.nom_substance as substance,composants.dose_substance as dose FROM composants,specialite,est_compose_de WHERE specialite.CodeCIS=est_compose_de.CodeCIS And composants.Code_substance=est_compose_de.Code_substance And specialite.CodeCIS='{$CodeCIS}'");
 		
 		while ($matSpe=$repSpe->fetch()){	
 			echo "<p>  <span class='cat'>  Code CIS </span> <span class='cat'> Dénomination </span> <span class='cat'> Titulaire </span> </p>";
@@ -59,14 +77,27 @@
 			echo "<p> </br><span class='info'>". $matSpe['Type_procedure_AMM'] . "</span><span class='info'>". $matSpe['Date_AMM'] . "</span></br> </p>";
 	}	
 
-	
 	while ($matPres=$repPres->fetch()){	
-			echo "<div id='bulle'> <p class='cat'>Prix </p>  <p class='info'> Min ".$matPres['prix_min']." € | Max ". $matPres['Prix_max']." € </br> </p> <p class='cat'> Taux de remboursement </br></p> <p class='info'>".$matPres['Taux_remboursement']."</p>";
+		echo "<div id='bulle'> <p class='cat'> Prix </p>  <p class='info'> Min ".$matPres['prix_min']." € | Max ". $matPres['Prix_max']." € </br> </p> <p class='cat'> Taux de remboursement </br></p> <p class='info'>".$matPres['Taux_remboursement']."</p>";
+	}
+
+	while ($matSub=$repSub->fetch()){	
+			echo "<div id='bulle'> 
+			<p class='cat'> Substances Utilisées : </p>  
+			<p class='info'> substance : ".$matSub['substance']." | dose : ". $matSub['dose']." </br> </p>";
 		}
-					
+
+	while ($matGene=$repgene->fetch()){	
+			echo "<div id='bulle'> 
+			<p class='cat'>Generique </p>  
+			<p class='info'> Nom du Generique : ".$matGene['libelle_generique']." | type de generique : ". $matGene['type_generique']." </br> </p> ";
+	}		
 		$repSpe ->closeCursor();
 		$repPres ->closeCursor();
+		$repgene ->closeCursor();
 		
+		if (isset($_SESSION['client'])){
+
 	echo "<form action='AjouterFavoris.php' method='post' autocomplete='on'>
 	<p>
 	<input  type='hidden' name='codeCIS' value='".$CodeCIS."'/>
@@ -74,24 +105,20 @@
 	</p>
 	</form>
 	";
-		
+}
 		
 	echo"
 	
 	<p class='retour'>
-	<a 	href='recherche.php?nom=".$nom."&codeCIS=".$code."&voieAdm=".$voieAdm."' >
-			Retour
+	<a 	href='recherche.php?nom=".$nom."&voieAdm=".$voieAdm."' >
+			Retour vers la recherche
 		</a>
 	</p>";
 	
 	?>
 	
-	
-	
-	
-	
 	<p id='liensBas'>
-	<a 	href="quisommenous.html" >
+	<a 	href="quisommenous.php" >
 			Qui sommes-nous ?
 		</a>
 	

@@ -1,3 +1,7 @@
+<?php
+	session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -7,20 +11,31 @@
 		<title>Nous contacter</title>
 	</head>
 
-	<body>
-			
+	<body>		
 	<p id="inscriptionConnexion">
-	<a 	href="inscripton.html" > S'inscrire  </a>
-	<a 	href="connexion.html" > Se connecter </a>
-	</p>
+	<?php 
+        if (isset($_SESSION['client'])){
+            echo "Bonjour M. ".$_SESSION['nom']." ".$_SESSION['prenom'];
+            echo "<br />";''
+   ?>	
+   <a 	href="favoris.php" > favoris </a>
+    <a href="deconnexion.php"> Déconnexion </a>
+    <a href="profil.php"> Votre profil </a>
+    <?php 
+    } else {
+    ?>
+	<a 	href="inscription.php" >
+			S'inscrire 
+		</a>
 	
-	<h2> 
-		<a href="rechercheNom.php" > Recherche par nom </a> 
-		<a 	href="rechercheVoieAdm.php" > Recherche par voie d'administration </a>
-		<a 	href="rechercheCodeCIS.php" > Recherche par code CIS </a>
-	</h2>
+	<a 	href="connexion.php" >
+			Se connecter
+		</a>
 
-	<h1> <a id="contact"href="index.html" > Medic'Info </a>  </h1>
+    <?php 
+    } 
+    ?>
+	<h1> <a id="contact" href="index.php" > Medic'Info </a>  </h1>
 
 	<div>
 		<form method="get" action="message.php"  autocomplete="off">
