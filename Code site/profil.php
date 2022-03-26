@@ -37,27 +37,21 @@
 	echo '<li> <strong> date de naissance  : </strong>'.$mat['date_naissance'].'<br/> </li>' ;
 	echo '<li> <strong> Numero : </strong>'.$mat['numero'].'</li>';
 	echo '<li> <strong> Mon adresse : </strong>'.$mat['adresse'].'</li>';
-	echo "</ul>"; 
-	?>
-	<form action="profil.php" method="post" autocomplete="off">
-	<p>  <INPUT type="text" name="profession" value =<?php if (isset($_POST['profession'])){ echo $_POST['profession'] ; } else{ echo " Profession ";}?>> </p>	
-	<p>  <INPUT type="text" name="allergie" value = <?php if (isset($_POST['allergie'])){ echo $_POST['allergie'] ; } else{ echo "Allergie";}?>> </p>	
-	<p> <INPUT type="text" name="pathologie" value =<?php if (isset($_POST['pathologie'])){ echo $_POST['pathologie'] ; } else{ echo "Pathologie ";}?>> </p>	
-	<p> <INPUT id="boutonProfil" type="submit" value=""></p>
-	</form>
-	</div>;
+	if ( $mat['allergies']!=Null ) { echo '<li> <strong> Mes allergies :</strong>'.$mat['allergies'].'</li>';}
+	if ( $mat['Profession']!=Null ) { echo '<li> <strong> Ma profession :</strong>'.$mat['Profession'].'</li>';}
+	if ( $mat['Pathologies']!=Null ) { echo '<li> <strong> Mes pathologie :</strong>'.$mat['Pathologies'].'</li>';}
 
-	<p id='liensBas'>
+	echo "</ul>"; 
+	echo "<a href='modifier_information.php'/> Modifier mes informations </a>";
+	?>
+
+	<div id='liensBas'>
 		
 		<a 	href="quisommenous.php" >Qui sommes-nous ? </a>
-		
 		<a 	href="contact.php" > Contact </a>
-		
 		<a 	href="mentionLegales.php" >	Mentions légales </a>
-		
 		<a 	href="donneesPersonnelles.php" > Données personnelles </a>
-		
 		<a 	href="baseDeDonnees.php" > Base de données </a>
-		</p>
+</div>
 		
 </body>

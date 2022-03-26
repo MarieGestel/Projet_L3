@@ -1,5 +1,6 @@
 <?php
-include('bd.php');  
+	session_start();
+    include('bd.php');  
 ?>
 <!DOCTYPE html>
 <html>
@@ -50,7 +51,7 @@ include('bd.php');
             if($estPresent==0){
                 nouvelleIncription($n, $p, $adr,$num,$mail,$mdp,$sexe,$date);
 
-                $rep = $bdd->query('select * from Clients WHERE mail="'.$mail.'" AND motdepasse="'.$motdepasse.'"');
+                $rep = $bdd->query('select * from Clients WHERE mail="'.$mail.'" AND motdepasse="'.$mdp.'"');
 
 				while ($client = $rep ->fetch()){
 	 				$_SESSION['id_client']=$client['id_client'];

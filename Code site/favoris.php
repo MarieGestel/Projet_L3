@@ -20,8 +20,7 @@ include('bd.php');
     <a 	href="profil.php" > Mon profil </a>
 	<h1> <a id="contact"href="index.php" > Medic'Info </a>  </h1>
 
-	<?php
-            
+	<?php 
 	    if (isset($_SESSION['client'])){
         
        	$result = $bdd->query("select specialite.CodeCIS as CodeCIS, specialite.Denomination_medicament as Denomination_medicament, specialite.forme_pharmaceutique as forme_pharmaceutique, specialite.Voie_administration as Voie_administration from specialite,Clients,favoris Where Clients.id_client=favoris.id_client and 
@@ -48,28 +47,19 @@ include('bd.php');
                 $result->closeCursor();
         }else{
             echo "Vous n'avez pas de favoris";
+            echo '<meta http-equiv="refresh" content="1; url=index.php">';
         }
             
-            ?>
-            </table>
-            <p id='liensBas'>
-		
-        <a 	href="quisommenous.php" >Qui sommes-nous ? </a>
-        
-        <a 	href="contact.php" > Contact </a>
-        
-        <a 	href="mentionLegales.php" >	Mentions légales </a>
-        
-        <a 	href="donneesPersonnelles.php" > Données personnelles </a>
-        
-        <a 	href="baseDeDonnees.php" > Base de données </a>
-        </p>
-        
-        </body>
+        ?>
+        </table>
 
+        <div id='liensBas'>
+        <a 	href="quisommenous.php" >Qui sommes-nous ? </a>
+        <a 	href="contact.php" > Contact </a>
+        <a 	href="mentionLegales.php" >	Mentions légales </a>      
+        <a 	href="donneesPersonnelles.php" > Données personnelles </a>        
+        <a 	href="baseDeDonnees.php" > Base de données </a>
+    </div>
+        
     </body>
-	
-	
-	
-	
-    </html>
+</html>

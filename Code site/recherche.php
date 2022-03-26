@@ -1,5 +1,6 @@
 <?php
 	session_start();
+	require('bd.php');
 ?>
 
 <!DOCTYPE html>
@@ -20,69 +21,57 @@
 	<?php 
         if (isset($_SESSION['client'])){
             echo "Bonjour M. ".$_SESSION['nom']." ".$_SESSION['prenom'];
-            echo "<br />";''
-   ?>	
-   <a 	href="favoris.php" > favoris </a>
-    <a href="deconnexion.php"> Déconnexion </a>
-    <a href="profil.php"> Votre profil </a>
-    <?php 
-    } else {
+            echo "<br />";
+   		 	echo '<a href="favoris.php" > favoris </a>';
+    		echo '<a href="deconnexion.php"> Déconnexion </a>';
+    		echo '<a href="profil.php"> Votre profil </a>';
+    	} else {
+			echo "<a href='inscription.php' > S'inscrire </a>";
+			echo '<a href="connexion.php" > Se connecter </a>';
+    	} 
     ?>
-	<a 	href="inscription.php" >
-			S'inscrire 
-		</a>
-	
-	<a 	href="connexion.php" >
-			Se connecter
-		</a>
-
-    <?php 
-    } 
-    ?>
-		<h1> 	<a 	id="contact"href="index.php" > Medic'Info </a>  </h1>
-		
+	<h1> 	<a 	id="contact"href="index.php" > Medic'Info </a>  </h1>
 		
 	<?php
-	if(isset($_GET['nom'])){
-	$nom=$_GET['nom'];	
-}
-else{
-	$nom=""	;
-}
+		if(isset($_GET['nom'])){
+			$nom=$_GET['nom'];	
+		}
+		else{
+			$nom=""	;
+		}
 
-if(isset($_GET['voieAdm'])){
-	$voieAdm=$_GET['voieAdm'];	
-}
-else{
-	$voieAdm=""	;
-}
+		if(isset($_GET['voieAdm'])){
+			$voieAdm=$_GET['voieAdm'];	
+		}
+		else{
+			$voieAdm=""	;
+		}
+		if(isset($_GET['forme'])){
+			$forme=$_GET['forme'];	
+		}
+		else{
+			$forme=""	;
+		}
 
-if(isset($_GET['codeCIS'])){
-	$codeCIS=$_GET['codeCIS'];	
-}
-else{
-	$codeCIS=""	;
-}
+		if(isset($_GET['codeCIS'])){
+			$codeCIS=$_GET['codeCIS'];	
+		}
+		else{
+			$codeCIS=""	;
+		}
 
-echo"
-
-<form action='recherche.php?nom=".$nom."&voieAdm=".$voieAdm."&codeCIS=".$codeCIS." method='get' autocomplete='on'>
-	<p>
-	<input class='recherche' type='text' name='nom' value='".$nom."' placeholder='Nom'/>
-	<input class='recherche' type='text' name='voieAdm' value='".$voieAdm."' placeholder='Voie Administration'/>
-	<input  class='recherche'type='text' name='codeCIS' value='".$codeCIS."'placeholder='Code CIS'/>
-	<input class='recherche' type='submit' value='Rechercher'>
-	</p>
-	</form>
-	";
+echo " <form action='recherche.php?nom=".$nom."&voieAdm=".$voieAdm."&forme=".$forme."&codeCIS=".$codeCIS." method='get' autocomplete='on'>
+			<p>
+			<input class='recherche' type='text' name='nom' value='".$nom."' placeholder='Nom'/>
+			<input class='recherche' type='text' name='voieAdm' value='".$voieAdm."' placeholder='Voie Administration'/>
+			<input class='recherche' type='text' name='forme' value='".$forme."' placeholder='forme pharmaceutique'/>
+			<input  class='recherche'type='text' name='codeCIS' value='".$codeCIS."'placeholder='Code CIS'/>
+			<input class='recherche' type='submit' value='Rechercher'>
+			</p>
+		</form>";
 	
-	
-		require('bd.php');
-		
-
-
 if($nom!="" && $voieAdm!="" && $codeCIS!=""){
-	$rep = $bdd->query("SELECT CodeCIS, denomination_medicament  FROM specialite WHERE denomination_medicament LIKE '%".$nom."%' AND CodeCIS=".$codeCIS." AND Voie_administration LIKE '%".$voieAdm."%' ");
+	$rep = $bdd->query("SELECT CodeCIS, denomination_medicament  FROM specialite WHERE denomination_medicament LIKE '%".$nom."%' AND CodeCIS=".$codeCIS." AND Voie_administration LIKE '%".$voieAdm."%'");
 	while ($mat=$rep->fetch()){
 	echo "<p class='resultatRecherche'> Code CIS : <a href='medicament.php?CodeCIS=".$mat['CodeCIS']."&nom=".$nom."&voieAdm=".$voieAdm."&code=".$codeCIS."'>".$mat['CodeCIS']."</a> |  Nom du médicament : ".$mat['denomination_medicament']." </br> </p>";
 	}
