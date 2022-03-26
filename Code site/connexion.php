@@ -11,8 +11,8 @@
 	<h1> <a id="contact" href='index.php'> Medic'Info </a> </h1>
 	<h2> <strong>Page de Connexion</strong> </h2>
 		
-	<form action="connecter.php" method="get" autocomplete="off">
-	<p> Adresse mail <INPUT type="text" name="mail" value = <?php if (isset($_GET['mail'])){ echo $_GET['mail'] ; } else{ echo "";}?>> </p>	
+	<form action="connecter.php" method="post" autocomplete="off">
+	<p> Adresse mail <INPUT type="text" name="mail" value = <?php if (isset($_POST['mail'])){ echo $_POST['mail'] ; } else{ echo "";}?>> </p>	
 	<p> Mot de passe <INPUT type="password" name="motdepasse" value="" > </p>
 	<p> <INPUT id="bouton" type="submit" value="Se connecter"></p>
 	</form>

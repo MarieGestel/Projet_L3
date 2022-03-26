@@ -13,32 +13,24 @@
 
 	<body>		
 	<p id="inscriptionConnexion">
+
 	<?php 
         if (isset($_SESSION['client'])){
             echo "Bonjour M. ".$_SESSION['nom']." ".$_SESSION['prenom'];
-            echo "<br />";''
-   ?>	
-   <a 	href="favoris.php" > favoris </a>
-    <a href="deconnexion.php"> Déconnexion </a>
-    <a href="profil.php"> Votre profil </a>
-    <?php 
-    } else {
+            echo "<br />";
+      		echo '<a href="favoris.php" > favoris </a>';
+	  		echo '<a href="deconnexion.php"> Déconnexion </a>';
+    		echo '<a href="profil.php"> Votre profil </a>';
+    	} else {
+			echo "<a href='inscription.php' > S'inscrire </a>";
+			echo '<a 	href="connexion.php" > Se connecter </a>';
+		} 
     ?>
-	<a 	href="inscription.php" >
-			S'inscrire 
-		</a>
-	
-	<a 	href="connexion.php" >
-			Se connecter
-		</a>
 
-    <?php 
-    } 
-    ?>
 	<h1> <a id="contact" href="index.php" > Medic'Info </a>  </h1>
 
 	<div>
-		<form method="get" action="message.php"  autocomplete="off">
+		<form method="post" action="message.php"  autocomplete="off">
 			<p> Nom <INPUT type="text" name="n" value=""> </p>
 			<p> Prenom <INPUT type="text" name="p" value=""> </p>
 			<p> mail <INPUT type="text" name="mail" value=""> </p>

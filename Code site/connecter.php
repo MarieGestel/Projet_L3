@@ -1,19 +1,30 @@
 <?php
 	session_start();
  	require('bd.php');
-	$bdd = getBDMarie() ; 
+	$bdd = getBDMarie() ;
+?>
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<link rel="stylesheet" href="styles.css" type="text/css" media="screen" />
+		<title>Medic'Info/Connexion</title>
+
+<?php	
+	$mail=$_POST['mail'];
+	$mdp=md5($_POST['motdepasse']);
 	
-	if($_GET['mail']=="" || $_GET['motdepasse']==""){
-		echo '<meta http-equiv="refresh" content="0; url=connexion.php?mail='.$_GET['mail'].'"/>';
+	if($mail=="" || $mdp==""){
+		echo '<meta http-equiv="refresh" content="1; url=connexion.php?mail='.$mail.'"/>';
+		echo "mail ou mot de passe vide";
 	}
 
 	else{
 		$result=0;
-
 		$var=$bdd->query('select count(*) from Clients where mail="'.$_GET['mail'].'" AND motdepasse="'.$_GET['motdepasse'].'"');
-
 		while ($ligne = $var ->fetch()){
-		$result=$ligne[0];
+			$result=$ligne[0];
 		}
 		$var->closeCursor();
 		
@@ -22,7 +33,7 @@
 		} 
 
 		else{
-				$rep = $bdd->query('select * from Clients WHERE mail="'.$_GET['mail'].'" AND motdepasse="'.$_GET['motdepasse'].'"');
+				$rep = $bdd->query('select * from Clients WHERE mail="'.$mail.'" AND motdepasse="'.$mdp.'"');
 				
 				while ($client = $rep ->fetch()){
 	 				$_SESSION['id_client']=$client['id_client'];
@@ -42,3 +53,4 @@
 	 		}
 	} 
 ?>
+</head>
