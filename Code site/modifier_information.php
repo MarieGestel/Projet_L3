@@ -14,7 +14,7 @@
 
     <body>
 
-	<p id="inscriptionConnexion">
+	<div id="inscriptionConnexion">
     <?php 
         if (isset($_SESSION['client'])){
             echo "Bonjour M. ".$_SESSION['nom']." ".$_SESSION['prenom'];
@@ -23,7 +23,7 @@
     	echo '<a href="deconnexion.php"> Déconnexion </a>';
 		echo "</p>";
         echo "<h1> 	<a 	id='contact' href='index.php' > Medic'Info </a>  </h1>";
-
+        echo "</div >";
         $client = $bdd->query("select * from Clients where id_client='".$_SESSION['id_client']."'");
         $mat = $client ->fetch(); 
 
@@ -45,7 +45,15 @@
 
         }
     ?>
-    </p>
+
+    <div id='liensBas'>
+		
+		<a 	href="quisommenous.php" >Qui sommes-nous ? </a>
+		<a 	href="contact.php" > Contact </a>
+		<a 	href="mentionLegales.php" >	Mentions légales </a>
+		<a 	href="donneesPersonnelles.php" > Données personnelles </a>
+	</div>
+
 </body>
 
 </html>

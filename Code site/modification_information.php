@@ -20,13 +20,12 @@
                 }
                 else {
                     $res="UPDATE Clients SET nom='".$n."',prenom='".$p."', mail='".$mail."', date_naissance='".$date."',adresse='".$adr."',numero='".$num."',allergies='".$all."', Profession='".$prof."', Pathologies='".$path."' WHERE id_client='".$id."' ";
-                    if($seconnecter->exec($res)!= false){
-                        echo 'les informations du client ont été mis à jour';
-                    }
+                    $seconnecter->exec($res);
                 }
             } 
 
     if (isset($_SESSION['client'])){
+
         if(isset($_POST['nom'])){
             $n=$_POST['nom'];	
         }
@@ -85,7 +84,10 @@
         else{
             $all="";
         }
-        modifier_information($n,$p,$mail,$date,$adr,$num,$prof,$all,$path,$_SESSION['client']);
+        $id=$_SESSION['id_client'];
+
+        modifier_information($n,$p,$mail,$date,$adr,$num,$prof,$all,$path,$id);
+        echo '<meta http-equiv="refresh" content="0; url=profil.php"/>';
 
     }
     ?>

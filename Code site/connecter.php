@@ -22,14 +22,15 @@
 
 	else{
 		$result=0;
-		$var=$bdd->query('select count(*) from Clients where mail="'.$_GET['mail'].'" AND motdepasse="'.$_GET['motdepasse'].'"');
+		$var=$bdd->query('select count(*) from Clients where mail="'.$mail.'" AND motdepasse="'.$mdp.'"');
 		while ($ligne = $var ->fetch()){
 			$result=$ligne[0];
 		}
 		$var->closeCursor();
-		
+
  	 	if($result==0){
-			echo '<meta http-equiv="refresh" content="0; url=connexion.php"/>';
+			  echo 'Nous ne trouvons pas de client correspondant à la demande veuillez vous inscrire';
+			echo '<meta http-equiv="refresh" content="0; url=inscription.php"/>';
 		} 
 
 		else{

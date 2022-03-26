@@ -37,9 +37,9 @@
 	echo '<li> <strong> date de naissance  : </strong>'.$mat['date_naissance'].'<br/> </li>' ;
 	echo '<li> <strong> Numero : </strong>'.$mat['numero'].'</li>';
 	echo '<li> <strong> Mon adresse : </strong>'.$mat['adresse'].'</li>';
-	if ( $mat['allergies']!=Null ) { echo '<li> <strong> Mes allergies :</strong>'.$mat['allergies'].'</li>';}
-	if ( $mat['Profession']!=Null ) { echo '<li> <strong> Ma profession :</strong>'.$mat['Profession'].'</li>';}
-	if ( $mat['Pathologies']!=Null ) { echo '<li> <strong> Mes pathologie :</strong>'.$mat['Pathologies'].'</li>';}
+	if ( $mat['allergies']!=Null ) { echo '<li> <strong> Mes allergies : </strong>'.$mat['allergies'].'</li>';}
+	if ( $mat['Profession']!=Null ) { echo '<li> <strong> Ma profession : </strong>'.$mat['Profession'].'</li>';}
+	if ( $mat['Pathologies']!=Null ) { echo '<li> <strong> Mes pathologie : </strong>'.$mat['Pathologies'].'</li>';}
 
 	echo "</ul>"; 
 	echo "<a href='modifier_information.php'/> Modifier mes informations </a>";
