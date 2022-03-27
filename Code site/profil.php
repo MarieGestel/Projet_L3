@@ -27,7 +27,7 @@
 
 	echo "<h1> 	<a 	id='contact'href='index.php' > Medic'Info </a>  </h1>";
 
-	echo '<div id="profil">';
+	echo '<div class="profil">';
 	echo '<h2> Mon profil  </h2>'; 
 	//echo "<img src=".$mat['url_photo'].">"; 
 	echo " <ul>";
@@ -40,18 +40,24 @@
 	if ( $mat['allergies']!=Null ) { echo '<li> <strong> Mes allergies : </strong>'.$mat['allergies'].'</li>';}
 	if ( $mat['Profession']!=Null ) { echo '<li> <strong> Ma profession : </strong>'.$mat['Profession'].'</li>';}
 	if ( $mat['Pathologies']!=Null ) { echo '<li> <strong> Mes pathologie : </strong>'.$mat['Pathologies'].'</li>';}
-
 	echo "</ul>"; 
-	echo "<a href='modifier_information.php'/> Modifier mes informations </a>";
+
+	echo "<form action='modifier_information.php' method='post' autocomplete='off'>";
+	echo '<INPUT class="bouton" type="submit" value= "Modifier mes informations" >';
+	echo '</form>';
+	
+	//echo "<a class='modif' href='modifier_information.php'/> Modifier mes informations </a>";
+	echo "</div>";
 	?>
 
 	<div id='liensBas'>
-		
 		<a 	href="quisommenous.php" >Qui sommes-nous ? </a>
 		<a 	href="contact.php" > Contact </a>
 		<a 	href="mentionLegales.php" >	Mentions légales </a>
 		<a 	href="donneesPersonnelles.php" > Données personnelles </a>
 		<a 	href="baseDeDonnees.php" > Base de données </a>
-</div>
+	</div>
+
 		
-</body>
+	</body>
+</html>

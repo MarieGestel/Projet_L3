@@ -16,9 +16,7 @@ include('bd.php');
                     $MessageConnexion = die (" la connection impossible");
                 } else {
                     $res="INSERT INTO favoris(CodeCIS,id_client) VALUES ('".$CodeCIS."','".$id_client."')";
-                    if($seconnecter->exec($res)!= false){
-                        echo 'La table favoris a été mise à jour.'.'<br/>';
-                    }           
+                    $seconnecter->exec($res);     
                 }
             }
 
@@ -45,7 +43,7 @@ include('bd.php');
             }
             echo '<meta http-equiv="refresh" content="0; url=favoris.php">';
         } else{
-            echo "Vous n'êtes pas connecté."
+            echo "Vous n'êtes pas connecté.";
             echo '<meta http-equiv="refresh" content="1; url=index.php">';
         }
         ?>
