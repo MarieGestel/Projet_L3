@@ -90,8 +90,8 @@ session_start();
 	}
 	echo "</div> ";
 
-	echo "<p class='cat'>Generique </p>";  
 	while ($matGene=$repgene->fetch()){	
+		echo "<p class='cat'>Generique </p>";  
 			echo "<div id='bulle'> 
 			<p class='info'> Nom du Generique : ".$matGene['libelle_generique']." | type de generique : ". $matGene['type_generique']." </br> </p> ";
 	}	

@@ -95,15 +95,11 @@
 
 	<select class='recherche' name="forme" id='forme'>
 	<option value=""> forme pharmaceutique</option>
-	<option value="à sucer "> à sucer </option>
-	<option value="dispersible"> dispersible</option>
-    <option value="à virion fragmenté"> à virion fragmenté</option>
-    <option value="adsorbé"> adsorbé</option>
-    <option value="buvable"> buvable</option>
     <option value="capsule"> capsule </option>
     <option value="collyre"> collyre </option>
     <option value="comprimé"> comprimé</option>
     <option value="crème"> crème</option>
+	<option value="dispersible"> dispersible</option>
     <option value="dispositif transdermique"> dispositif </option>
     <option value="emplâtre"> emplâtre </option>
     <option value="émulsion"> émulsion</option>

@@ -71,53 +71,115 @@ echo " <form action='recherche.php?nom=".$nom."&voieAdm=".$voieAdm."&forme=".$fo
 		</form>";
 	
 if($nom!="" && $voieAdm!="" && $codeCIS!=""){
-	$rep = $bdd->query("SELECT CodeCIS, denomination_medicament  FROM specialite WHERE denomination_medicament LIKE '%".$nom."%' AND CodeCIS=".$codeCIS." AND Voie_administration LIKE '%".$voieAdm."%'");
-	while ($mat=$rep->fetch()){
-	echo "<p class='resultatRecherche'> Code CIS : <a href='medicament.php?CodeCIS=".$mat['CodeCIS']."&nom=".$nom."&voieAdm=".$voieAdm."&code=".$codeCIS."'>".$mat['CodeCIS']."</a> |  Nom du médicament : ".$mat['denomination_medicament']." </br> </p>";
+	$present =$bdd->query("SELECT count(*)  FROM specialite WHERE denomination_medicament LIKE '%".$nom."%' AND CodeCIS=".$codeCIS." AND Voie_administration LIKE '%".$voieAdm."%'");
+	$ligne=0;
+	while ($result=$present->fetch()){
+		$ligne=$result[0];
 	}
-	$rep->closeCursor();
+	if($ligne!=0){
+		$rep = $bdd->query("SELECT CodeCIS, denomination_medicament  FROM specialite WHERE denomination_medicament LIKE '%".$nom."%' AND CodeCIS=".$codeCIS." AND Voie_administration LIKE '%".$voieAdm."%'");
+		while ($mat=$rep->fetch()){
+			echo "<p class='resultatRecherche'> Code CIS : <a href='medicament.php?CodeCIS=".$mat['CodeCIS']."&nom=".$nom."&voieAdm=".$voieAdm."&code=".$codeCIS."'>".$mat['CodeCIS']."</a> |  Nom du médicament : ".$mat['denomination_medicament']." </br> </p>";
+		}
+		$rep->closeCursor();
+	}else{
+		echo "<p class='resultatRecherche'> Aucun médicament ne correspond a votre recherche </p>";
+	}
 }
 elseif($nom!="" && $voieAdm=="" && $codeCIS!=""){
-	$rep = $bdd->query("SELECT CodeCIS, denomination_medicament  FROM specialite WHERE denomination_medicament LIKE '%".$nom."%' AND CodeCIS=".$codeCIS." ");
-	while ($mat=$rep->fetch()){
-	echo "<p class='resultatRecherche'> Code CIS : <a href='medicament.php?CodeCIS=".$mat['CodeCIS']."&nom=".$nom."&voieAdm=".$voieAdm."&code=".$codeCIS."'>".$mat['CodeCIS']."</a> |   Nom du médicament : ".$mat['denomination_medicament']." </br> </p>";
+	$present =$bdd->query("SELECT count(*)  FROM specialite WHERE denomination_medicament LIKE '%".$nom."%' AND CodeCIS=".$codeCIS." ");
+	$ligne=0;
+	while ($result=$present->fetch()){
+		$ligne=$result[0];
 	}
-	$rep->closeCursor();
+	if($ligne!=0){
+		$rep = $bdd->query("SELECT CodeCIS, denomination_medicament  FROM specialite WHERE denomination_medicament LIKE '%".$nom."%' AND CodeCIS=".$codeCIS." ");
+		while ($mat=$rep->fetch()){
+			echo "<p class='resultatRecherche'> Code CIS : <a href='medicament.php?CodeCIS=".$mat['CodeCIS']."&nom=".$nom."&voieAdm=".$voieAdm."&code=".$codeCIS."'>".$mat['CodeCIS']."</a> |   Nom du médicament : ".$mat['denomination_medicament']." </br> </p>";
+		}
+		$rep->closeCursor();
+	}else{
+		echo "<p class='resultatRecherche'> Aucun médicament ne correspond a votre recherche </p>";
+	}
 }
 elseif($nom!="" && $voieAdm=="" && $codeCIS==""){
-	$rep = $bdd->query("SELECT CodeCIS, denomination_medicament  FROM specialite WHERE denomination_medicament LIKE '%".$nom."%' ");
-	while ($mat=$rep->fetch()){
-	echo "<p class='resultatRecherche'> Code CIS : <a href='medicament.php?CodeCIS=".$mat['CodeCIS']."&nom=".$nom."&voieAdm=".$voieAdm."&code=".$codeCIS."'>".$mat['CodeCIS']."</a> |   Nom du médicament : ".$mat['denomination_medicament']." </br> </p>";
+	$present =$bdd->query("SELECT count(*)  FROM specialite WHERE denomination_medicament LIKE '%".$nom."%' ");
+	$ligne=0;
+	while ($result=$present->fetch()){
+		$ligne=$result[0];
 	}
-	$rep->closeCursor();
+	if($ligne!=0){
+		$rep = $bdd->query("SELECT CodeCIS, denomination_medicament  FROM specialite WHERE denomination_medicament LIKE '%".$nom."%' ");
+		while ($mat=$rep->fetch()){
+			echo "<p class='resultatRecherche'> Code CIS : <a href='medicament.php?CodeCIS=".$mat['CodeCIS']."&nom=".$nom."&voieAdm=".$voieAdm."&code=".$codeCIS."'>".$mat['CodeCIS']."</a> |   Nom du médicament : ".$mat['denomination_medicament']." </br> </p>";
+		}
+		$rep->closeCursor();
+	}else{
+		echo "<p class='resultatRecherche'> Aucun médicament ne correspond a votre recherche </p>";
+	}
 }
 elseif($nom!="" && $voieAdm!="" && $codeCIS==""){
-	$rep = $bdd->query("SELECT CodeCIS, denomination_medicament  FROM specialite WHERE denomination_medicament LIKE '%".$nom."%' AND Voie_administration LIKE '%".$voieAdm."%'  ");
-	while ($mat=$rep->fetch()){
-	echo "<p class='resultatRecherche'> Code CIS : <a href='medicament.php?CodeCIS=".$mat['CodeCIS']."&nom=".$nom."&voieAdm=".$voieAdm."&code=".$codeCIS."'>".$mat['CodeCIS']."</a> |   Nom du médicament : ".$mat['denomination_medicament']." </br> </p>";
+	$present =$bdd->query("SELECT count(*)  FROM specialite WHERE denomination_medicament LIKE '%".$nom."%' AND Voie_administration LIKE '%".$voieAdm."%'  ");
+	$ligne=0;
+	while ($result=$present->fetch()){
+		$ligne=$result[0];
 	}
-	$rep->closeCursor();
+	if($ligne!=0){
+		$rep = $bdd->query("SELECT CodeCIS, denomination_medicament  FROM specialite WHERE denomination_medicament LIKE '%".$nom."%' AND Voie_administration LIKE '%".$voieAdm."%'  ");
+		while ($mat=$rep->fetch()){
+			echo "<p class='resultatRecherche'> Code CIS : <a href='medicament.php?CodeCIS=".$mat['CodeCIS']."&nom=".$nom."&voieAdm=".$voieAdm."&code=".$codeCIS."'>".$mat['CodeCIS']."</a> |   Nom du médicament : ".$mat['denomination_medicament']." </br> </p>";
+		}
+		$rep->closeCursor();
+	}else{
+		echo "<p class='resultatRecherche'> Aucun médicament ne correspond a votre recherche </p>";
+	}
 }
 elseif($nom=="" && $voieAdm!="" && $codeCIS!=""){
-	$rep = $bdd->query("SELECT CodeCIS, denomination_medicament  FROM specialite WHERE CodeCIS=".$codeCIS." AND Voie_administration LIKE '%".$voieAdm."%' ");
-	while ($mat=$rep->fetch()){
-	echo "<p class='resultatRecherche'> Code CIS : <a href='medicament.php?CodeCIS=".$mat['CodeCIS']."&nom=".$nom."&voieAdm=".$voieAdm."&code=".$codeCIS."'>".$mat['CodeCIS']."</a> |   Nom du médicament : ".$mat['denomination_medicament']." </br> </p>";
+	$present =$bdd->query("SELECT count(*) FROM specialite WHERE CodeCIS=".$codeCIS." AND Voie_administration LIKE '%".$voieAdm."%' ");
+	$ligne=0;
+	while ($result=$present->fetch()){
+		$ligne=$result[0];
 	}
-	$rep->closeCursor();
+	if($ligne!=0){
+		$rep = $bdd->query("SELECT CodeCIS, denomination_medicament  FROM specialite WHERE CodeCIS=".$codeCIS." AND Voie_administration LIKE '%".$voieAdm."%' ");
+		while ($mat=$rep->fetch()){
+			echo "<p class='resultatRecherche'> Code CIS : <a href='medicament.php?CodeCIS=".$mat['CodeCIS']."&nom=".$nom."&voieAdm=".$voieAdm."&code=".$codeCIS."'>".$mat['CodeCIS']."</a> |   Nom du médicament : ".$mat['denomination_medicament']." </br> </p>";
+		}
+		$rep->closeCursor();
+	}else{
+		echo "<p class='resultatRecherche'> Aucun médicament ne correspond a votre recherche </p>";
+	}
 }
 elseif($nom=="" && $voieAdm=="" && $codeCIS!=""){
-	$rep = $bdd->query("SELECT CodeCIS, denomination_medicament  FROM specialite WHERE  CodeCIS=".$codeCIS."  ");
-	while ($mat=$rep->fetch()){
-	echo "<p class='resultatRecherche'> Code CIS : <a href='medicament.php?CodeCIS=".$mat['CodeCIS']."&nom=".$nom."&voieAdm=".$voieAdm."&code=".$codeCIS."'>".$mat['CodeCIS']."</a> |   Nom du médicament : ".$mat['denomination_medicament']." </br> </p>";
+	$present = $bdd->query("SELECT count(*) FROM specialite WHERE  CodeCIS=".$codeCIS."  ");
+	$ligne=0;
+	while ($result=$present->fetch()){
+		$ligne=$result[0];
 	}
-	$rep->closeCursor();
-}
-elseif($nom=="" && $voieAdm!="" && $codeCIS==""){
-	$rep = $bdd->query("SELECT CodeCIS, denomination_medicament  FROM specialite WHERE Voie_administration LIKE '%".$voieAdm."%' ");
-	while ($mat=$rep->fetch()){
-	echo "<p class='resultatRecherche'> Code CIS : <a href='medicament.php?CodeCIS=".$mat['CodeCIS']."&nom=".$nom."&voieAdm=".$voieAdm."&code=".$codeCIS."'>".$mat['CodeCIS']."</a> |   Nom du médicament : ".$mat['denomination_medicament']." </br> </p>";
+	if($ligne!=0){
+		$rep = $bdd->query("SELECT CodeCIS, denomination_medicament  FROM specialite WHERE  CodeCIS=".$codeCIS."  ");
+		while ($mat=$rep->fetch()){
+			echo "<p class='resultatRecherche'> Code CIS : <a href='medicament.php?CodeCIS=".$mat['CodeCIS']."&nom=".$nom."&voieAdm=".$voieAdm."&code=".$codeCIS."'>".$mat['CodeCIS']."</a> |   Nom du médicament : ".$mat['denomination_medicament']." </br> </p>";
+		}
+		$rep->closeCursor();
+	}else{
+		echo "<p class='resultatRecherche'> Aucun médicament ne correspond a votre recherche </p>";
+	}	
+}elseif($nom=="" && $voieAdm!="" && $codeCIS==""){
+	$present = $bdd->query("SELECT count(*) FROM specialite WHERE Voie_administration LIKE '%".$voieAdm."%' ");
+	$ligne=0;
+	while ($result=$present->fetch()){
+		$ligne=$result[0];
 	}
-	$rep->closeCursor();
+	if($ligne!=0){
+		$rep = $bdd->query("SELECT CodeCIS, denomination_medicament  FROM specialite WHERE Voie_administration LIKE '%".$voieAdm."%' ");
+		while ($mat=$rep->fetch()){
+			echo "<p class='resultatRecherche'> Code CIS : <a href='medicament.php?CodeCIS=".$mat['CodeCIS']."&nom=".$nom."&voieAdm=".$voieAdm."&code=".$codeCIS."'>".$mat['CodeCIS']."</a> |   Nom du médicament : ".$mat['denomination_medicament']." </br> </p>";
+		}
+		$rep->closeCursor();
+	}else{
+		echo "<p class='resultatRecherche'> Aucun médicament ne correspond a votre recherche </p>";
+	}
 }
 else{
 	echo "<p class='resultatRecherche'> Aucun médicament ne correspond a votre recherche </p>";
