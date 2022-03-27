@@ -23,7 +23,7 @@
     		echo '<a href="profil.php"> Votre profil </a>';
     	} else {
 			echo "<a href='inscription.php' > S'inscrire </a>";
-			echo '<a 	href="connexion.php" > Se connecter </a>';
+			echo '<a href="connexion.php" > Se connecter </a>';
 		} 
     ?>
 
@@ -33,7 +33,7 @@
 		<form method="post" action="message.php"  autocomplete="off">
 			<p> Nom <INPUT type="text" name="n" value=""> </p>
 			<p> Prenom <INPUT type="text" name="p" value=""> </p>
-			<p> mail <INPUT type="text" name="mail" value=""> </p>
+			<p> mail <INPUT type="email" name="mail" value=""> </p>
 			<p> Sujet <INPUT type="text" name="sujet" value=""> </p>
 			<p> Commentaires <TEXTAREA rows="3" name="commentaires"> Votre commentaire </TEXTAREA>
 			<p><INPUT  type="submit" value="Envoyer"> </p>
