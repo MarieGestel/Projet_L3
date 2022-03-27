@@ -12,14 +12,14 @@
 		<title>Medic'Info</title>
 
     <?php 
-            function modifier_information($n,$p,$mail,$date,$adr,$num,$prof,$all,$path,$id)
+            function modifier_information($n,$p,$date,$adr,$num,$id)
            {
                $seconnecter=getBDMarie();
                 if (!$seconnecter){
                     $MessageConnexion = die (" la connection impossible");
                 }
                 else {
-                    $res="UPDATE Clients SET nom='".$n."',prenom='".$p."', mail='".$mail."', date_naissance='".$date."',adresse='".$adr."',numero='".$num."',allergies='".$all."', Profession='".$prof."', Pathologies='".$path."' WHERE id_client='".$id."' ";
+                    $res="UPDATE Clients SET nom='".$n."',prenom='".$p."',date_naissance='".$date."',adresse='".$adr."',numero='".$num."'  WHERE id_client='".$id."' ";
                     $seconnecter->exec($res);
                 }
             } 
@@ -38,13 +38,6 @@
         }
         else{
             $p=$_SESSION['prenom']	;
-        }
-
-        if(isset($_POST['mail'])){
-            $mail=$_POST['mail'];	
-        }
-        else{
-            $mail=$_SESSION['mail']	;
         }
 
         if(isset($_POST['date'])){
@@ -66,29 +59,21 @@
         else{
             $num=$_SESSION['numero']	;
         }
-        if(isset($_POST['profession'])){
-            $prof=$_POST['profession'];	
-        }
-        else{
-            $prof="";
-        }
-        if(isset($_POST['pathologies'])){
-            $path=$_POST['pathologies'];	
-        }
-        else{
-            $path="";
-        }
-        if(isset($_POST['allergies'])){
-            $all=$_POST['allergies'];	
-        }
-        else{
-            $all="";
-        }
+        // if(isset($_POST['photo'])){
+        //     $photo=$_POST['photo'];	
+        // }
+        // else{
+        //     $photo="";
+        // }
+
         $id=$_SESSION['id_client'];
 
-        modifier_information($n,$p,$mail,$date,$adr,$num,$prof,$all,$path,$id);
+        modifier_information($n,$p,$date,$adr,$num,$id);
         echo '<meta http-equiv="refresh" content="0; url=profil.php"/>';
 
+    }else{
+        echo "Vous n'êtes pas connecté";
+        echo '<meta http-equiv="refresh" content="1; url=index.php"/>';
     }
     ?>
 

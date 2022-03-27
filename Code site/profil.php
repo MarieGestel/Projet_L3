@@ -29,7 +29,7 @@
 
 	echo '<div class="profil">';
 	echo '<h2> Mon profil  </h2>'; 
-	//echo "<img src=".$mat['url_photo'].">"; 
+	//if ( $mat['photo']!=Null ) { echo '<img src='.$mat['photo'];}
 	echo " <ul>";
 	echo '<li> <strong> Nom : </strong>'.$mat['nom'].'<br/> </li>' ;
 	echo '<li> <strong> Prenom  : </strong>'.$mat['prenom'].'<br/> </li>' ;
