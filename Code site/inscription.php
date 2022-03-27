@@ -22,10 +22,10 @@
     </p>
 
     <p> Date de naissance <input type="date" name="date" value=<?php if (isset($_POST["date"])) { echo $_POST["date"];} else{ echo "";}?>> </p>
-    <p> Numero <input type="text" name="num" value=<?php if (isset($_POST["num"])) { echo $_POST["num"];} else{ echo "";}?>></p>
+    <p> Numero <input type="tel" name="num" value=<?php if (isset($_POST["num"])) { echo $_POST["num"];} else{ echo "";}?>></p>
     <p> adresse <input type="text" name="adr" value=<?php if (isset($_POST["adr"])) { echo $_POST["adr"];} else{ echo "";}?>></p>
-    <p> Email<input type="text" name="mail1" <?php if (isset($_POST["mail1"])) { echo $_POST["mail1"];} else{ echo "";}?>></p>
-    <p> Confirmation email <input type="text" name="mail2"></p>
+    <p> Email<input type="email" name="mail1" <?php if (isset($_POST["mail1"])) { echo $_POST["mail1"];} else{ echo "";}?>></p>
+    <p> Confirmation email <input type="eamil" name="mail2"></p>
     <p> Mot de passe <input type="password" name="pass1"></p>
     <p> Confirmation mot de passe <input type="password" name="pass2"> </p>
     <p> <INPUT id="boutonInscription" type="submit" value="S'inscrire"> </p>

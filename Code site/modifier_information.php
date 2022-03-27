@@ -34,9 +34,9 @@
         //echo '<p> <strong> ajouter une photo  :  </strong> <input type="file" name="photo" /> </p>';
         echo '<p> <strong> Modifier mon nom  :  </strong> <input type="text" name="nom" value='.$_SESSION['nom'].'> </p>';
         echo '<p> <strong> modifier mon prénom :  </strong> <input type="text" name="prenom" value='.$_SESSION['prenom'].'></p>';
-        echo '<p> <strong> modifier ma date de naissance :  </strong> <input type="text" name="date" value='.$_SESSION['date_naissance'].'></p>';
+        echo '<p> <strong> modifier ma date de naissance :  </strong> <input type="date" name="date" value='.$_SESSION['date_naissance'].'></p>';
         echo '<p> <strong> modifier mon adresse :  </strong> <input type="text" name="adresse" value='.$_SESSION['adresse'].'></p>';
-        echo '<p> <strong> modifier mon numéro de téléphone :  </strong> <input type="text" name="num" value='.$_SESSION['numero'].'></p>';
+        echo '<p> <strong> modifier mon numéro de téléphone :  </strong> <input type="tel" name="num" value='.$_SESSION['numero'].'></p>';
         echo '<INPUT class="bouton" type="submit" value= Modifier >';
         echo '</form>';
         echo ' </div>';
@@ -44,8 +44,8 @@
         echo " <div class='profil'>";
         echo "<h2> Modifier mon adresse mail ou mon mot de passe : </h2>";
         echo "<form action='modification_mail_mdp.php' method='post' autocomplete='off'>";
-        echo '<p> <strong> modifier mon adresse mail :  </strong> <input type="text" name="mail1" ></p>';
-        echo '<p> <strong> confirmer mon adresse mail :  </strong> <input type="text" name="mail2" ></p>';
+        echo '<p> <strong> modifier mon adresse mail :  </strong> <input type="email" name="mail1" ></p>';
+        echo '<p> <strong> confirmer mon adresse mail :  </strong> <input type="email" name="mail2" ></p>';
         echo '<p> <strong> modifier mon mot de passe :  </strong> <input type="password" name="mdp1" ></p>';
         echo '<p> <strong> confirmer  mon mot de passe :  </strong> <input type="password" name="mdp2"></p>';
         echo '<INPUT class="bouton" type="submit" value= Modifier >';

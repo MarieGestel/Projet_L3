@@ -38,7 +38,7 @@
 	<p>
 	<input class='recherche' type='text' name='nom' value='' placeholder='Nom'/>
 
-	<select class='recherche' name='voieAdm' >
+	<select class='recherche' name='voieAdm'  id='voieAdm'>
 	<option value=""> voie d'administration </option>
     <option value="auriculaire"> auriculaire </option>
     <option value="buccogingivale"> buccogingivale </option>
@@ -93,7 +93,7 @@
 	<option value="voie extracorporelle autre"> voie extracorporelle autre</option>
 	</select>
 
-	<select class='recherche' name="forme">
+	<select class='recherche' name="forme" id='forme'>
 	<option value=""> forme pharmaceutique</option>
 	<option value="à sucer "> à sucer </option>
 	<option value="dispersible"> dispersible</option>
@@ -123,7 +123,6 @@
 	<input class='recherche' type="submit" value="Rechercher">
 	</p>
 	</form>
-	
 	
 	<div id='imagesIndex'>
 	<img src="Images/médicament1.jpeg" 
