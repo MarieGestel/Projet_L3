@@ -96,7 +96,6 @@ session_start();
 			<p class='info'> Nom du Generique : ".$matGene['libelle_generique']." | type de generique : ". $matGene['type_generique']." </br> </p> ";
 	}	
 	echo "</div> ";	
-	
 		$repSpe ->closeCursor();
 		$repPres ->closeCursor();
 		$repgene ->closeCursor();
