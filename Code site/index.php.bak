@@ -126,11 +126,6 @@
 		
 	<img src="Images/médicament2.jpg" 
 		alt ="Image accueil2" />
-		
-	<?php
-	require('graphiqueTopFavoris.php');
-	echo '<div id="imagesIndex"><img src="favoris.png" alt ="graphique" /> </div>';
-	?>
 	
 	</div>
 	
