@@ -12,8 +12,8 @@ $valx=array();
 		
 
 // content="text/plain; charset=utf-8"
-require_once ('../../bin/php/php7.4.16/ext/jpgraph/src/jpgraph.php');
-require_once ('../../bin/php/php7.4.16/ext/jpgraph/src/jpgraph_bar.php');
+require_once ('jpgraph/src/jpgraph.php');
+require_once ('jpgraph/src/jpgraph_bar.php');
 
 //$data3y=array(87,86,88,155);
 
