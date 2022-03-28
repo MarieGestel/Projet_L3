@@ -40,20 +40,21 @@
     ?>
        <h1> 	<a 	id="contact" href="index.php" > Medic'Info </a>  </h1>
 	   
-       <p>L'activité de Medic'Info est consacrée aux services de gestion médicale à destination de toute population confondue. Medic'Info propose des solutions d'information sur les produits de santé et d'aide a la décision thérapeutique dans une perspective d'amélioration continue des pratiques medicinales.</p>
+       <p>Bienvenue sur Medic'Info! Un doute concernant les médicaments que vous prenez ou bien besoin d'informations? Ce site est fait pour vous, peu importe votre âge, votre profession, votre mode de vie, Medic'Info a pour but de vous aider en vous apportant le plus d'informations possible à propos d'un médicament.</p>
        
-       <p>Nous somme guidées par une statégie qui se décline ainsi</p>
+       <p>Sur notre site, vous trouverez donc:</p>
        <ul>
-        <li>ouverture et transparence</li>
-        <li>performance</li>
-        <li>accès au informations d'un medicament</li>
+        <li>toute les informations nécessaires concernant le médicament de votre choix</li>
+        <li>des graphiques concernant les taux de remboursement et les 10 médicaments les plus mis en favoris</li>
+        <li>un espace commentaire dans lequel vous pouvez nous faire part de ce que vous souhaitez si vous êtes inscrit au site</li>
+	<li>la mise en favoris des médicaments que vous désirez retrouver en quelques clics (aussi pour les inscrits)</li>
        </ul>
        
-       <h2>Nous accélérons vos recherches medicamenteuses</h2>
-       <p>Medic'Info constitue un maillon essentiel pour faciliter la mise a disposition en France des informations d'un médicament, des thérapies et des dispositifs médicaux innovants et sûrs, et nous favorisons un accés plus large et rapide aux traitements dans des conditions assurant la securité de nos visiteurs.</p>
+       <h2>Nous accélérons vos recherches médicamenteuses</h2>
+       <p>Medic'Info constitue un maillon essentiel pour faciliter l'accès aux informations d'un médicament. À travers le nom, la voie d'administration ou le Code CIS, vous trouverez en un clic tout ce que vous devez savoir sur le médicament recherché. Afin d'avoir un accès plus pratique au site ainsi que des fonctionnalités particulières, nous vous recommandons vivement de vous inscrire, promis vous ne recevrez pas tout un tas de mails inutiles.</p>
     
        <h3>Nous en bref</h3>
-       <p>Nous somme quatre étudiantes en licence Mathématiques et Informatique appliquées aux sciences humaines et sociales a l'université de Paul Valery Montpellier , notre cursus s'est donc achevé par notre projet de fin d'études qui a donné naissance à Medic'Info.
+       <p>Nous sommes Marie, Eva, Manel et Léa, quatre étudiantes en licence Mathématiques et Informatique appliquées aux sciences humaines et sociales à l'université de Paul Valery à Montpellier. Dans le cadre de notre troisième année de licence nous devons, à partir d'une base de données, créer entièrement un site web. Après plusieurs semaines de travail, c'est ainsi qu'est né Medic'Info, un site à titre informatif s'appuyant sur la base de données publique des médicaments qui, nous l'espérons, saura vous guider dans le choix de vos médicaments tout en vous apportant un maximum d'informations.
        </p>
       <img src="Images/universite-paul-valery-montpellier-3.png">
 
