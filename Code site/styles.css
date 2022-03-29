@@ -19,6 +19,38 @@ h2{
 	text-align : center;
 }
 
+ nav 
+{
+    width: 20%;
+	margin-left: 80%;
+    height: 50px;
+	background-color : #c1f3d4;
+}
+ 
+nav .menu
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+ 
+nav .menu a 
+{
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+	color:black;
+} 
+ 
+nav a:hover 
+{
+	background-color : #5ca678;
+}
+
 #inscriptionConnexion{
 	color : #5ca678;
 	text-align : right;
@@ -27,7 +59,6 @@ h2{
 
 form{
 	text-align : center;
-	
 }
 
 .recherche{
