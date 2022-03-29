@@ -35,24 +35,15 @@
 	<h1> <a id="contact"href="index.php" > Medic'Info </a>  </h1>
 
 
-	<h2 id='gauche'><a href='pageRecherche.php'> Recherche </a> </h2> <h2 id='droite'> <a href='donneesClees.php'> Données clées </a></h2>
+	<h2><a href='pageRecherche.php'> Recherche </a> </h2> <h2> <a href='donneesClees.php'> Données clées </a></h2>
 
-	<p id='bienvenu'>
-	Bienvenu(e) sur notre site !
-	</p>
-	
-	<div id='imagesIndex'>
-	<img src="Images/médicament1.jpeg" 
-		alt ="Image accueil1" height='366px' width='499px' />
-		
-	<img src="Images/médicament2.jpg" 
-		alt ="Image accueil2" />
+
 		
 	<?php
-	/*
+	
 	require('graphiqueTopFavoris.php');
 	echo '<div id="imagesIndex"><img src="favoris.png" alt ="graphique" /> </div>';
-	*/
+	
 	?>
 	
 	</div>
