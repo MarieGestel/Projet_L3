@@ -12,31 +12,27 @@ session_start();
 		<title>Medic'Info</title>
 	</head>
 	
-	<body>
-	<p id="inscriptionConnexion">
-	<?php 
-        if (isset($_SESSION['client'])){
-            echo "Bonjour M. ".$_SESSION['nom']." ".$_SESSION['prenom'];
-            echo "<br />";''
-   ?>	
-   <a 	href="favoris.php" > favoris </a>
-    <a href="deconnexion.php"> Déconnexion </a>
-    <a href="profil.php"> Votre profil </a>
+	<body class="BodyLiensBas">
     <?php 
-    } else {
+		echo '<nav>';
+		echo '<div class="menu">';
+		if (isset($_SESSION['client'])){
+            //echo "Bonjour M. ".$_SESSION['nom']." ".$_SESSION['prenom'];
+            //echo "<br />";
+   		 	echo '<a href="favoris.php" > Favoris </a>';
+			echo "<a href='profil.php'> profil </a>";
+			echo '<a href="deconnexion.php"> Déconnexion </a>';
+    	} else {
+			echo "<a 	href='inscription.php' > Inscription </a>";
+			echo '<a 	href="connexion.php" > Connexion </a>'; 
+    	} 
     ?>
-	<a 	href="inscription.php" >
-			S'inscrire 
-		</a>
-	
-	<a 	href="connexion.php" >
-			Se connecter
-		</a>
+	</div>
+	</nav>
 
-    <?php 
-    } 
-    ?>
-    <h1> 	<a 	id="contact"href="index.php" > Medic'Info </a>  </h1>
+    <h1> <a href="index.php" > MEDIC'INFO </a>  </h1>
+
+    <div class="divLiensBas">
     <h2> Qu’est-ce que les données personnelles ?</h2>
     <p> Une donnée à caractère personnel correspond en droit français à toute information relative à une personne physique identifiée ou qui peut être identifiée, directement ou indirectement, par référence à un numéro d'identification ou à un ou plusieurs éléments qui lui sont propres. 
         En France, les données ayant été l'objet d'un procédé d'anonymisation ne sont pas considérées comme des données à caractère personnel.
@@ -46,12 +42,13 @@ session_start();
     </p>
     <p> <strong> Consulter le règlement générale sur la protection des données pour plus d'information :</strong>  <a 	href="https://www.cnil.fr/fr/reglement-europeen-protection-donnees" >https://www.cnil.fr/fr/reglement-europeen-protection-donnees</a> </p>
 
-    <div id='liensBas'>
+    <div class='liensBas'>
 	<a 	href="quisommenous.php" > Qui sommes-nous ? </a>
 	<a 	href="contact.php" > Contact </a>
 	<a 	href="mentionLegales.php" > Mentions légales </a>
 	<a 	href="donneesPersonnelles.php" > Données personnelles </a>
 	<a 	href="baseDeDonnees.php" > Base de données </a>
+    </div>
     </div>
     </body>
 </html>

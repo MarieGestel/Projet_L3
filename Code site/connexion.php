@@ -6,42 +6,26 @@
 		<title>Medic'Info/Connexion</title>
 	</head>
 	
-	<body id="formulaire" >
-	
-	<h1> <a id="contact" href='index.php'> Medic'Info </a> </h1>
+	<body class='inscrire'>
+	<div id="formulaire"	>
+	<h1> <a href='index.php'> MEDIC'INFO </a> </h1>
 	<h2> <strong>Page de Connexion</strong> </h2>
 		
-	<form action="connecter.php" method="post" autocomplete="off">
+	<form  action="connecter.php" method="post" autocomplete="off">
 	<p> Adresse mail <INPUT type="text" name="mail" value = <?php if (isset($_POST['mail'])){ echo $_POST['mail'] ; } else{ echo "";}?>> </p>	
 	<p> Mot de passe <INPUT type="password" name="motdepasse" value="" > </p>
 	<p> <INPUT id="bouton" type="submit" value="Se connecter"></p>
 	</form>
 	
 	<a 	href="inscription.php" > Je ne possède pas encore de compte </a>
-
-
-
-<p id='liensBas'>
-	<a 	href="quiSommesNous.php" >
-			Qui sommes-nous ?
-		</a>
-	
-	<a 	href="contact.php" >
-			Contact
-		</a>
-	
-	<a 	href="mentionLegales.php" >
-			Mentions légales
-		</a>
-	
-	<a 	href="donneesPersonnelles.php" >
-			Données personnelles
-		</a>
-	
-	<a 	href="baseDeDonnees.php" >
-			Base de données
-		</a>
-	</p>
+</div>
+	<div class='liensBas'>
+	<a 	href="quiSommesNous.php" >Qui sommes-nous ? </a>
+	<a 	href="contact.php" > Contact </a>
+	<a 	href="mentionLegales.php" >Mentions légales </a>
+	<a 	href="donneesPersonnelles.php" > Données personnelles </a>
+	<a 	href="baseDeDonnees.php" > Base de données </a>
+	</div>
 	
 	</body>
 	

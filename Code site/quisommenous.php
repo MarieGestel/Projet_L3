@@ -5,43 +5,34 @@
 <!DOCTYPE html>
 <html>
    <head>
-		<meta http-equiv="Content-Type"
-		content="text/html; charset=UTF-8" />
-		
-       <link rel="stylesheet" href="styles.css"
-		type="text/css" media="screen" />
-      
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <link rel="stylesheet" href="styles.css" type="text/css" media="screen" />
       <title>qui somme nous</title>
         
    </head>
-   <body>
-   <p id="inscriptionConnexion">
-	<?php 
-        if (isset($_SESSION['client'])){
-            echo "Bonjour M. ".$_SESSION['nom']." ".$_SESSION['prenom'];
-            echo "<br />";''
-   ?>	
-   <a 	href="favoris.php" > favoris </a>
-    <a href="deconnexion.php"> Déconnexion </a>
-    <a href="profil.php"> Votre profil </a>
-    <?php 
-    } else {
-    ?>
-	<a 	href="inscription.html" >
-			S'inscrire 
-		</a>
-	
-	<a 	href="connexion.php" >
-			Se connecter
-		</a>
 
-    <?php 
-    } 
+   <body class="BodyLiensBas">
+   <?php 
+		echo '<nav>';
+		echo '<div class="menu">';
+		if (isset($_SESSION['client'])){
+            //echo "Bonjour M. ".$_SESSION['nom']." ".$_SESSION['prenom'];
+            //echo "<br />";
+   		 	echo '<a href="favoris.php" > Favoris </a>';
+			echo "<a href='profil.php'> profil </a>";
+			echo '<a href="deconnexion.php"> Déconnexion </a>';
+    	} else {
+			echo "<a 	href='inscription.php' > Inscription </a>";
+			echo '<a 	href="connexion.php" > Connexion </a>'; 
+    	} 
     ?>
-       <h1> 	<a 	id="contact" href="index.php" > Medic'Info </a>  </h1>
-	   
+	</div>
+	</nav>
+
+       <h1> <a href="index.php" > MEDIC'INFO </a>  </h1>
+
+       <div class="divLiensBas">
        <p>Bienvenue sur Medic'Info! Un doute concernant les médicaments que vous prenez ou bien besoin d'informations? Ce site est fait pour vous, peu importe votre âge, votre profession, votre mode de vie, Medic'Info a pour but de vous aider en vous apportant le plus d'informations possible à propos d'un médicament.</p>
-       
        <p>Sur notre site, vous trouverez donc:</p>
        <ul>
         <li>toute les informations nécessaires concernant le médicament de votre choix</li>
@@ -57,27 +48,14 @@
        <p>Nous sommes Marie, Eva, Manel et Léa, quatre étudiantes en licence Mathématiques et Informatique appliquées aux sciences humaines et sociales à l'université de Paul Valery à Montpellier. Dans le cadre de notre troisième année de licence nous devons, à partir d'une base de données, créer entièrement un site web. Après plusieurs semaines de travail, c'est ainsi qu'est né Medic'Info, un site à titre informatif s'appuyant sur la base de données publique des médicaments qui, nous l'espérons, saura vous guider dans le choix de vos médicaments tout en vous apportant un maximum d'informations.
        </p>
       <img src="Images/universite-paul-valery-montpellier-3.png">
+      </div>
+       <div class='liensBas'>
+	      <a href="quisommenous.php" > Qui sommes-nous ? </a>
+         <a href="contact.php" > Contact </a>
+	      <a href="mentionLegales.php" > Mentions légales </a>
+	      <a href="donneesPersonnelles.php" > Données personnelles </a>
+	      <a href="baseDeDonnees.php" > Base de données </a>
+	</div>
 
-       <p id='liensBas'>
-	<a 	href="quisommenous.html" >
-			Qui sommes-nous ?
-		</a>
-	
-	<a 	href="contact.php" >
-			Contact
-		</a>
-	
-	<a 	href="mentionLegales.php" >
-			Mentions légales
-		</a>
-	
-	<a 	href="donneesPersonnelles.php" >
-			Données personnelles
-		</a>
-	
-	<a 	href="baseDeDonnees.php" >
-			Base de données
-		</a>
-	</p>
    </body>
 </html>

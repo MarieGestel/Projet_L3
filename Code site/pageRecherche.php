@@ -17,26 +17,31 @@
 		<title>Medic'Info</title>
 	</head>
 	
-	<body>
-    <p id="inscriptionConnexion">
-    <?php 
-        if (isset($_SESSION['client'])){
-            echo "Bonjour M. ".$_SESSION['nom']." ".$_SESSION['prenom'];
-            echo "<br />";
+	<body class='rechercheIndex'>
+	<?php 
+		echo '<nav>';
+		echo '<div class="menu">';
+		if (isset($_SESSION['client'])){
+            //echo "Bonjour M. ".$_SESSION['nom']." ".$_SESSION['prenom'];
+            //echo "<br />";
    		 	echo '<a href="favoris.php" > Favoris </a>';
-			echo "<a href='profil.php'> Votre profil </a>";
+			echo "<a href='profil.php'> profil </a>";
 			echo '<a href="deconnexion.php"> Déconnexion </a>';
     	} else {
-			echo "<a 	href='inscription.php' > S'inscrire </a>";
-			echo '<a 	href="connexion.php" > Se connecter </a>'; 
+			echo "<a 	href='inscription.php' > Inscription </a>";
+			echo '<a 	href="connexion.php" > Connexion </a>'; 
     	} 
     ?>
-	</p>
-	<h1> <a id="contact"href="index.php" > Medic'Info </a>  </h1>
+	</div>
+	</nav>
+
+	<h1> <a href="index.php" > MEDIC'INFO </a>  </h1>
+	<h2>
+		<a href='donneesClees.php'> Données clées </a>
+	</h2>
 
 	<form action='recherche.php' method='get' autocomplete='on'>
-	<p>
-	<input class='recherche' type='text' name='nom' value='' placeholder='Nom'/>
+	<p> <input class='recherche' type='text' name='nom' value='' placeholder='Nom'/>
 
 	<select class='recherche' name='voieAdm'  id='voieAdm'>
 	<option value=""> voie d'administration </option>
@@ -119,21 +124,15 @@
 	<input class='recherche' type="submit" value="Rechercher">
 	</p>
 	</form>
-	
 
 	
-	<p id='liensBas'>
-		
+	<div class='liensBas'>
 	<a 	href="quisommenous.php" >Qui sommes-nous ? </a>
-	
 	<a 	href="contact.php" > Contact </a>
-	
 	<a 	href="mentionLegales.php" >	Mentions légales </a>
-	
 	<a 	href="donneesPersonnelles.php" > Données personnelles </a>
-	
 	<a 	href="baseDeDonnees.php" > Base de données </a>
-	</p>
+	</div>
 	
 	</body>
 	
