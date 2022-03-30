@@ -11,42 +11,44 @@
 		<title>Nous contacter</title>
 	</head>
 
-	<body>		
-	<p id="inscriptionConnexion">
-
+	<body class="BodyLiensBas">		
 	<?php 
-        if (isset($_SESSION['client'])){
-            echo "Bonjour M. ".$_SESSION['nom']." ".$_SESSION['prenom'];
-            echo "<br />";
-      		echo '<a href="favoris.php" > favoris </a>';
-	  		echo '<a href="deconnexion.php"> Déconnexion </a>';
-    		echo '<a href="profil.php"> Votre profil </a>';
+		echo '<nav>';
+		echo '<div class="menu">';
+		if (isset($_SESSION['client'])){
+            //echo "Bonjour M. ".$_SESSION['nom']." ".$_SESSION['prenom'];
+            //echo "<br />";
+   		 	echo '<a href="favoris.php" > Favoris </a>';
+			echo "<a href='profil.php'> profil </a>";
+			echo '<a href="deconnexion.php"> Déconnexion </a>';
     	} else {
-			echo "<a href='inscription.php' > S'inscrire </a>";
-			echo '<a href="connexion.php" > Se connecter </a>';
-		} 
+			echo "<a 	href='inscription.php' > Inscription </a>";
+			echo '<a 	href="connexion.php" > Connexion </a>'; 
+    	} 
     ?>
+	</div>
+	</nav>
 
-	<h1> <a id="contact" href="index.php" > Medic'Info </a>  </h1>
+	<h1> <a href="index.php" > MEDIC'INFO </a>  </h1>
 
-	<div>
+	<div id ="contacter" > 
+		<h2> Nous contacter : </h2>
 		<form method="post" action="message.php"  autocomplete="off">
-			<p> Nom <INPUT type="text" name="n" value=""> </p>
-			<p> Prenom <INPUT type="text" name="p" value=""> </p>
-			<p> mail <INPUT type="email" name="mail" value=""> </p>
-			<p> Sujet <INPUT type="text" name="sujet" value=""> </p>
-			<p> Commentaires <TEXTAREA rows="3" name="commentaires"> Votre commentaire </TEXTAREA>
+			<p> Nom : <INPUT type="text" name="n" value=""> </p>
+			<p> Prenom : <INPUT type="text" name="p" value=""> </p>
+			<p> email : <INPUT type="email" name="mail" value=""> </p>
+			<p> Sujet : <INPUT type="text" name="sujet" value=""> </p>
+			<p>     <TEXTAREA rows="3" name="commentaires"> Votre commentaire </TEXTAREA>
 			<p><INPUT  type="submit" value="Envoyer"> </p>
 		</form>
-	</div>
-	
-	<p id='liensBas'>
+	<div class ='liensBas'>
 	<a 	href="quisommenous.php" > Qui sommes-nous ? </a>
 	<a 	href="contact.php" > Contact </a>
 	<a 	href="mentionLegales.php" > Mentions légales </a>
 	<a 	href="donneesPersonnelles.php" > Données personnelles </a>
 	<a 	href="baseDeDonnees.php" > Base de données </a>
-	</p>
-	
+	</div>
+	</div>
+
 	</body>
 </html>

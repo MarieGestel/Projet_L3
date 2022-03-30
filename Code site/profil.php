@@ -12,20 +12,22 @@
 		<title>Medic'Info</title>
 	</head>
 
-	<body >
-	<p id="inscriptionConnexion">
+	<body class='BodyProfil'>
     <?php 
+		echo '<nav>';
+		echo '<div class="menu">';
         if (isset($_SESSION['client'])){
-            echo "Bonjour M. ".$_SESSION['nom']." ".$_SESSION['prenom'];
-            echo "<br />";
+            //echo "Bonjour M. ".$_SESSION['nom']." ".$_SESSION['prenom'];
+            //echo "<br />";
     	echo '<a href="favoris.php" > favoris </a>';
     	echo '<a href="deconnexion.php"> Déconnexion </a>';
-		echo "</p>";
 	}
+	echo "</div>
+	</nav>";
 	$re = $bdd->query("select * from Clients where id_client='".$_SESSION['id_client']."'");
 	$mat = $re ->fetch(); 
 
-	echo "<h1> 	<a 	id='contact'href='index.php' > Medic'Info </a>  </h1>";
+	echo "<h1> 	<a href='index.php' > MEDIC'INFO </a>  </h1>";
 
 	echo '<div class="profil">';
 	echo '<h2> Mon profil  </h2>'; 
@@ -50,7 +52,7 @@
 	echo "</div>";
 	?>
 
-	<div id='liensBas'>
+	<div class='liensBas'>
 		<a 	href="quisommenous.php" >Qui sommes-nous ? </a>
 		<a 	href="contact.php" > Contact </a>
 		<a 	href="mentionLegales.php" >	Mentions légales </a>

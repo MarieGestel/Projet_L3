@@ -12,19 +12,23 @@
 		<title>Medic'Info</title>
 	</head>
 
-    <body>
+    <body class='BodyProfil'>
 
-	<div id="inscriptionConnexion">
     <?php 
+		echo '<nav>';
+		echo '<div class="menu">';
         if (isset($_SESSION['client'])){
-            echo "Bonjour M. ".$_SESSION['nom']." ".$_SESSION['prenom'];
-            echo "<br />";
+            //echo "Bonjour M. ".$_SESSION['nom']." ".$_SESSION['prenom'];
+            //echo "<br />";
     	echo '<a href="favoris.php" > favoris </a>';
     	echo '<a href="deconnexion.php"> Déconnexion </a>';
-        echo " <a id='modif' href='profil.php'/><strong> Retour sur le profil </strong> </a>";
-		echo "</p>";
-        echo "<h1> 	<a 	id='contact' href='index.php' > Medic'Info </a>  </h1>";
+        echo '<a href="profil.php"> Profil </a>';
+	    echo "</div>
+	    </nav>";
+
+        echo "<h1> 	<a href='index.php' > MEDIC'INFO </a>  </h1>";
         echo "</div >";
+
         $client = $bdd->query("select * from Clients where id_client='".$_SESSION['id_client']."'");
         $mat = $client ->fetch(); 
 
@@ -67,7 +71,7 @@
         }
     ?>
 
-    <div id='liensBas'>
+    <div class='liensBas'>
 		<a 	href="quisommenous.php" >Qui sommes-nous ? </a>
 		<a 	href="contact.php" > Contact </a>
 		<a 	href="mentionLegales.php" >	Mentions légales </a>

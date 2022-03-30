@@ -82,10 +82,18 @@ if(isset($_post)['s\'inscrire'])){
        <title>Medic'Info</title>
 </head>
 
+<<<<<<< HEAD
    <body >
     <h1> 	<a 	id="contact" href="index.php" > Medic'Info </a>  </h1>
     <p >  <a href="connexion.php" > Je possède déjà un compte. </a> </p>     
 	<form id ="inscription" action="NouvelleInscription.php" method="post" autocomplete="off">
+=======
+<body class='inscrire'>
+    <h1> <a href='index.php'> MEDIC'INFO </a> </h1>
+    <p >  <a href="connexion.php" > Je possède déjà un compte. </a> </p> 
+    <div id ="inscription" > 
+	<form action="NouvelleInscription.php" method="post" autocomplete="off">
+>>>>>>> 2369381f7b431efb8b2677227f43b33c9409b8fc
     <h2> <strong> Page d'inscription  <strong>  </h2>
     <p> Nom <input type="text" name="nom" value= <?php if (isset($_POST["nom"])) { echo $_POST["nom"];} else{ echo "";}?>></p>
     <p>Prenom <input type="text" name="prenom" value=<?php if (isset($_POST["prenom"])) { echo $_POST["prenom"];} else{ echo "";}?>></p>
@@ -105,15 +113,15 @@ if(isset($_post)['s\'inscrire'])){
     <p> Confirmation mot de passe <input type="password" name="pass2"> </p>
     <p> <INPUT id="boutonInscription" type="submit" value="s'inscrire"> </p>
     </form>
+    </div>
 
-    <p>
-       <p id='liensBas'>
+    <div class='liensBas'>
        <a 	href="quiSommesNous.php" > Qui sommes-nous ? </a>
        <a 	href="contact.php" > Contact </a>
        <a 	href="mentionLegales.php" > Mentions légales </a>
        <a 	href="donneesPersonnelles.php" > Données personnelles </a> 
        <a 	href="baseDeDonnees.php" > Base de données </a>
-	</p>
+    </div>
 
     </body>
 </html>

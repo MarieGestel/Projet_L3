@@ -5,21 +5,19 @@ include('bd.php');
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta http-equiv="Content-Type"
-		content="text/html; charset=UTF-8" />
-		
-		<link rel="stylesheet" href="styles.css"
-		type="text/css" media="screen" />
-		
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<link rel="stylesheet" href="styles.css" type="text/css" media="screen" />
 		<title>Medic'Info</title>
 	</head>
 	
-	<body >
-	<p id="inscriptionConnexion">
-	<a 	href="deconnexion.php" > Se déconnecter </a>
-    <a 	href="profil.php" > Mon profil </a>
-	<h1> <a id="contact"href="index.php" > Medic'Info </a>  </h1>
-
+	<body id='BodyFavoris'>
+	<nav>
+    <div class="menu">
+	<a 	href="deconnexion.php" > Deconnexion </a>
+    <a 	href="profil.php" > Profil </a>
+    </div>
+    </nav>
+	<h1> <a href="index.php" > MEDIC'INFO </a>  </h1>
 	<?php 
 	    if (isset($_SESSION['client'])){
         
@@ -53,7 +51,7 @@ include('bd.php');
         ?>
         </table>
 
-        <div id='liensBas'>
+        <div class='liensBas'>
         <a 	href="quisommenous.php" >Qui sommes-nous ? </a>
         <a 	href="contact.php" > Contact </a>
         <a 	href="mentionLegales.php" >	Mentions légales </a>      
