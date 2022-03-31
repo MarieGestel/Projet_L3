@@ -1,8 +1,11 @@
 <?php
-require "PHPMailer/PHPMailerAutoload.php";
 session_start();
-$bdd = new PDO('mysql:host=localhost;dbname=bd_manel;charset=utf8', 'root', 'root');
-if(isset($_post)['s\'inscrire'])){
+require "PHPMailer/PHPMailerAutoload.php";
+require('bd.php');
+//$bdd = new PDO('mysql:host=localhost;dbname=bd_manel;charset=utf8', 'root', 'root');
+//$bdd = getBDMarie() ;
+
+if(isset($_POST['s\'inscrire'])){
     if(!empty($_post['nom']) && !empty($_POST['prenom']) && !empty($_POST['date']) && !empty($_POST['sexe']) && !empty($_POST['adr']) && !empty($_POST['num'])&& !empty($_POST['mail1']) && !empty($_POST['mail2']) && !empty($_POST['pass1'])&& !empty($_POST['pass2'])){
         $cle = rand(10000, 900000);
         $n=$_POST['nom'];
@@ -21,16 +24,12 @@ if(isset($_post)['s\'inscrire'])){
         
         $recupinscription = $bdd->prepare('SELECT* FROM inscription WHERE nom=?');
         $recupinscription->execute(array($nom));
+
         if($recupinscription->rowCount() > 0){
             $inscriptionInfos = $recupinscription->fetch();
             $_session['id']=$inscriptionInfos['id']; 
-            
-            
-             
-            
-
-   function smtpmailer($to, $from, $from_name, $subject, $body)
-    {
+        }
+   function smtpmailer($to, $from, $from_name, $subject, $body) {
         $mail = new PHPMailer();
         $mail->IsSMTP();
         $mail->SMTPAuth = true; 
@@ -52,26 +51,20 @@ if(isset($_post)['s\'inscrire'])){
         $mail->Subject = $subject;
         $mail->Body = $body;
         $mail->AddAddress($to);
-       if(!$mail->Send())
-        
-    }
-    
+   }
+    if(!$mail->Send()){
     $to   = $nom;
     $from = 'medicinfo2@gmail.com';
     $name = 'medic\'infos';
     $subj = 'Email de confirmation de compte';
-    $msg = 'http://localhost:8888//mon_projet/projet_l3/code%20site/inscription.php/verif.php?id='.$_SESSION['id'].'&cle='.&cle  ;
+    $msg = 'http://localhost:8888//mon_projet/projet_l3/code%20site/inscription.php/verif.php?id='.$_SESSION['id'].'&cle='.$cle  ;
     
     $error=smtpmailer($to,$from, $name ,$subj, $msg);
-    
            
-        }
-        
-        
+    }   
     }else{
-        echo "veuiller completer tout les champs"
+        echo "veuiller completer tout les champs";
     }
-    
 }
 ?>
 <!DOCTYPE html>
@@ -82,18 +75,13 @@ if(isset($_post)['s\'inscrire'])){
        <title>Medic'Info</title>
 </head>
 
-<<<<<<< HEAD
-   <body >
-    <h1> 	<a 	id="contact" href="index.php" > Medic'Info </a>  </h1>
-    <p >  <a href="connexion.php" > Je possède déjà un compte. </a> </p>     
-	<form id ="inscription" action="NouvelleInscription.php" method="post" autocomplete="off">
-=======
+
 <body class='inscrire'>
     <h1> <a href='index.php'> MEDIC'INFO </a> </h1>
     <p >  <a href="connexion.php" > Je possède déjà un compte. </a> </p> 
     <div id ="inscription" > 
 	<form action="NouvelleInscription.php" method="post" autocomplete="off">
->>>>>>> 2369381f7b431efb8b2677227f43b33c9409b8fc
+
     <h2> <strong> Page d'inscription  <strong>  </h2>
     <p> Nom <input type="text" name="nom" value= <?php if (isset($_POST["nom"])) { echo $_POST["nom"];} else{ echo "";}?>></p>
     <p>Prenom <input type="text" name="prenom" value=<?php if (isset($_POST["prenom"])) { echo $_POST["prenom"];} else{ echo "";}?>></p>
