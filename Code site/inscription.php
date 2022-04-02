@@ -86,11 +86,10 @@ if(isset($_POST['s\'inscrire'])){
     <p> Nom <input type="text" name="nom" value= <?php if (isset($_POST["nom"])) { echo $_POST["nom"];} else{ echo "";}?>></p>
     <p>Prenom <input type="text" name="prenom" value=<?php if (isset($_POST["prenom"])) { echo $_POST["prenom"];} else{ echo "";}?>></p>
 
-    <p>
-        <label> Sexe : </label>
+    <div> <label> Sexe : </label>
         Homme:<input type="radio" name="sexe" value="M">
         Femme:<input type="radio" name="sexe" value="F">
-    </p>
+    </div>
 
     <p> Date de naissance <input type="date" name="date" value=<?php if (isset($_POST["date"])) { echo $_POST["date"];} else{ echo "";}?>> </p>
     <p> Numero <input type="tel" name="num" value=<?php if (isset($_POST["num"])) { echo $_POST["num"];} else{ echo "";}?>></p>

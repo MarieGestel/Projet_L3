@@ -34,11 +34,15 @@
 	<div id ="contacter" > 
 		<h2> Nous contacter : </h2>
 		<form method="post" action="message.php"  autocomplete="off">
-			<p> Nom : <INPUT type="text" name="n" value=""> </p>
-			<p> Prenom : <INPUT type="text" name="p" value=""> </p>
-			<p> email : <INPUT type="email" name="mail" value=""> </p>
-			<p> Sujet : <INPUT type="text" name="sujet" value=""> </p>
-			<p>     <TEXTAREA rows="3" name="commentaires"> Votre commentaire </TEXTAREA>
+			<p> Nom : </p>
+				<INPUT type="text" name="n" value=""> 
+			<p> Prenom : </p>
+				<INPUT type="text" name="p" value=""> 
+			<p> email : </p>
+				<INPUT type="email" name="mail" value=""> 
+			<p> Sujet : </p>
+				<INPUT type="text" name="sujet" value=""> 
+			<p> <TEXTAREA rows="3" name="commentaires"> Votre commentaire </TEXTAREA>
 			<p><INPUT  type="submit" value="Envoyer"> </p>
 		</form>
 	<div class ='liensBas'>

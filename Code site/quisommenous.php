@@ -38,7 +38,7 @@
         <li>toute les informations nécessaires concernant le médicament de votre choix</li>
         <li>des graphiques concernant les taux de remboursement et les 10 médicaments les plus mis en favoris</li>
         <li>un espace commentaire dans lequel vous pouvez nous faire part de ce que vous souhaitez si vous êtes inscrit au site</li>
-	<li>la mise en favoris des médicaments que vous désirez retrouver en quelques clics (aussi pour les inscrits)</li>
+	   <li>la mise en favoris des médicaments que vous désirez retrouver en quelques clics (aussi pour les inscrits)</li>
        </ul>
        
        <h2>Nous accélérons vos recherches médicamenteuses</h2>
@@ -48,7 +48,8 @@
        <p>Nous sommes Marie, Eva, Manel et Léa, quatre étudiantes en licence Mathématiques et Informatique appliquées aux sciences humaines et sociales à l'université de Paul Valery à Montpellier. Dans le cadre de notre troisième année de licence nous devons, à partir d'une base de données, créer entièrement un site web. Après plusieurs semaines de travail, c'est ainsi qu'est né Medic'Info, un site à titre informatif s'appuyant sur la base de données publique des médicaments qui, nous l'espérons, saura vous guider dans le choix de vos médicaments tout en vous apportant un maximum d'informations.
        </p>
       <img src="Images/universite-paul-valery-montpellier-3.png">
-      </div>
+      <img src="Images/logo_miashs.png">
+
        <div class='liensBas'>
 	      <a href="quisommenous.php" > Qui sommes-nous ? </a>
          <a href="contact.php" > Contact </a>
@@ -56,6 +57,6 @@
 	      <a href="donneesPersonnelles.php" > Données personnelles </a>
 	      <a href="baseDeDonnees.php" > Base de données </a>
 	</div>
-
+   </div>
    </body>
 </html>

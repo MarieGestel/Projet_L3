@@ -16,7 +16,7 @@
 		<title>Medic'Info</title>
 	</head>
 	
-	<body class='rechercheIndex'>
+	<body class='inscrire'>
     <?php 
 		echo '<nav>';
 		echo '<div class="menu">';
@@ -72,7 +72,6 @@ echo " <form action='recherche.php?nom=".$nom."&voieAdm=".$voieAdm."&forme=".$fo
 			<input class='recherche' type='submit' value='Rechercher'>
 			</p>
 		</form>";
-	
 if($nom!="" && $voieAdm!="" && $codeCIS!=""){
 	$present =$bdd->query("SELECT count(*)  FROM specialite WHERE denomination_medicament LIKE '%".$nom."%' AND CodeCIS=".$codeCIS." AND Voie_administration LIKE '%".$voieAdm."%'");
 	$ligne=0;
@@ -187,7 +186,7 @@ elseif($nom=="" && $voieAdm=="" && $codeCIS!=""){
 else{
 	echo "<p class='resultatRecherche'> Aucun médicament ne correspond a votre recherche </p>";
 }
-
+echo '</div>';
 ?>
 
 	<div class='liensBas'>
