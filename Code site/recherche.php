@@ -72,9 +72,6 @@ echo " <form action='recherche.php?nom=".$nom."&voieAdm=".$voieAdm."&forme=".$fo
 			<input class='recherche' type='submit' value='Rechercher'>
 			</p>
 		</form>";
-<<<<<<< HEAD
-if($nom!="" && $voieAdm!="" && $codeCIS!=""){
-=======
 	
 if($nom!="" || $voieAdm!="" || $codeCIS!="" || $forme!=""){
 	
@@ -116,7 +113,7 @@ if($nom!="" || $voieAdm!="" || $codeCIS!="" || $forme!=""){
 	$rep=$bdd->query($req2);
 	
 		while ($mat=$rep->fetch()){
-			echo "<p class='resultatRecherche'> Code CIS : <a href='medicament.php?CodeCIS=".$mat['CodeCIS']."&nom=".$nom."&voieAdm=".$voieAdm."&code=".$codeCIS."'>".$mat['CodeCIS']."</a> |  Nom du médicament : ".$mat['denomination_medicament']." </br> </p>";
+			echo "<p class='resultatRecherche'> Code CIS : <a href='medicament.php?CodeCIS=".$mat['CodeCIS']."&nom=".$nom."&voieAdm=".$voieAdm."&forme=".$forme."'>".$mat['CodeCIS']."</a> |  Nom du médicament : ".$mat['denomination_medicament']." </br> </p>";
 		}
 		$rep->closeCursor();
 	}else{
@@ -242,14 +239,8 @@ elseif($nom=="" && $voieAdm=="" && $codeCIS!=""){
 }
 else{
 	echo "<p class='resultatRecherche'> Aucun médicament ne correspond a votre recherche </p>";
-<<<<<<< HEAD
-}
-echo '</div>';
-=======
 } */
 
-
->>>>>>> 716f0b41791c33df5b4e9eb290d3192aaaa3fd19
 ?>
 
 	<div class='liensBas'>

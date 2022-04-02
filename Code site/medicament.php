@@ -36,7 +36,8 @@ session_start();
 	<form action='recherche.php' method='get' autocomplete='on'>
 	<input class='recherche' type='text' name='nom' value='' placeholder='Nom'/>
 	<input class='recherche' type='text' name='voieAdm' value='' placeholder="Voie d'administration"/>
-	<input  class='recherche'type='text' name='codeCIS' value=''placeholder='Code CIS'/>
+	<input class='recherche' type='text' name='forme' value='' placeholder='forme pharmaceutique'/>
+	<input  class='recherche'type='text' name='codeCIS' value='' placeholder='Code CIS'/>
 	<input class='recherche' type="submit" value="Rechercher">
 	</form>
 	
@@ -48,6 +49,7 @@ session_start();
 		$CodeCIS=$_GET['CodeCIS'];	
 		$nom=$_GET['nom'];
 		$voieAdm=$_GET['voieAdm'];
+		$forme=$_GET['forme'];
 		//$code=$_GET['code'];
 		
 		$repSpe = $bdd->query("SELECT * FROM specialite WHERE CodeCIS='{$CodeCIS}'");
@@ -86,8 +88,8 @@ session_start();
 		<p class='info'> Nom du Generique : ".$matGene['libelle_generique']." | type de generique : ". $matGene['type_generique']." </br> </p> ";
 		echo "</span> ";
 	}	
+	echo "<p class='cat'> Condition de prescription et de délivrance : </p>";  
 	while ($matcpd=$repcpd->fetch()){	
-		echo "<p class='cat'> Condition de prescription et de délivrance : </p>";  
 		echo "<span id='bulle'> 
 		<p class='info'>".$matcpd['Condition_prescription_ou_delivrance']."</p> ";
 		echo "</span> ";
@@ -109,7 +111,7 @@ session_start();
 	";
 	}
 		
-	echo" <p id='retour'> <a href='recherche.php?nom=".$nom."&voieAdm=".$voieAdm."' > Retour vers la recherche </a> </p>";
+	echo" <p id='retour'> <a href='recherche.php?nom=".$nom."&voieAdm=".$voieAdm."&forme=".$forme."' > Retour vers la recherche </a> </p>";
 	
 	?>
 	</div>
