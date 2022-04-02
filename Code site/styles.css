@@ -245,8 +245,13 @@ font-size: 1.1em;
 	text-align: left;
 	margin-left: 40px;
 }
+#inscription div label {
+	margin-right: 40px;
+}
 #inscription div input{
 	display: inline;
+	height: 20px;
+	margin-left: 10px;
 }
 #inscription label~input{
 	width: 100px;
@@ -256,8 +261,8 @@ font-size: 1.1em;
 #inscription #boutonInscription {
     margin-top: 30px;
     padding-left: 0px;
-	margin-left: 25%;
-    background-color: aliceblue;
+	margin-left: 30%;
+    background-color: rgb(42, 135, 216);
     width: 200px;
 	display: inline;
 	
@@ -388,6 +393,8 @@ margin-left : 20%;
 	background-attachment: fixed;
 
 }
+
+
 .divLiensBas{
 	margin: 0 auto;
 	margin-top: 3px;
@@ -435,4 +442,12 @@ margin-left : 20%;
     background-color: aliceblue;
     width: 200px;
 }
+#retourRecherche {
+	text-align: center;
+	font-size: 1.5em;
+	font-weight : bold;
 
+}
+#retourRecherche a{
+	border:black 1px solid;
+}

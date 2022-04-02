@@ -39,16 +39,14 @@
 	<h2>
 		<a href='donneesClees.php'> Données clées </a>
 	</h2>
-
 	<form action='recherche.php' method='get' autocomplete='on'>
-	<p> <input class='recherche' type='text' name='nom' value='' placeholder='Nom'/>
+	<p> <input class='recherche' type='text' name='nom' value=''placeholder='Nom'/>	
 
-	<select class='recherche' name='voieAdm'  id='voieAdm'>
+<select class="recherche" name="voieAdm"  id='voieAdm'>
 	<option value=""> voie d'administration </option>
     <option value="auriculaire"> auriculaire </option>
     <option value="buccogingivale"> buccogingivale </option>
     <option value="cutanée"> cutanée </option>
-    <option value="dentaire "> dentaire </option>
 	<option value="endotrachéobronchique"> endotrachéobronchique</option>
 	<option value="épilésionnelle"> épilésionnelle </option>
 	<option value="gastrique"> gastrique</option>
@@ -120,7 +118,7 @@
     <option value="suspension"> suspension </option>
     </select>
 
-	<input  class='recherche'type='text' name='codeCIS' value=''placeholder='Code CIS'/>
+	<input  class='recherche'type='text' name='codeCIS' value=''placeholder='Code CIS'/> 
 	<input class='recherche' type="submit" value="Rechercher">
 	</p>
 	</form>

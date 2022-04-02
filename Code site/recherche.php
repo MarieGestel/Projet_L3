@@ -240,7 +240,7 @@ elseif($nom=="" && $voieAdm=="" && $codeCIS!=""){
 else{
 	echo "<p class='resultatRecherche'> Aucun médicament ne correspond a votre recherche </p>";
 } */
-
+echo "<p id='retourRecherche'> <a href='pageRecherche.php' > Retour vers la recherche </a> </p>";
 ?>
 
 	<div class='liensBas'>

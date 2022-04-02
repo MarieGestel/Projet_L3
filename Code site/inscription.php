@@ -81,7 +81,6 @@ if(isset($_POST['s\'inscrire'])){
     <p >  <a href="connexion.php" > Je possède déjà un compte. </a> </p> 
     <div id ="inscription" > 
 	<form action="NouvelleInscription.php" method="post" autocomplete="off">
-
     <h2> <strong> Page d'inscription  <strong>  </h2>
     <p> Nom <input type="text" name="nom" value= <?php if (isset($_POST["nom"])) { echo $_POST["nom"];} else{ echo "";}?>></p>
     <p>Prenom <input type="text" name="prenom" value=<?php if (isset($_POST["prenom"])) { echo $_POST["prenom"];} else{ echo "";}?>></p>

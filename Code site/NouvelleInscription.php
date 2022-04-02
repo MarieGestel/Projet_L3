@@ -27,20 +27,59 @@
                 }
             }
         }
+        if(isset($_POST['nom'])){
+            $n=$_POST['nom'];}
+        else{
+            $n="" ;
+        }
+        if(isset($_POST['prenom'])){
+            $p=$_POST['prenom'];
+        }else{
+            $p="" ;
+        }
+        if(isset($_POST['date'])){
+            $date=$_POST['date'];
+        }else{
+            $date="";
+        }
+        if(isset($_POST['sexe'])){
+            $sexe=$_POST['sexe'];
+        }else{
+            $sexe="";
+        }
+        if(isset($_POST['adr'])){
+            $adr=$_POST['adr'];
+        }else{
+            $adr="";
+        }
+        if(isset($_POST['num'])){
+            $num=$_POST['num'];
+        }else{
+            $num="";
+        }
+        if(isset($_POST['mail1'])){
+            $mail=$_POST['mail1'];
+        }else{
+            $mail="";
+        }
+        if(isset($_POST['mail2'])){
+            $mail2=$_POST['mail2'];
+        }else{
+            $mail2="";
+        }
+        if(isset($_POST['pass1'])){
+            $mdp=md5($_POST['pass1']);
+        }else{
+            $mdp="";
+        }
+        if(isset($_POST['pass2'])){
+            $mdp2=md5($_POST['pass2']);
+        }else{
+            $mdp2="";
+        }
 
-        $n=$_POST['nom'];
-        $p=$_POST['prenom'];
-        $date=$_POST['date'];
-        $sexe=$_POST['sexe'];
-        $adr=$_POST['adr'];
-        $num=$_POST['num'];
-        $mail=$_POST['mail1'];
-        $mail2=$_POST['mail2'];
-        $mdp=md5($_POST['pass1']);
-        $mdp2=md5($_POST['pass2']);
-
-        if($n=="" || $p=="" || $mail=="" || $date=="" || $sexe==""|| $adr==""|| $num==""|| $mail!=$mail2|| $mdp!= $mdp2) {;
-            echo '<meta http-equiv="refresh" content="O; url=inscription.php?nom='.$n.'&prenom='.$p.'&adr='.$adr.'&num='.$num.'&mail='.$mail.'"/>';
+        if($n=="" || $p=="" || $mail=="" || $date=="" || $sexe==""|| $adr==""|| $num==""||$mail==""||$mdp==""|| $mail!=$mail2|| $mdp!= $mdp2) {
+            echo '<meta http-equiv="refresh" content="0; url=inscription.php?nom='.$n.'&prenom='.$p.'&adr='.$adr.'&num='.$num.'&mail='.$mail.'"/>';
         } else{
             $client = $bdd->query("select count(*) from Clients where mail='".$mail."' and motdepasse='".$mdp."'");
             $estPresent=0;
