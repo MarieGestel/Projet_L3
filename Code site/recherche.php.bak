@@ -16,7 +16,7 @@
 		<title>Medic'Info</title>
 	</head>
 	
-	<body class='inscrire'>
+	<body class='rechercheIndex'>
     <?php 
 		echo '<nav>';
 		echo '<div class="menu">';
@@ -72,64 +72,8 @@ echo " <form action='recherche.php?nom=".$nom."&voieAdm=".$voieAdm."&forme=".$fo
 			<input class='recherche' type='submit' value='Rechercher'>
 			</p>
 		</form>";
-<<<<<<< HEAD
+	
 if($nom!="" && $voieAdm!="" && $codeCIS!=""){
-=======
-	
-if($nom!="" || $voieAdm!="" || $codeCIS!="" || $forme!=""){
-	
-	$req="SELECT count(*)  FROM specialite WHERE 1=1 ";
-	
-	if($nom!=""){
-		$req=$req."AND denomination_medicament LIKE '%".$nom."%' ";
-	}
-	if($voieAdm!=""){
-		$req=$req."AND Voie_administration LIKE '%".$voieAdm."%'";
-	}
-	if($codeCIS!=""){
-		$req=$req."AND CodeCIS=".$codeCIS;
-	}
-	if($forme!=""){
-		$req=$req."AND Forme_pharmaceutique LIKE '%".$forme."%'";
-	}
-	
-	$present=$bdd->query($req);
-	
-	while ($result=$present->fetch()){
-		$ligne=$result[0];
-	}
-	
-	 if($ligne!=0){
-		$req2="SELECT CodeCIS, denomination_medicament  FROM specialite WHERE 1=1 ";
-	if($nom!=""){
-		$req2=$req2."AND denomination_medicament LIKE '%".$nom."%' ";
-	}
-	if($voieAdm!=""){
-		$req2=$req2."AND Voie_administration LIKE '%".$voieAdm."%'";
-	}
-	if($codeCIS!=""){
-		$req2=$req2."AND CodeCIS=".$codeCIS;
-	}
-	if($forme!=""){
-		$req2=$req2."AND Forme_pharmaceutique LIKE '%".$forme."%'";
-	}
-	$rep=$bdd->query($req2);
-	
-		while ($mat=$rep->fetch()){
-			echo "<p class='resultatRecherche'> Code CIS : <a href='medicament.php?CodeCIS=".$mat['CodeCIS']."&nom=".$nom."&voieAdm=".$voieAdm."&code=".$codeCIS."'>".$mat['CodeCIS']."</a> |  Nom du médicament : ".$mat['denomination_medicament']." </br> </p>";
-		}
-		$rep->closeCursor();
-	}else{
-		echo "<p class='resultatRecherche'> Aucun médicament ne correspond a votre recherche </p>";
-	}
-	}
-	else{
-		echo "<p class='resultatRecherche'> Aucun médicament ne correspond a votre recherche </p>";
-	} 
-	
-	
-/* if($nom!="" && $voieAdm!="" && $codeCIS!=""){
->>>>>>> 716f0b41791c33df5b4e9eb290d3192aaaa3fd19
 	$present =$bdd->query("SELECT count(*)  FROM specialite WHERE denomination_medicament LIKE '%".$nom."%' AND CodeCIS=".$codeCIS." AND Voie_administration LIKE '%".$voieAdm."%'");
 	$ligne=0;
 	while ($result=$present->fetch()){
@@ -242,14 +186,8 @@ elseif($nom=="" && $voieAdm=="" && $codeCIS!=""){
 }
 else{
 	echo "<p class='resultatRecherche'> Aucun médicament ne correspond a votre recherche </p>";
-<<<<<<< HEAD
 }
-echo '</div>';
-=======
-} */
 
-
->>>>>>> 716f0b41791c33df5b4e9eb290d3192aaaa3fd19
 ?>
 
 	<div class='liensBas'>
