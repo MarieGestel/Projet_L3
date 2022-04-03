@@ -12,7 +12,15 @@
 	<h2> <strong>Page de Connexion</strong> </h2>
 		
 	<form  action="connecter.php" method="post" autocomplete="off">
-	<p> Adresse mail <INPUT type="text" name="mail" value = <?php if (isset($_POST['mail'])){ echo $_POST['mail'] ; } else{ echo "";}?>> </p>	
+	<?php
+	if (isset($_POST["mail"])){ 
+		$mail=$_POST['mail'] ; 
+	}else{ 
+		$mail="salut";
+	}
+	echo $mail;
+	echo '<p> Adresse mail <INPUT type="text" name="mail" value ='.$mail.' > </p>';
+	?>	
 	<p> Mot de passe <INPUT type="password" name="motdepasse" value="" > </p>
 	<p> <INPUT id="bouton" type="submit" value="Se connecter"></p>
 	</form>
