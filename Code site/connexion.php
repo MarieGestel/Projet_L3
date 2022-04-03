@@ -13,8 +13,8 @@
 		
 	<form  action="connecter.php" method="post" autocomplete="off">
 	<?php
-	if (isset($_POST["mail"])){ 
-		$mail=$_POST['mail'] ; 
+	if (isset($_GET["mail"])){ 
+		$mail=$_GET['mail'] ; 
 	}else{ 
 		$mail="";
 	}

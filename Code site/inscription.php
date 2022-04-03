@@ -82,18 +82,18 @@ if(isset($_POST['s\'inscrire'])){
     <div id ="inscription" > 
 	<form action="NouvelleInscription.php" method="post" autocomplete="off">
     <h2> <strong> Page d'inscription  <strong>  </h2>
-    <p> Nom <input type="text" name="nom" value= <?php if (isset($_POST["nom"])) { echo $_POST["nom"];} else{ echo "";}?>></p>
-    <p>Prenom <input type="text" name="prenom" value=<?php if (isset($_POST["prenom"])) { echo $_POST["prenom"];} else{ echo "";}?>></p>
+    <p> Nom <input type="text" name="nom" value= <?php if (isset($_GET["nom"])) { echo $_GET["nom"];} else{ echo "";}?>></p>
+    <p>Prenom <input type="text" name="prenom" value=<?php if (isset($_GET["prenom"])) { echo $_GET["prenom"];} else{ echo "";}?>></p>
 
     <div> <label> Sexe : </label>
         Homme:<input type="radio" name="sexe" value="M">
         Femme:<input type="radio" name="sexe" value="F">
     </div>
 
-    <p> Date de naissance <input type="date" name="date" value=<?php if (isset($_POST["date"])) { echo $_POST["date"];} else{ echo "";}?>> </p>
-    <p> Numero <input type="tel" name="num" value=<?php if (isset($_POST["num"])) { echo $_POST["num"];} else{ echo "";}?>></p>
-    <p> adresse <input type="text" name="adr" value=<?php if (isset($_POST["adr"])) { echo $_POST["adr"];} else{ echo "";}?>></p>
-    <p> Email<input type="email" name="mail1" <?php if (isset($_POST["mail1"])) { echo $_POST["mail1"];} else{ echo "";}?>></p>
+    <p> Date de naissance <input type="date" name="date" value=<?php if (isset($_GET["date"])) { echo $_GET["date"];} else{ echo "";}?>> </p>
+    <p> Numero <input type="tel" name="num" value=<?php if (isset($_GET["num"])) { echo $_GET["num"];} else{ echo "";}?>></p>
+    <p> adresse <input type="text" name="adr" value=<?php if (isset($_GET["adr"])) { echo $_GET["adr"];} else{ echo "";}?>></p>
+    <p> Email<input type="email" name="mail1" <?php if (isset($_GET["mail1"])) { echo $_GET["mail1"];} else{ echo "";}?>></p>
     <p> Confirmation email <input type="eamil" name="mail2"></p>
     <p> Mot de passe <input type="password" name="pass1"></p>
     <p> Confirmation mot de passe <input type="password" name="pass2"> </p>
