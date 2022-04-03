@@ -451,3 +451,13 @@ margin-left : 20%;
 #retourRecherche a{
 	border:black 1px solid;
 }
+
+.graphique{
+text-align:center;
+}
+
+.noData{
+text-align : center;
+font-weight : bold;
+font-size:1.3em;	
+}
