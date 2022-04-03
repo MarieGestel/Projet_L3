@@ -16,9 +16,8 @@
 	if (isset($_POST["mail"])){ 
 		$mail=$_POST['mail'] ; 
 	}else{ 
-		$mail="salut";
+		$mail="";
 	}
-	echo $mail;
 	echo '<p> Adresse mail <INPUT type="text" name="mail" value ='.$mail.' > </p>';
 	?>	
 	<p> Mot de passe <INPUT type="password" name="motdepasse" value="" > </p>
