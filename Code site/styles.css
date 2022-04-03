@@ -447,6 +447,7 @@ margin-left : 20%;
 #retourRecherche a{
 	border:black 1px solid;
 }
+<<<<<<< HEAD
 #graphique{
 	display: inline-block;
 }
@@ -462,3 +463,15 @@ margin-left : 20%;
 	margin-left: 60%;
 	margin-right: -20%;
 }
+=======
+
+.graphique{
+text-align:center;
+}
+
+.noData{
+text-align : center;
+font-weight : bold;
+font-size:1.3em;	
+}
+>>>>>>> da02efe044087533ca927cb5a0e2af41beaf7e64
