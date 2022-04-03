@@ -45,12 +45,26 @@ session_start();
 	<div id='rechercheMedicament'>
 	<?php
 		require('bd.php');
-	
-		$CodeCIS=$_GET['CodeCIS'];	
-		$nom=$_GET['nom'];
-		$voieAdm=$_GET['voieAdm'];
-		$forme=$_GET['forme'];
-		//$code=$_GET['code'];
+		if(isset($_GET['CodeCIS'])){
+			$CodeCIS=$_GET['CodeCIS'];	
+		}else{
+			$CodeCIS="";	
+		}
+		if(isset($_GET['nom'])){
+			$nom=$_GET['nom'];
+		}else{
+			$nom="";
+		}
+		if(isset($_GET['voieAdm'])){
+			$voieAdm=$_GET['voieAdm'];
+		}else{
+			$voieAdm="";
+		}
+		if(isset($_GET['forme'])){
+			$forme=$_GET['forme'];
+		}else{
+			$forme="";
+		}
 		
 		$repSpe = $bdd->query("SELECT * FROM specialite WHERE CodeCIS='{$CodeCIS}'");
 		$repPres = $bdd->query("SELECT * FROM presentation WHERE CodeCIS='{$CodeCIS}'");
