@@ -2,9 +2,9 @@
 
 $bdd = new PDO('mysql:host=localhost;dbname=bdd_medicament;charset=utf8', 'root', 'root');
 
-if(isset($_GET['forme'])){
+if(isset($_GET['formePhar'])){
 	$voieAdm="";
-	$forme=$_GET['forme'];
+	$forme=$_GET['formePhar'];
 	$rep = $bdd->query('SELECT ((count(*)/(SELECT count(*) from presentation, specialite WHERE presentation.CodeCIS=specialite.CodeCIS
 AND specialite.Forme_pharmaceutique="'.$forme.'"))*100) as Nombre, Taux_remboursement 
 FROM presentation, specialite
@@ -42,8 +42,7 @@ if(count($datay)==0 || count($valx)==0){
 	else{
 	echo '<meta http-equiv="refresh" content="0; url=donneesclees.php?voieAdm=noData">';	
 	}
-}
-
+}else{
 
 // content="text/plain; charset=utf-8"
 require_once ('jpgraph/src/jpgraph.php');
@@ -84,7 +83,8 @@ if(file_exists('remboursement.png')){
 }
 $graph->Stroke('remboursement.png');  
 
-echo '<meta http-equiv="refresh" content="0; url=donneesclees.php?forme='.$forme.'&voieAdm='.$voieAdm.'">';
+echo '<meta http-equiv="refresh" content="0; url=donneesclees.php?formePhar='.$forme.'&voieAdm='.$voieAdm.'">';
+}
 
 
 ?>

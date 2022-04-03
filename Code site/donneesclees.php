@@ -37,8 +37,13 @@
 	<h1> <a id="contact"href="index.php" > MEDIC'INFO </a>  </h1>
 	<h2><a href='pageRecherche.php'> Recherche </a> </h2>
 
-	<form action='graphique_remboursement.php' method='get' autocomplete='on'>
-	<select class="recherche" name="voieAdm"  id='voieAdm'> 
+	<div id='graphique'>
+	<h2> Top 5 des médicaments en favoris : </h2>
+	<div> <img src="favoris.png" alt ="graphique Favoris" /></div> 
+
+	<h2> Top 10 des meilleurs taux de remboursements par rapport à la voie ou à la forme : </h2>
+	<form action='graphique_remboursement_top10.php' method='get' autocomplete='on'>
+	<select class="recherche" name="voie"  id='voie'> 
 	<option value=""> voie d'administration </option>
     <option value="auriculaire"> auriculaire </option>
     <option value="buccogingivale"> buccogingivale </option>
@@ -114,30 +119,23 @@
     </select>
 	<input class='recherche' type="submit" value="Rechercher"> 
 	</form>
-		
 	<?php
-<<<<<<< HEAD
-	echo"<div id='graphique'>";
 	if(isset($_GET['forme']) || isset($_GET['voie'])){
-		echo"<h2> Graphique Taux de remboursement : </h2>";
-		echo '<p><img src="remboursement.png" alt ="graphique remboursement" /></p>';
+		if($_GET['forme'] =="noData" || $_GET['voie']=="noData"){
+			echo "<div class='noData'> <p> Nous ne pouvons pas répondre à votre demande </p> </div>";
+		}else{
+			echo '<div><img src="remboursement_top10.png" alt ="graphique remboursement" /></div> ';
+		}
 	}
-	echo"<h2> Graphique Top 5 des médicaments en favoris : </h2>";
-	echo '<p><img src="favoris.png" alt ="graphique Favoris" /><p/>';
-	echo "</div>";
-=======
-	
-	require('graphiqueTopFavoris.php');
-	echo '<div class="graphique"><img src="favoris.png" alt ="graphique" /> </div>';
-	?>
-	
+	?> 
+
+	<h2> Pourcentage des médicaments rembourser à un certain taux selon la Voie d'administration : </h2>
 	<form action='graphiqueRemboursement.php' method='get' autocomplete='on'>
 	<select class='recherche' name='voieAdm'  id='voieAdm'>
 	<option value=""> voie d'administration </option>
     <option value="auriculaire"> auriculaire </option>
     <option value="buccogingivale"> buccogingivale </option>
     <option value="cutanée"> cutanée </option>
-    <option value="dentaire "> dentaire </option>
 	<option value="endotrachéobronchique"> endotrachéobronchique</option>
 	<option value="épilésionnelle"> épilésionnelle </option>
 	<option value="gastrique"> gastrique</option>
@@ -187,20 +185,23 @@
 	<option value="voie extracorporelle autre"> voie extracorporelle autre</option>
 	</select>
 	<input class='recherche' type="submit" value="Rechercher">
-	</form>
+	</form> 
+
 	<?php
-	if($_GET['voieAdm']!=""){
-		if($_GET['voieAdm']=="noData"){
-			echo"<div class='noData'> <p> Aucune donnée n'est disponible pour votre sélection. </p> </div>";
-		}
-		else{
-		echo '<div class="graphique"><img src="remboursement.png" alt ="graphique" /> </div>';
-		}
+	if(isset($_GET['voieAdm']) ){
+		if($_GET['voieAdm']!=""){
+			if($_GET['voieAdm']=="noData"){
+				echo"<div class='noData'> <p> Aucune donnée n'est disponible pour votre sélection. </p> </div>";
+			}
+			else{
+			echo '<div><img src="remboursement.png" alt ="graphique" /> </div>';
+			}
+		} 
 	}
 	?>
-
+	<h2> Pourcentage des médicaments rembourser à un certain taux selon la forme Pharmaceutique : </h2>
 	<form action='graphiqueRemboursement.php' method='get' autocomplete='on'>
-	<select class='recherche' name="forme" id='forme'>
+	<select class='recherche' name="formePhar" id='forme'>
 	<option value=""> forme pharmaceutique</option>
     <option value="capsule"> capsule </option>
     <option value="collyre"> collyre </option>
@@ -222,18 +223,19 @@
     <option value="suspension"> suspension </option>
     </select>
 	<input class='recherche' type="submit" value="Rechercher">
-	</form>
+	</form>  
 	
 	<?php
-	if($_GET['forme']!=""){
-		if($_GET['forme']=="noData"){
-			echo"<div class='noData'> <p> Aucune donnée n'est disponible pour votre sélection. </p> </div>";
-		}
-		else{
-		echo '<div class="graphique"><img src="remboursement.png" alt ="graphique" /> </div>';
+	if(isset($_GET['formePhar']) ){
+		if($_GET['formePhar']!=""){
+			if($_GET['formePhar']=="noData"){
+				echo"<div class='noData'> <p> Aucune donnée n'est disponible pour votre sélection. </p> </div>";
+			}
+			else{
+			echo '<div> <img src="remboursement.png" alt ="graphique" /> </div>';
+			}
 		}
 	}
->>>>>>> da02efe044087533ca927cb5a0e2af41beaf7e64
 	?>
 	
 	</div>

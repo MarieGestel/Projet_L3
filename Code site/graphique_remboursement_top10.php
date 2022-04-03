@@ -1,16 +1,19 @@
 <?php
+
 if(isset($_GET['forme'])){
 	$forme=$_GET['forme'];
 }else{
 	$forme="";
 }
-if(isset($_GET['voieAdm'])){
-	$voie=$_GET['voieAdm'];
+if(isset($_GET['voie'])){
+	$voie=$_GET['voie'];
 }else{
 	$voie="";
 }
 
 $bdd = new PDO('mysql:host=localhost;dbname=bdd_medicament;charset=utf8', 'root', 'root');
+
+// 1er graphique 
 $compte=0;
 $compter=0;
 if( $voie!="" || $forme!=""){
@@ -21,7 +24,7 @@ if( $voie!="" || $forme!=""){
     if($forme!=""){
         $compte=$compte." AND specialite.Forme_pharmaceutique LIKE '%".$forme."%' ";
     }
-    $compter=$bdd->query($compte);	
+   $compter=$bdd->query($compte);	
 }
 
 $estpresent=0;
@@ -29,12 +32,13 @@ if($compter!=0){
     while ($ligne = $compter ->fetch()){
         $estpresent=$ligne[0];
     } 
-}
+} 
 
 
 if ($estpresent==0){ 
-    echo 'Nous ne pouvons pas répondre à votre demande';
-    echo '<meta http-equiv="refresh" content="2; url=donneesclees.php"/>';
+    $voie="noData" ;
+    $forme="noData";
+    echo '<meta http-equiv="refresh" content="0; url=donneesclees.php?forme='.$forme.'&voie='.$voie.'"/>'; 
 
 }else{
     if( $voie!="" || $forme!=""){
@@ -45,7 +49,7 @@ if ($estpresent==0){
         if($forme!=""){
             $recherche=$recherche." AND specialite.Forme_pharmaceutique LIKE '%".$forme."%' ";
         }
-        $recherche=$recherche.' ORDER BY presentation.Taux_remboursement DESC LIMIT 7 ';	
+        $recherche=$recherche.' ORDER BY presentation.Taux_remboursement DESC LIMIT 10 ';	
         $rechercher= $bdd->query($recherche);
     }
 
@@ -68,7 +72,7 @@ if ($estpresent==0){
  	$theme_class=new UniversalTheme;
 	$graph->SetTheme($theme_class);
 
-	$graph->yaxis->SetTickPositions(array(20,40,60,80,100), array(20,40,60,80,100));
+	$graph->yaxis->SetTickPositions(array(0,10, 20, 30,40, 50,60, 70, 80,90,100), array(0,10, 20, 30,40, 50,60, 70, 80,90,100));
 	$graph->SetBox(false);
 
 	$graph->ygrid->SetFill(false);
@@ -102,10 +106,10 @@ if ($estpresent==0){
     //$graph->stroke();
 
    // Display the graph
-	if(file_exists('remboursement.png')){
-		unlink('remboursement.png');
+	if(file_exists('remboursement_top10.png')){
+		unlink('remboursement_top10.png');
 	}
-	$graph->Stroke('remboursement.png'); 
+	$graph->Stroke('remboursement_top10.png'); 
     echo '<meta http-equiv="refresh" content="0; url=donneesclees.php?forme='.$forme.'&voie='.$voie.'"/>'; 
 
 }
