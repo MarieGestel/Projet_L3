@@ -122,7 +122,8 @@ session_start();
 		$repgene ->closeCursor();
 		$repSub ->closeCursor();
 	
-	$req="SELECT specialite.CodeCIS, Denomination_medicament, count(*) as occurence FROM specialite, favoris WHERE 1=1 ";
+	$req="SELECT specialite.CodeCIS, Denomination_medicament,Forme_pharmaceutique ,Voie_administration, count(*) as occurence FROM specialite, favoris WHERE 1=1 ";
+	//$req="SELECT specialite.CodeCIS, Denomination_medicament,Forme_pharmaceutique ,Voie_administration, count(*) as occurence FROM specialite, favoris, composants, est_compose_de WHERE est_compose_de.CodeCIS=specialite.CodeCIS AND est_compose_de.Code_substance=composants.Code_substance";
 	$req2="SELECT count(*) FROM specialite, favoris WHERE 1=1 ";
 	if($nom!=""){
 		$req=$req." AND Denomination_medicament LIKE '%".$nom."%' ";
@@ -145,7 +146,7 @@ session_start();
 
 	$rep=$bdd->query($req);
 	$rep2=$bdd->query($req2);
-	$resultatreq2=0;
+	$resultatreq2=0; 
 	
 	
 	while($ligne=$rep2->fetch()){
@@ -157,7 +158,7 @@ session_start();
 		echo "<p class='cat'> D'autres ont mis en favoris : </p>"; 
 	}
 		while ($mat=$rep->fetch()){
-			echo "<p class='resultatRecherche'> Code CIS : <a href='medicament.php?CodeCIS=".$mat['CodeCIS']."&nom=".$nom."&voieAdm=".$voieAdm."&forme=".$forme."'>".$mat['CodeCIS']."</a> |  Nom du médicament : ".$mat['Denomination_medicament']." </br> </p>";
+			echo "<p class='resultatRecherche'> Code CIS : <a href='medicament.php?CodeCIS=".$mat['CodeCIS']."&nom=".$nom."&voieAdm=".$mat['Voie_administration']."&forme=".$mat['Forme_pharmaceutique']."'>".$mat['CodeCIS']."</a> |  Nom du médicament : ".$mat['Denomination_medicament']." </br> </p>";
 		}
 		$rep->closeCursor();
 	
