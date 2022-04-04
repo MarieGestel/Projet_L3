@@ -101,14 +101,22 @@ session_start();
 		echo "<span id='bulle'> 
 		<p class='info'> Nom du Generique : ".$matGene['libelle_generique']." | type de generique : ". $matGene['type_generique']." </br> </p> ";
 		echo "</span> ";
-	}	
-	echo "<p class='cat'> Condition de prescription et de délivrance : </p>";  
+	}
+
+	$count = $bdd->query("SELECT count(*) FROM cpd WHERE CodeCIS='{$CodeCIS}'");
+	$compter=0;
+	while ($ligne=$count->fetch()){	
+		$compter=$ligne[0];
+	}
+	if($compter!=0){
+		echo "<p class='cat'> Conditions de prescription et de délivrance : </p>" ; 
 	while ($matcpd=$repcpd->fetch()){	
 		echo "<span id='bulle'> 
 		<p class='info'>".$matcpd['Condition_prescription_ou_delivrance']."</p> ";
 		echo "</span> ";
 	}	
-	
+}
+		$count ->closeCursor();
 		$repSpe ->closeCursor();
 		$repPres ->closeCursor();
 		$repgene ->closeCursor();
