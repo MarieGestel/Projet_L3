@@ -1,4 +1,15 @@
 <?php
+if(isset($_GET['forme'])){
+	$forme=$_GET['forme'];
+}else{
+	$forme="";
+}
+if(isset($_GET['voieAdm'])){
+	$voie=$_GET['voieAdm'];
+}else{
+	$voie="";
+}
+
 $bdd = new PDO('mysql:host=localhost;dbname=bdd_medicament;charset=utf8', 'root', 'root');
 $rep = $bdd->query('SELECT CodeCIS, count(*) as occurence FROM `favoris` GROUP BY CodeCIS ORDER BY occurence DESC LIMIT 5 ');
 
@@ -10,15 +21,14 @@ $valx=array();
 		}
 		$rep ->closeCursor();
 		
-
-// content="text/plain; charset=utf-8"
+ // content="text/plain; charset=utf-8"
 require_once ('jpgraph/src/jpgraph.php');
 require_once ('jpgraph/src/jpgraph_bar.php');
 
 //$data3y=array(87,86,88,155);
 
 // Create the graph. These two calls are always required
-$graph = new Graph(350,200,'auto');
+$graph=new Graph(800,400,'auto');
 $graph->SetScale("textlin");
 
 $theme_class=new UniversalTheme;
@@ -49,6 +59,6 @@ $graph->title->Set("Top 5 des médicaments les plus mis en favoris");
 if(file_exists('favoris.png')){
 	unlink('favoris.png');
 }
-$graph->Stroke('favoris.png');  
+$graph->Stroke('favoris.png');   
 
 ?>

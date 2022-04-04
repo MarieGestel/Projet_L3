@@ -74,7 +74,7 @@
     <div class='liensBas'>
 		<a 	href="quisommenous.php" >Qui sommes-nous ? </a>
 		<a 	href="contact.php" > Contact </a>
-		<a 	href="mentionLegales.php" >	Mentions légales </a>
+		<a 	href="baseDeDonnees.php" > Base de données </a>
 		<a 	href="donneesPersonnelles.php" > Données personnelles </a>
     </div>
 

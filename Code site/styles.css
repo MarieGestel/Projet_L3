@@ -374,11 +374,7 @@ margin-left : 20%;
 	border: 1px solid black;
     width: 300px;
 }
-#imagesIndex{
-	margin-top: 10px;
-	margin-left: 37%;
-	margin-right: 35%;
-}
+
 
 .inscrire{
 	background-image: url(Images/pexels-andreea-ch-1166644.jpg);
@@ -451,3 +447,28 @@ margin-left : 20%;
 #retourRecherche a{
 	border:black 1px solid;
 }
+
+
+#graphique img{
+	width: 50%;
+	border: 1px black solid ;
+	margin-left: 25%;
+
+}
+#graphique h2{
+	background-color: white;
+	height: 50px;
+	padding-top: 20px;
+}
+
+
+/* .graphique{
+text-align:center;
+}*/
+
+.noData{
+text-align : center;
+font-weight : bold;
+font-size:1.3em;	
+} 
+

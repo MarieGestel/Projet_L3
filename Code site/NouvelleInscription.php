@@ -68,18 +68,23 @@
             $mail2="";
         }
         if(isset($_POST['pass1'])){
-            $mdp=md5($_POST['pass1']);
-        }else{
-            $mdp="";
+            if($_POST['pass1']!=""){
+                $mdp=md5($_POST['pass1']);
+            }else{
+                $mdp="";
+            }
         }
         if(isset($_POST['pass2'])){
-            $mdp2=md5($_POST['pass2']);
-        }else{
-            $mdp2="";
+            if($_POST['pass2']!=""){
+                $mdp2=md5($_POST['pass2']);
+            }else{
+                $mdp2="";
+            }
         }
 
         if($n=="" || $p=="" || $mail=="" || $date=="" || $sexe==""|| $adr==""|| $num==""||$mail==""||$mdp==""|| $mail!=$mail2|| $mdp!= $mdp2) {
-            echo '<meta http-equiv="refresh" content="0; url=inscription.php?nom='.$n.'&prenom='.$p.'&adr='.$adr.'&num='.$num.'&mail='.$mail.'"/>';
+            echo '<meta http-equiv="refresh" content="1; url=inscription.php?nom='.$n.'&prenom='.$p.'&adr='.$adr.'&num='.$num.'&mail='.$mail.'"/>';
+            echo "Il faut remplir tous les champs";
         } else{
             $client = $bdd->query("select count(*) from Clients where mail='".$mail."' and motdepasse='".$mdp."'");
             $estPresent=0;

@@ -12,7 +12,14 @@
 	<h2> <strong>Page de Connexion</strong> </h2>
 		
 	<form  action="connecter.php" method="post" autocomplete="off">
-	<p> Adresse mail <INPUT type="text" name="mail" value = <?php if (isset($_POST['mail'])){ echo $_POST['mail'] ; } else{ echo "";}?>> </p>	
+	<?php
+	if (isset($_GET["mail"])){ 
+		$mail=$_GET['mail'] ; 
+	}else{ 
+		$mail="";
+	}
+	echo '<p> Adresse mail <INPUT type="text" name="mail" value ='.$mail.' > </p>';
+	?>	
 	<p> Mot de passe <INPUT type="password" name="motdepasse" value="" > </p>
 	<p> <INPUT id="bouton" type="submit" value="Se connecter"></p>
 	</form>
@@ -20,9 +27,8 @@
 	<a 	href="inscription.php" > Je ne possède pas encore de compte </a>
 </div>
 	<div class='liensBas'>
-	<a 	href="quiSommesNous.php" >Qui sommes-nous ? </a>
+	<a 	href="quisommesnous.php" >Qui sommes-nous ? </a>
 	<a 	href="contact.php" > Contact </a>
-	<a 	href="mentionLegales.php" >Mentions légales </a>
 	<a 	href="donneesPersonnelles.php" > Données personnelles </a>
 	<a 	href="baseDeDonnees.php" > Base de données </a>
 	</div>

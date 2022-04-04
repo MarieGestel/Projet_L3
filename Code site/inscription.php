@@ -3,8 +3,9 @@ session_start();
 require "PHPMailer/PHPMailerAutoload.php";
 require('bd.php');
 //$bdd = new PDO('mysql:host=localhost;dbname=bd_manel;charset=utf8', 'root', 'root');
-//$bdd = getBDMarie() ;
+$bdd = getBDMarie() ;
 
+/* //Essai mail de confirmation
 if(isset($_POST['s\'inscrire'])){
     if(!empty($_post['nom']) && !empty($_POST['prenom']) && !empty($_POST['date']) && !empty($_POST['sexe']) && !empty($_POST['adr']) && !empty($_POST['num'])&& !empty($_POST['mail1']) && !empty($_POST['mail2']) && !empty($_POST['pass1'])&& !empty($_POST['pass2'])){
         $cle = rand(10000, 900000);
@@ -19,7 +20,7 @@ if(isset($_POST['s\'inscrire'])){
         $mdp=md5($_POST['pass1']);
         $mdp2=md5($_POST['pass2']);
   
-        $insererinscription = $bdd->prepare('INSERT INTO inscription(nom,prenom,date,sexe,adr,num,mail1,mail2,pass1,pass2, cle,confirme )VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+        $insererinscription = $bdd->prepare('INSERT INTO Inscription(nom,prenom,date,sexe,adr,num,mail1,mail2,pass1,pass2, cle,confirme )VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
         $insererUser->execute(array($nom, $prenom, $date, $sexe, $adr,$num, $mail1, $mail2, $pass1, $pass2, $cle, 0 ));
         
         $recupinscription = $bdd->prepare('SELECT* FROM inscription WHERE nom=?');
@@ -65,7 +66,7 @@ if(isset($_POST['s\'inscrire'])){
     }else{
         echo "veuiller completer tout les champs";
     }
-}
+} */
 ?>
 <!DOCTYPE html>
 <html>
@@ -82,18 +83,18 @@ if(isset($_POST['s\'inscrire'])){
     <div id ="inscription" > 
 	<form action="NouvelleInscription.php" method="post" autocomplete="off">
     <h2> <strong> Page d'inscription  <strong>  </h2>
-    <p> Nom <input type="text" name="nom" value= <?php if (isset($_POST["nom"])) { echo $_POST["nom"];} else{ echo "";}?>></p>
-    <p>Prenom <input type="text" name="prenom" value=<?php if (isset($_POST["prenom"])) { echo $_POST["prenom"];} else{ echo "";}?>></p>
+    <p> Nom <input type="text" name="nom" value= <?php if (isset($_GET["nom"])) { echo $_GET["nom"];} else{ echo "";}?>></p>
+    <p>Prenom <input type="text" name="prenom" value=<?php if (isset($_GET["prenom"])) { echo $_GET["prenom"];} else{ echo "";}?>></p>
 
     <div> <label> Sexe : </label>
         Homme:<input type="radio" name="sexe" value="M">
         Femme:<input type="radio" name="sexe" value="F">
     </div>
 
-    <p> Date de naissance <input type="date" name="date" value=<?php if (isset($_POST["date"])) { echo $_POST["date"];} else{ echo "";}?>> </p>
-    <p> Numero <input type="tel" name="num" value=<?php if (isset($_POST["num"])) { echo $_POST["num"];} else{ echo "";}?>></p>
-    <p> adresse <input type="text" name="adr" value=<?php if (isset($_POST["adr"])) { echo $_POST["adr"];} else{ echo "";}?>></p>
-    <p> Email<input type="email" name="mail1" <?php if (isset($_POST["mail1"])) { echo $_POST["mail1"];} else{ echo "";}?>></p>
+    <p> Date de naissance <input type="date" name="date" value=<?php if (isset($_GET["date"])) { echo $_GET["date"];} else{ echo "";}?>> </p>
+    <p> Numero <input type="tel" name="num" value=<?php if (isset($_GET["num"])) { echo $_GET["num"];} else{ echo "";}?>></p>
+    <p> adresse <input type="text" name="adr" value=<?php if (isset($_GET["adr"])) { echo $_GET["adr"];} else{ echo "";}?>></p>
+    <p> Email<input type="email" name="mail1" <?php if (isset($_GET["mail1"])) { echo $_GET["mail1"];} else{ echo "";}?>></p>
     <p> Confirmation email <input type="eamil" name="mail2"></p>
     <p> Mot de passe <input type="password" name="pass1"></p>
     <p> Confirmation mot de passe <input type="password" name="pass2"> </p>
@@ -102,9 +103,8 @@ if(isset($_POST['s\'inscrire'])){
     </div>
 
     <div class='liensBas'>
-       <a 	href="quiSommesNous.php" > Qui sommes-nous ? </a>
+       <a 	href="quisommenous.php" > Qui sommes-nous ? </a>
        <a 	href="contact.php" > Contact </a>
-       <a 	href="mentionLegales.php" > Mentions légales </a>
        <a 	href="donneesPersonnelles.php" > Données personnelles </a> 
        <a 	href="baseDeDonnees.php" > Base de données </a>
     </div>

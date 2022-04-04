@@ -11,9 +11,20 @@
 		<link rel="stylesheet" href="styles.css" type="text/css" media="screen" />
 		<title>Medic'Info/Connexion</title>
 
-<?php	
-	$mail=$_POST['mail'];
-	$mdp=md5($_POST['motdepasse']);
+<?php
+	if(isset($_POST['mail'])){
+		$mail=$_POST['mail'];
+	}else{
+		$mail="";
+	}
+
+	if(isset($_POST['motdepasse'])){
+		if($_POST['motdepasse']!=""){
+			$mdp=md5($_POST['motdepasse']);
+		}else{
+			$mdp="";
+		}
+	}
 	
 	if($mail=="" || $mdp==""){
 		echo '<meta http-equiv="refresh" content="1; url=connexion.php?mail='.$mail.'"/>';
@@ -30,7 +41,7 @@
 
  	 	if($result==0){
 			  echo 'Nous ne trouvons pas de client correspondant à la demande veuillez vous inscrire';
-			echo '<meta http-equiv="refresh" content="0; url=inscription.php"/>';
+			echo '<meta http-equiv="refresh" content="1 url=inscription.php"/>';
 		} 
 
 		else{

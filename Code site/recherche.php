@@ -126,7 +126,7 @@ if($nom!="" || $voieAdm!="" || $codeCIS!="" || $forme!=""){
 	
 	
 /* if($nom!="" && $voieAdm!="" && $codeCIS!=""){
->>>>>>> 716f0b41791c33df5b4e9eb290d3192aaaa3fd19
+	\\Ancien code pour la recherche
 	$present =$bdd->query("SELECT count(*)  FROM specialite WHERE denomination_medicament LIKE '%".$nom."%' AND CodeCIS=".$codeCIS." AND Voie_administration LIKE '%".$voieAdm."%'");
 	$ligne=0;
 	while ($result=$present->fetch()){
@@ -246,7 +246,6 @@ echo "<p id='retourRecherche'> <a href='pageRecherche.php' > Retour vers la rech
 	<div class='liensBas'>
 	<a 	href="quisommenous.php" > Qui sommes-nous ? </a>
 	<a 	href="contact.php" > Contact </a>
-	<a 	href="mentionLegales.php" > Mentions légales </a>
 	<a 	href="donneesPersonnelles.php" > Données personnelles </a>
 	<a 	href="baseDeDonnees.php" > Base de données </a>
 	</div>

@@ -151,28 +151,25 @@ session_start();
 		$req=$req."AND Forme_pharmaceutique LIKE '%".$forme."%'";
 		$req2=$req2."AND Forme_pharmaceutique LIKE '%".$forme."%'";
 	}
-	$req=$req."AND favoris.CodeCIS=specialite.CodeCIS GROUP BY specialite.CodeCIS ORDER BY occurence DESC LIMIT 5 ";
-	$req2=$req2."AND favoris.CodeCIS=specialite.CodeCIS GROUP BY favoris.CodeCIS";
+	$req=$req."AND favoris.CodeCIS=specialite.CodeCIS GROUP BY CodeCIS ORDER BY occurence DESC LIMIT 5 ";
+	$req2=$req2."AND favoris.CodeCIS=specialite.CodeCIS GROUP BY CodeCIS";
 	
 	$rep=$bdd->query($req);
 	$rep2=$bdd->query($req2);
 	$resultatreq2=0;
-	
-	
-	while($ligne=$rep2->fetch()){
+	while ($ligne=$rep2->fetch()){
 		$resultatreq2=$ligne[0];
-	} 
-	$rep2->closeCursor();
-
+	}
 	if($resultatreq2!=0){
 		echo "<p class='cat'> D'autres ont mis en favoris : </p>"; 
 	}
-	
-	
 		while ($mat=$rep->fetch()){
 			echo "<p class='resultatRecherche'> Code CIS : <a href='medicament.php?CodeCIS=".$mat['CodeCIS']."&nom=".$nom."&voieAdm=".$mat['Voie_administration']."&forme=".$mat['Forme_pharmaceutique']."'>".$mat['CodeCIS']."</a> |  Nom du médicament : ".$mat['denomination_medicament']." </br> </p>";
 		}
 		$rep->closeCursor();
+	
+	
+	
 	
 	
 		
