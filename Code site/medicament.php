@@ -136,24 +136,23 @@ session_start();
 	$req="SELECT specialite.CodeCIS, denomination_medicament, count(*) as occurence FROM specialite, favoris WHERE 1=1 ";
 	$req2="SELECT count(*) FROM specialite, favoris WHERE 1=1 ";
 	if($nom!=""){
-		$req=$req."AND denomination_medicament LIKE '%".$nom."%' ";
-		$req2=$req2."AND denomination_medicament LIKE '%".$nom."%' ";
+		$req=$req." AND denomination_medicament LIKE '%".$nom."%' ";
+		$req2=$req2." AND denomination_medicament LIKE '%".$nom."%' ";
 	}
 	if($voieAdm!=""){
-		$req=$req."AND Voie_administration LIKE '%".$voieAdm."%'";
-		$req2=$req2."AND Voie_administration LIKE '%".$voieAdm."%'";
+		$req=$req." AND Voie_administration LIKE '%".$voieAdm."%'";
+		$req2=$req2." AND Voie_administration LIKE '%".$voieAdm."%'";
 	}
-	if($codeCIS!=""){
-		$req=$req."AND CodeCIS=".$codeCIS;
-		$req2=$req2."AND CodeCIS=".$codeCIS;
+	if($CodeCIS!=""){
+		$req=$req." AND specialite.CodeCIS=".$CodeCIS;
+		$req2=$req2." AND specialite.CodeCIS=".$CodeCIS;
 	}
 	if($forme!=""){
-		$req=$req."AND Forme_pharmaceutique LIKE '%".$forme."%'";
-		$req2=$req2."AND Forme_pharmaceutique LIKE '%".$forme."%'";
+		$req=$req." AND Forme_pharmaceutique LIKE '%".$forme."%'";
+		$req2=$req2." AND Forme_pharmaceutique LIKE '%".$forme."%'";
 	}
-	$req=$req."AND favoris.CodeCIS=specialite.CodeCIS GROUP BY specialite.CodeCIS ORDER BY occurence DESC LIMIT 5 ";
-	$req2=$req2."AND favoris.CodeCIS=specialite.CodeCIS GROUP BY favoris.CodeCIS";
-	
+	$req=$req." AND favoris.CodeCIS=specialite.CodeCIS GROUP BY favoris.CodeCIS ORDER BY occurence DESC LIMIT 5 ";
+	$req2=$req2." AND favoris.CodeCIS=specialite.CodeCIS GROUP BY favoris.CodeCIS";
 	$rep=$bdd->query($req);
 	$rep2=$bdd->query($req2);
 	$resultatreq2=0;
