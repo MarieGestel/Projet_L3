@@ -121,23 +121,12 @@ session_start();
 		$repPres ->closeCursor();
 		$repgene ->closeCursor();
 		$repSub ->closeCursor();
-		
-	if (isset($_SESSION['client'])){
-
-	echo "<form action='AjouterFavoris.php' method='post' autocomplete='on'>
-	<p>
-	<input  type='hidden' name='codeCIS' value='".$CodeCIS."'/>
-	<input class='recherche' type='submit' value='Ajouter aux favoris'>
-	</p>
-	</form>
-	";
-	}
 	
-	$req="SELECT specialite.CodeCIS, denomination_medicament, count(*) as occurence FROM specialite, favoris WHERE 1=1 ";
+	$req="SELECT specialite.CodeCIS, Denomination_medicament, count(*) as occurence FROM specialite, favoris WHERE 1=1 ";
 	$req2="SELECT count(*) FROM specialite, favoris WHERE 1=1 ";
 	if($nom!=""){
-		$req=$req." AND denomination_medicament LIKE '%".$nom."%' ";
-		$req2=$req2." AND denomination_medicament LIKE '%".$nom."%' ";
+		$req=$req." AND Denomination_medicament LIKE '%".$nom."%' ";
+		$req2=$req2." AND Denomination_medicament LIKE '%".$nom."%' ";
 	}
 	if($voieAdm!=""){
 		$req=$req." AND Voie_administration LIKE '%".$voieAdm."%'";
@@ -153,6 +142,7 @@ session_start();
 	}
 	$req=$req." AND favoris.CodeCIS=specialite.CodeCIS GROUP BY favoris.CodeCIS ORDER BY occurence DESC LIMIT 5 ";
 	$req2=$req2." AND favoris.CodeCIS=specialite.CodeCIS GROUP BY favoris.CodeCIS";
+
 	$rep=$bdd->query($req);
 	$rep2=$bdd->query($req2);
 	$resultatreq2=0;
@@ -166,17 +156,22 @@ session_start();
 	if($resultatreq2!=0){
 		echo "<p class='cat'> D'autres ont mis en favoris : </p>"; 
 	}
-	
-	
 		while ($mat=$rep->fetch()){
-			echo "<p class='resultatRecherche'> Code CIS : <a href='medicament.php?CodeCIS=".$mat['CodeCIS']."&nom=".$nom."&voieAdm=".$mat['Voie_administration']."&forme=".$mat['Forme_pharmaceutique']."'>".$mat['CodeCIS']."</a> |  Nom du médicament : ".$mat['denomination_medicament']." </br> </p>";
+			echo "<p class='resultatRecherche'> Code CIS : <a href='medicament.php?CodeCIS=".$mat['CodeCIS']."&nom=".$nom."&voieAdm=".$voieAdm."&forme=".$forme."'>".$mat['CodeCIS']."</a> |  Nom du médicament : ".$mat['Denomination_medicament']." </br> </p>";
 		}
 		$rep->closeCursor();
 	
-	
-		
+	if (isset($_SESSION['client'])){
+
+		echo "<form action='AjouterFavoris.php' method='post' autocomplete='on'>
+		<p>
+		<input  type='hidden' name='codeCIS' value='".$CodeCIS."'/>
+		<input class='recherche' type='submit' value='Ajouter aux favoris'>
+		</p>
+		</form>
+		";
+	}
 	echo" <p id='retour'> <a href='recherche.php?nom=".$nom."&voieAdm=".$voieAdm."&forme=".$forme."' > Retour vers la recherche </a> </p>";
-	
 	?>
 	</div>
 
