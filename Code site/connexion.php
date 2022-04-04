@@ -27,9 +27,8 @@
 	<a 	href="inscription.php" > Je ne possède pas encore de compte </a>
 </div>
 	<div class='liensBas'>
-	<a 	href="quiSommesNous.php" >Qui sommes-nous ? </a>
+	<a 	href="quisommesnous.php" >Qui sommes-nous ? </a>
 	<a 	href="contact.php" > Contact </a>
-	<a 	href="mentionLegales.php" >Mentions légales </a>
 	<a 	href="donneesPersonnelles.php" > Données personnelles </a>
 	<a 	href="baseDeDonnees.php" > Base de données </a>
 	</div>

@@ -31,7 +31,7 @@ $datay=array();
 $valx=array();
 		while ($ligne = $rep ->fetch()){
 		array_push($datay, $ligne['Nombre']);	
-		array_push($valx, $ligne['Taux_remboursement']);	
+		array_push($valx, $ligne['Taux_remboursement']."%");	
 		}
 		$rep ->closeCursor();
 		

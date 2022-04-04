@@ -39,6 +39,9 @@
 
 	<div id='graphique'>
 	<h2> Top 5 des médicaments en favoris : </h2>
+	<?php
+	require('graphiqueTopFavoris.php');
+	?>
 	<div> <img src="favoris.png" alt ="graphique Favoris" /></div> 
 
 	<h2> Top 10 des meilleurs taux de remboursements par rapport à la voie ou à la forme : </h2>
@@ -243,7 +246,6 @@
 	<div class='liensBas'>
 	<a 	href="quisommenous.php" >Qui sommes-nous ? </a>
 	<a 	href="contact.php" > Contact </a>
-	<a 	href="mentionLegales.php" >	Mentions légales </a>
 	<a 	href="donneesPersonnelles.php" > Données personnelles </a>
 	<a 	href="baseDeDonnees.php" > Base de données </a>
 	</div>

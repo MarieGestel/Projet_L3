@@ -86,7 +86,7 @@ session_start();
 		<p class='cat'> Prix </p>  
 		<p class='info'> Min ".$matPres['prix_min']." € | Max ". $matPres['Prix_max']." € </br> </p> 
 		<p class='cat'> Taux de remboursement </br></p> 
-		<p class='info'>".$matPres['Taux_remboursement']."</p>";
+		<p class='info'>".$matPres['Taux_remboursement']."%</p>";
 		echo "</span> ";
 	}
 
@@ -133,7 +133,6 @@ session_start();
 	<div class='liensBas'>
 	<a 	href="quisommenous.php" > Qui sommes-nous ? </a>
 	<a 	href="contact.php" > Contact </a>
-	<a 	href="mentionLegales.php" > Mentions légales </a>
 	<a 	href="donneesPersonnelles.php" > Données personnelles </a>
 	<a 	href="baseDeDonnees.php" > Base de données </a>
 </div>

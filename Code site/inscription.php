@@ -3,8 +3,9 @@ session_start();
 require "PHPMailer/PHPMailerAutoload.php";
 require('bd.php');
 //$bdd = new PDO('mysql:host=localhost;dbname=bd_manel;charset=utf8', 'root', 'root');
-//$bdd = getBDMarie() ;
+$bdd = getBDMarie() ;
 
+/* //Essai mail de confirmation
 if(isset($_POST['s\'inscrire'])){
     if(!empty($_post['nom']) && !empty($_POST['prenom']) && !empty($_POST['date']) && !empty($_POST['sexe']) && !empty($_POST['adr']) && !empty($_POST['num'])&& !empty($_POST['mail1']) && !empty($_POST['mail2']) && !empty($_POST['pass1'])&& !empty($_POST['pass2'])){
         $cle = rand(10000, 900000);
@@ -19,7 +20,7 @@ if(isset($_POST['s\'inscrire'])){
         $mdp=md5($_POST['pass1']);
         $mdp2=md5($_POST['pass2']);
   
-        $insererinscription = $bdd->prepare('INSERT INTO inscription(nom,prenom,date,sexe,adr,num,mail1,mail2,pass1,pass2, cle,confirme )VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+        $insererinscription = $bdd->prepare('INSERT INTO Inscription(nom,prenom,date,sexe,adr,num,mail1,mail2,pass1,pass2, cle,confirme )VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
         $insererUser->execute(array($nom, $prenom, $date, $sexe, $adr,$num, $mail1, $mail2, $pass1, $pass2, $cle, 0 ));
         
         $recupinscription = $bdd->prepare('SELECT* FROM inscription WHERE nom=?');
@@ -65,7 +66,7 @@ if(isset($_POST['s\'inscrire'])){
     }else{
         echo "veuiller completer tout les champs";
     }
-}
+} */
 ?>
 <!DOCTYPE html>
 <html>
@@ -102,9 +103,8 @@ if(isset($_POST['s\'inscrire'])){
     </div>
 
     <div class='liensBas'>
-       <a 	href="quiSommesNous.php" > Qui sommes-nous ? </a>
+       <a 	href="quisommenous.php" > Qui sommes-nous ? </a>
        <a 	href="contact.php" > Contact </a>
-       <a 	href="mentionLegales.php" > Mentions légales </a>
        <a 	href="donneesPersonnelles.php" > Données personnelles </a> 
        <a 	href="baseDeDonnees.php" > Base de données </a>
     </div>
