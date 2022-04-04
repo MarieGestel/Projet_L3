@@ -38,7 +38,7 @@ if($compter!=0){
 if ($estpresent==0){ 
     $voie="noData" ;
     $forme="noData";
-    echo '<meta http-equiv="refresh" content="0; url=donneesclees.php?forme='.$forme.'&voie='.$voie.'"/>'; 
+    echo '<meta http-equiv="refresh" content="0; url=graphiqueTop10_remboursement.php?forme='.$forme.'&voie='.$voie.'"/>'; 
 
 }else{
     if( $voie!="" || $forme!=""){
@@ -102,6 +102,12 @@ if ($estpresent==0){
         }
     }
     $graph->title->Set($titre); 
+    
+    // Titre pour l'axe horizontal(axe x) et vertical (axe y)
+    $graph->xaxis->title->Set("CodeCIS");
+    $graph->yaxis->title->Set("Taux de remboursement");
+    $graph->yaxis->title->SetFont(FF_FONT1,FS_BOLD);
+    $graph->xaxis->title->SetFont(FF_FONT1,FS_BOLD);
 
     //$graph->stroke();
 
@@ -110,7 +116,7 @@ if ($estpresent==0){
 		unlink('remboursement_top10.png');
 	}
 	$graph->Stroke('remboursement_top10.png'); 
-    echo '<meta http-equiv="refresh" content="0; url=donneesclees.php?forme='.$forme.'&voie='.$voie.'"/>'; 
+    echo '<meta http-equiv="refresh" content="0; url=graphiqueTop10_remboursement.php?forme='.$forme.'&voie='.$voie.'"/>'; 
 
 }
 

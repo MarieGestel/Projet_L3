@@ -448,23 +448,28 @@ margin-left : 20%;
 	border:black 1px solid;
 }
 
-
-#graphique img{
+.graphique img{
 	width: 50%;
 	border: 1px black solid ;
 	margin-left: 25%;
 
 }
-#graphique h2{
+.graphique h2{
 	background-color: white;
-	height: 50px;
-	padding-top: 20px;
+	height: 60px;
+	padding-top: 10px;
+	font-size: 25px;
+} 
+
+.graphique form{
+margin-top: -50px;
 }
 
+#codecis{
+	background-color: white;
+	padding-bottom: 10px;
+}
 
-/* .graphique{
-text-align:center;
-}*/
 
 .noData{
 text-align : center;

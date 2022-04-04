@@ -37,10 +37,10 @@ $valx=array();
 		
 if(count($datay)==0 || count($valx)==0){
 	if($forme!=""){
-	echo '<meta http-equiv="refresh" content="0; url=donneesclees.php?forme=noData">';	
+	echo '<meta http-equiv="refresh" content="0; url=graphique_taux_remboursement.php?forme=noData">';	
 	}
 	else{
-	echo '<meta http-equiv="refresh" content="0; url=donneesclees.php?voieAdm=noData">';	
+	echo '<meta http-equiv="refresh" content="0; url=graphique_taux_remboursement.php?voieAdm=noData">';	
 	}
 }else{
 
@@ -83,7 +83,7 @@ if(file_exists('remboursement.png')){
 }
 $graph->Stroke('remboursement.png');  
 
-echo '<meta http-equiv="refresh" content="0; url=donneesclees.php?formePhar='.$forme.'&voieAdm='.$voieAdm.'">';
+echo '<meta http-equiv="refresh" content="0; url=graphique_taux_remboursement.php?formePhar='.$forme.'&voieAdm='.$voieAdm.'">';
 }
 
 
