@@ -49,6 +49,7 @@
        </p>
       <img src="Images/universite-paul-valery-montpellier-3.png">
       <img src="Images/logo_miashs.png">
+	<img id="logo" src="Images/MEDIC'Info.png">
 
        <div class='liensBas'>
 	      <a href="quisommenous.php" > Qui sommes-nous ? </a>

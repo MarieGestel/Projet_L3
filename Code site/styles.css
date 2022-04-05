@@ -477,3 +477,10 @@ font-weight : bold;
 font-size:1.3em;	
 } 
 
+
+#logo{
+margin-top:-1%;
+width : 190px;
+height : 190px;
+float: left;
+}
