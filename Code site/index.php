@@ -1,7 +1,7 @@
 <?php
 	session_start();
  	require('bd.php');
-	$bdd = getBDMarie() ; 
+	$bdd = getBD() ; 
 ?>
 
 <!DOCTYPE html>
@@ -13,22 +13,29 @@
 		<title>Medic'Info</title>
 	</head>
 	
+
+
 	<body id="index">
     <?php 
+echo '<img id="log" src="Images/Sanstitre.png">';
 		echo '<nav>';
 		echo '<div class="menu">';
+		//echo '<img id="log" src="Images/MEDICInfo.png">';
 		if (isset($_SESSION['client'])){
             //echo "Bonjour M. ".$_SESSION['nom']." ".$_SESSION['prenom'];
             //echo "<br />";
    		 	echo '<a href="favoris.php" > Favoris </a>';
 			echo "<a href='profil.php'> profil </a>";
 			echo '<a href="deconnexion.php"> Déconnexion </a>';
+
     	} else {
 			echo "<a 	href='inscription.php' > Inscription </a>";
 			echo '<a 	href="connexion.php" > Connexion </a>'; 
     	} 
     ?>
+
 	</div>
+
 	</nav>
 	<h1> <a id="contact" href="index.php" > MEDIC'INFO </a>  </h1>
 	
