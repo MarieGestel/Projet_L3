@@ -16,6 +16,7 @@ session_start();
 	
 	<body id='medicament'>
 	<?php 
+	//echo '<img id="log" src="Images/Sanstitre.png">';
 	echo '<nav>';
 	echo '<div class="menu">';
 	if (isset($_SESSION['client'])){

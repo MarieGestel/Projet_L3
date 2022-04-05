@@ -16,7 +16,7 @@
 
 	<body id="index">
     <?php 
-echo '<img id="log" src="Images/Sanstitre.png">';
+	echo '<img id="log" src="Images/Sanstitre.png">';
 		echo '<nav>';
 		echo '<div class="menu">';
 		//echo '<img id="log" src="Images/MEDICInfo.png">';
@@ -34,7 +34,6 @@ echo '<img id="log" src="Images/Sanstitre.png">';
     ?>
 
 	</div>
-
 	</nav>
 	<h1> <a id="contact" href="index.php" > MEDIC'INFO </a>  </h1>
 	
