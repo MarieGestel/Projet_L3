@@ -90,9 +90,11 @@ session_start();
 		echo "</span> ";
 	}
 
+	$substance=0;
 	echo "<p class='cat'> Substances Utilisées : </p>" ; 
 	while ($matSub=$repSub->fetch()){	
 		echo "<span id='bulle'> <p class='info'> substance : ".$matSub['substance']." | dose : ". $matSub['dose']." </br> </p>";
+		$substance=$matSub['substance'];
 	}
 	echo "</span> ";
 
@@ -122,28 +124,26 @@ session_start();
 		$repgene ->closeCursor();
 		$repSub ->closeCursor();
 	
-	$req="SELECT specialite.CodeCIS, Denomination_medicament,Forme_pharmaceutique ,Voie_administration, count(*) as occurence FROM specialite, favoris WHERE 1=1 ";
-	//$req="SELECT specialite.CodeCIS, Denomination_medicament,Forme_pharmaceutique ,Voie_administration, count(*) as occurence FROM specialite, favoris, composants, est_compose_de WHERE est_compose_de.CodeCIS=specialite.CodeCIS AND est_compose_de.Code_substance=composants.Code_substance";
-	$req2="SELECT count(*) FROM specialite, favoris WHERE 1=1 ";
-	if($nom!=""){
-		$req=$req." AND Denomination_medicament LIKE '%".$nom."%' ";
-		$req2=$req2." AND Denomination_medicament LIKE '%".$nom."%' ";
+	$req="SELECT specialite.CodeCIS, Denomination_medicament,Forme_pharmaceutique ,Voie_administration FROM specialite, favoris, composants, est_compose_de WHERE est_compose_de.CodeCIS=specialite.CodeCIS AND est_compose_de.Code_substance=composants.Code_substance AND composants.nom_substance LIKE '%".$substance."%'";
+	$req2="SELECT count(*) FROM specialite, favoris, composants, est_compose_de WHERE est_compose_de.CodeCIS=specialite.CodeCIS AND est_compose_de.Code_substance=composants.Code_substance AND composants.nom_substance LIKE '%".$substance."%' ";
+/* 	if($nom!=""){
+		//$req=$req." AND Denomination_medicament LIKE '%".$nom."%' ";
+		//$req2=$req2." AND Denomination_medicament LIKE '%".$nom."%' ";
 	}
 	if($voieAdm!=""){
-		$req=$req." AND Voie_administration LIKE '%".$voieAdm."%'";
-		$req2=$req2." AND Voie_administration LIKE '%".$voieAdm."%'";
-	}
+		//$req=$req." AND Voie_administration LIKE '%".$voieAdm."%'";
+		//$req2=$req2." AND Voie_administration LIKE '%".$voieAdm."%'";
+	} */
 	if($CodeCIS!=""){
-		$req=$req." AND specialite.CodeCIS=".$CodeCIS;
-		$req2=$req2." AND specialite.CodeCIS=".$CodeCIS;
+		$req=$req." AND specialite.CodeCIS!=".$CodeCIS;
+		$req2=$req2." AND specialite.CodeCIS!=".$CodeCIS;
 	}
-	if($forme!=""){
-		$req=$req." AND Forme_pharmaceutique LIKE '%".$forme."%'";
-		$req2=$req2." AND Forme_pharmaceutique LIKE '%".$forme."%'";
-	}
-	$req=$req." AND favoris.CodeCIS=specialite.CodeCIS GROUP BY favoris.CodeCIS ORDER BY occurence DESC LIMIT 5 ";
+/* 	if($forme!=""){
+		//$req=$req." AND Forme_pharmaceutique LIKE '%".$forme."%'";
+		//$req2=$req2." AND Forme_pharmaceutique LIKE '%".$forme."%'";
+	}  */
+	$req=$req." AND favoris.CodeCIS=specialite.CodeCIS  GROUP BY favoris.CodeCIS ORDER BY specialite.CodeCIS DESC LIMIT 5 ";
 	$req2=$req2." AND favoris.CodeCIS=specialite.CodeCIS GROUP BY favoris.CodeCIS";
-
 	$rep=$bdd->query($req);
 	$rep2=$bdd->query($req2);
 	$resultatreq2=0; 
@@ -156,10 +156,10 @@ session_start();
 
 	if($resultatreq2!=0){
 		echo "<p class='cat'> D'autres ont mis en favoris : </p>"; 
-	}
 		while ($mat=$rep->fetch()){
 			echo "<p class='resultatRecherche'> Code CIS : <a href='medicament.php?CodeCIS=".$mat['CodeCIS']."&nom=".$nom."&voieAdm=".$mat['Voie_administration']."&forme=".$mat['Forme_pharmaceutique']."'>".$mat['CodeCIS']."</a> |  Nom du médicament : ".$mat['Denomination_medicament']." </br> </p>";
-		}
+	}
+	}
 		$rep->closeCursor();
 	
 	if (isset($_SESSION['client'])){
