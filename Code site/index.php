@@ -1,7 +1,6 @@
 <?php
 	session_start();
  	require('bd.php');
-	$bdd = getBD() ; 
 ?>
 
 <!DOCTYPE html>
