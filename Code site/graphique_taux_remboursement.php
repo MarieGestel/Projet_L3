@@ -135,9 +135,9 @@
 	</form>  
 	
 	<?php
-	if(isset($_GET['formePhar']) ){
-		if($_GET['formePhar']!=""){
-			if($_GET['formePhar']=="noData"){
+	if(isset($_GET['forme']) ){
+		if($_GET['forme']!=""){
+			if($_GET['forme']=="noData"){
 				echo"<div class='noData'> <p> Aucune donnée n'est disponible pour votre sélection. </p> </div>";
 			}
 			else{
