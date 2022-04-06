@@ -83,7 +83,7 @@ if(file_exists('remboursement.png')){
 }
 $graph->Stroke('remboursement.png');  
 
-echo '<meta http-equiv="refresh" content="0; url=graphique_taux_remboursement.php?formePhar='.$forme.'&voieAdm='.$voieAdm.'">';
+echo '<meta http-equiv="refresh" content="0; url=graphique_taux_remboursement.php?forme='.$forme.'&voieAdm='.$voieAdm.'">';
 }
 
 

@@ -38,7 +38,7 @@
 	<h2><a href='pageRecherche.php'> Recherche </a> <a href='donneesclees.php'> Données clées </a> </h2>
 
 	<div class='graphique'>
-	<h2> Pourcentage des médicaments rembourser à un certain taux selon la Voie d'administration : </h2>
+	<h2> Pourcentage des médicaments remboursés à un certain taux selon la Voie d'administration : </h2>
 	<form action='graphiqueRemboursement.php' method='get' autocomplete='on'>
 	<select class='recherche' name='voieAdm'  id='voieAdm'>
 	<option value=""> voie d'administration </option>
@@ -108,7 +108,7 @@
 		} 
 	}
 	?>
-	<h2> Pourcentage des médicaments rembourser à un certain taux selon la forme Pharmaceutique : </h2>
+	<h2> Pourcentage des médicaments remboursés à un certain taux selon la forme Pharmaceutique : </h2>
 	<form action='graphiqueRemboursement.php' method='get' autocomplete='on'>
 	<select class='recherche' name="formePhar" id='forme'>
 	<option value=""> forme pharmaceutique</option>
