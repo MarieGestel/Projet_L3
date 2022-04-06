@@ -23,7 +23,6 @@ include('bd.php');
         
        	$result = $bdd->query("select specialite.CodeCIS as CodeCIS, specialite.Denomination_medicament as Denomination_medicament, specialite.forme_pharmaceutique as forme_pharmaceutique, specialite.Voie_administration as Voie_administration from specialite,Clients,favoris Where Clients.id_client=favoris.id_client and 
         favoris.CodeCIS=specialite.CodeCIS and Clients.id_client='".$_SESSION['id_client']."'");
-		//requête qui récupère les informations des médicaments mis en favoris et l'identifiant du client lorsque celui-ci est connecté
 		?>
 
 		<h2> <strong> Récapitulatif de vos favoris: </strong> </h2>
@@ -48,7 +47,6 @@ include('bd.php');
         }else{
             echo "Vous n'avez pas de favoris";
             echo '<meta http-equiv="refresh" content="1; url=index.php">';
-			//message qui apparait lorsqu'aucun médicaments n'a été mis en favoris
         }
             
         ?>

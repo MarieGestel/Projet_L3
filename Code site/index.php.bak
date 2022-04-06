@@ -26,11 +26,10 @@
    		 	echo '<a href="favoris.php" > Favoris </a>';
 			echo "<a href='profil.php'> profil </a>";
 			echo '<a href="deconnexion.php"> Déconnexion </a>';
-			//fait apparaitre les liens favoris, profil et déconnexion lorsque le client et connecter
+
     	} else {
 			echo "<a 	href='inscription.php' > Inscription </a>";
 			echo '<a 	href="connexion.php" > Connexion </a>'; 
-			//liens qui apparaissent en haut de page lorsque le client n'est pas encore inscrit et connecté
     	} 
     ?>
 
