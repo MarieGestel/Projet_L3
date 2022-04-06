@@ -1,7 +1,7 @@
 <?php
-	session_start();
- 	require('bd.php');
-	$bdd = getBD() ; 
+	session_start(); // Permet de démarrer une session
+	require('bd.php'); // importe le fichier bd.php
+   $bdd = getBD() ; // appel la focntion getBD() 
 ?>
 
 <!DOCTYPE html>
@@ -22,12 +22,12 @@
 		echo '<nav>';
 		echo '<div class="menu">';
 		if (isset($_SESSION['client'])){
-            //echo "Bonjour M. ".$_SESSION['nom']." ".$_SESSION['prenom'];
-            //echo "<br />";
+			//Si utilisateur connecté
    		 	echo '<a href="favoris.php" > Favoris </a>';
 			echo "<a href='profil.php'> profil </a>";
 			echo '<a href="deconnexion.php"> Déconnexion </a>';
     	} else {
+			//Si aucun utilisateur connecté
 			echo "<a 	href='inscription.php' > Inscription </a>";
 			echo '<a 	href="connexion.php" > Connexion </a>'; 
     	} 
@@ -40,7 +40,7 @@
 
 	<div class='graphique'>
     <h2> Top 5 des médicaments en favoris : </h2>
-	<?php require('graphiqueTopFavoris.php'); ?>
+	<?php require('graphiqueTopFavoris.php'); // importe le fichier garphiqueTopFavoris.php ?>
 	<div> <img src="favoris.png" alt ="graphique Favoris" /></div>
 
 	<h2> <a href='graphiqueTop10_remboursement.php'>Top 10 des taux de remboursements selon la voie d'administration et/ou la forme pharmaceutique  </a> </h2>

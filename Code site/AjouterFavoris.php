@@ -1,6 +1,6 @@
 <?php
-session_start();
-include('bd.php');  
+	session_start(); // Permet de démarrer une session
+    require('bd.php'); // importe le fichier bd.php
 ?>
 <!DOCTYPE html>
 <html>

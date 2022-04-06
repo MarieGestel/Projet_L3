@@ -12,7 +12,9 @@
 	<h2> <strong>Page de Connexion</strong> </h2>
 		
 	<form  action="connecter.php" method="post" autocomplete="off">
+	<!-- Formulaire d'inscription  -->
 	<?php
+	// recuperation de mail envoyé via la redirection si les paramètre rentré ne correspondait pas
 	if (isset($_GET["mail"])){ 
 		$mail=$_GET['mail'] ; 
 	}else{ 

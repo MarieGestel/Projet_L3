@@ -1,4 +1,5 @@
 <?php
+	// Permet l'activation de la session du client connecté
 	session_start();
 ?>
 
@@ -16,12 +17,12 @@
 		echo '<nav>';
 		echo '<div class="menu">';
 		if (isset($_SESSION['client'])){
-            //echo "Bonjour M. ".$_SESSION['nom']." ".$_SESSION['prenom'];
-            //echo "<br />";
+			//Si utilisateur connecté
    		 	echo '<a href="favoris.php" > Favoris </a>';
 			echo "<a href='profil.php'> profil </a>";
 			echo '<a href="deconnexion.php"> Déconnexion </a>';
     	} else {
+			//Sinon
 			echo "<a 	href='inscription.php' > Inscription </a>";
 			echo '<a 	href="connexion.php" > Connexion </a>'; 
     	} 
@@ -32,6 +33,7 @@
 	<h1> <a href="index.php" > MEDIC'INFO </a>  </h1>
 
 	<div id ="contacter" > 
+		<!-- Formulaire de contact  -->
 		<h2> Nous contacter : </h2>
 		<form method="post" action="message.php"  autocomplete="off">
 			<p> Nom : </p>
@@ -45,6 +47,7 @@
 			<p> <TEXTAREA rows="3" name="commentaires"> Votre commentaire </TEXTAREA>
 			<p><INPUT  type="submit" value="Envoyer"> </p>
 		</form>
+		
 	<div class ='liensBas'>
 	<a 	href="quisommenous.php" > Qui sommes-nous ? </a>
 	<a 	href="contact.php" > Contact </a>
