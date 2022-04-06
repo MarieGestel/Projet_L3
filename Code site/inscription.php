@@ -3,7 +3,7 @@ session_start();
 require "PHPMailer/PHPMailerAutoload.php";
 require('bd.php');
 //$bdd = new PDO('mysql:host=localhost;dbname=bd_manel;charset=utf8', 'root', 'root');
-$bdd = getBDMarie() ;
+$bdd = getBD() ;
 
 /* //Essai mail de confirmation
 if(isset($_POST['s\'inscrire'])){

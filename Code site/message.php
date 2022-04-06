@@ -14,7 +14,7 @@
         <?php
             include('bd.php');
             function enregistrer($n, $p,$mail,$sujet,$comm){
-                $seconnecter=getBDMarie();
+                $seconnecter=getBD();
                 if (!$seconnecter){
                     $MessageConnexion = die (" la connection impossible");
                 } else {

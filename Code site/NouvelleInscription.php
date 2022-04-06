@@ -11,7 +11,7 @@
     <?php
        function nouvelleIncription($n, $p, $adr,$num,$mail,$mdp,$sexe,$date)
        {
-           $seconnecter=getBDMarie();
+           $seconnecter=getBD();
             if (!$seconnecter){
                 $MessageConnexion = die (" la connection impossible");
             }

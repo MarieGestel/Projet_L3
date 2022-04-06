@@ -1,7 +1,7 @@
 <?php
 	session_start();
  	require('bd.php');
-	$bdd = getBDMarie() ; 
+	$bdd = getBD() ; 
 ?>
 
 <!DOCTYPE html>
