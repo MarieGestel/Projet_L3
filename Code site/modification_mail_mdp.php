@@ -13,7 +13,7 @@
 
     <?php 
         function modifier_mail($mail,$id){
-            $seconnecter=getBDMarie();
+            $seconnecter=getBD();
             if (!$seconnecter){
                 $MessageConnexion = die (" la connection impossible");
             } else {

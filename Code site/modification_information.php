@@ -14,7 +14,7 @@
     <?php 
             function modifier_information($n,$p,$date,$adr,$num,$id)
            {
-               $seconnecter=getBDMarie();
+               $seconnecter=getBD();
                 if (!$seconnecter){
                     $MessageConnexion = die (" la connection impossible");
                 }
