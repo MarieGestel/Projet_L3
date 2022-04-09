@@ -1,11 +1,10 @@
 <?php
-session_start();
-require "PHPMailer/PHPMailerAutoload.php";
-require('bd.php');
-//$bdd = new PDO('mysql:host=localhost;dbname=bd_manel;charset=utf8', 'root', 'root');
-$bdd = getBD() ;
+session_start();// Permet l'activation de la session du client connecté
+require('bd.php'); // importe le fichier bd.php
+$bdd = getBD() ; // appel la focntion getBD() 
 
 /* //Essai mail de confirmation
+//require "PHPMailer/PHPMailerAutoload.php";
 if(isset($_POST['s\'inscrire'])){
     if(!empty($_post['nom']) && !empty($_POST['prenom']) && !empty($_POST['date']) && !empty($_POST['sexe']) && !empty($_POST['adr']) && !empty($_POST['num'])&& !empty($_POST['mail1']) && !empty($_POST['mail2']) && !empty($_POST['pass1'])&& !empty($_POST['pass2'])){
         $cle = rand(10000, 900000);

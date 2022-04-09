@@ -1,7 +1,7 @@
 <?php
-	session_start();
- 	require('bd.php');
-	$bdd = getBD() ; 
+session_start();// Permet l'activation de la session du client connecté
+require('bd.php'); // importe le fichier bd.php
+$bdd = getBD() ; // appel la focntion getBD() 
 ?>
 
 <!DOCTYPE html>
@@ -17,9 +17,7 @@
     <?php 
 		echo '<nav>';
 		echo '<div class="menu">';
-        if (isset($_SESSION['client'])){
-            //echo "Bonjour M. ".$_SESSION['nom']." ".$_SESSION['prenom'];
-            //echo "<br />";
+        if (isset($_SESSION['client'])){ // Savoir si le client est connecté 
     	echo '<a href="favoris.php" > favoris </a>';
     	echo '<a href="deconnexion.php"> Déconnexion </a>';
         echo '<a href="profil.php"> Profil </a>';
@@ -28,12 +26,13 @@
 
         echo "<h1> 	<a href='index.php' > MEDIC'INFO </a>  </h1>";
         echo "</div >";
-
+        //requete pour récupérer les information du client 
         $client = $bdd->query("select * from Clients where id_client='".$_SESSION['id_client']."'");
         $mat = $client ->fetch(); 
 
         echo " <div class='profil'>";
         echo "<h2> Modifier mes informations : </h2>";
+        // Input pour modifier les infrmations
         echo "<form action='modification_information.php' method='post' autocomplete='off'>";
         //echo '<p> <strong> ajouter une photo  :  </strong> <input type="file" name="photo" /> </p>';
         echo '<p> <strong> Modifier mon nom  :  </strong> <input type="text" name="nom" value='.$_SESSION['nom'].'> </p>';

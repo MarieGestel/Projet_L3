@@ -1,18 +1,13 @@
 <?php
-	session_start();
-	require('bd.php');
+session_start();// Permet l'activation de la session du client connecté
+require('bd.php'); // importe le fichier bd.php
 ?>
 
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta http-equiv="Content-Type"
-		content="text/html; charset=UTF-8" />
-		
-		<link rel="stylesheet" href="styles.css"
-		type="text/css" media="screen" />
-		
-		
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<link rel="stylesheet" href="styles.css" type="text/css" media="screen" />
 		<title>Medic'Info</title>
 	</head>
 	
@@ -21,12 +16,12 @@
 		echo '<nav>';
 		echo '<div class="menu">';
 		if (isset($_SESSION['client'])){
-            //echo "Bonjour M. ".$_SESSION['nom']." ".$_SESSION['prenom'];
-            //echo "<br />";
+			//Si utilisateur connecté
    		 	echo '<a href="favoris.php" > Favoris </a>';
 			echo "<a href='profil.php'> profil </a>";
 			echo '<a href="deconnexion.php"> Déconnexion </a>';
     	} else {
+			//Sinon
 			echo "<a 	href='inscription.php' > Inscription </a>";
 			echo '<a 	href="connexion.php" > Connexion </a>'; 
     	} 
@@ -125,8 +120,9 @@ if($nom!="" || $voieAdm!="" || $codeCIS!="" || $forme!=""){
 	} 
 	
 	
-/* if($nom!="" && $voieAdm!="" && $codeCIS!=""){
-	\\Ancien code pour la recherche
+/*  \\Ancien code pour la recherche
+	
+	if($nom!="" && $voieAdm!="" && $codeCIS!=""){
 	$present =$bdd->query("SELECT count(*)  FROM specialite WHERE denomination_medicament LIKE '%".$nom."%' AND CodeCIS=".$codeCIS." AND Voie_administration LIKE '%".$voieAdm."%'");
 	$ligne=0;
 	while ($result=$present->fetch()){

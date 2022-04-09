@@ -1,20 +1,12 @@
 <?php
-if(isset($_GET['forme'])){
-	$forme=$_GET['forme'];
-}else{
-	$forme="";
-}
-if(isset($_GET['voieAdm'])){
-	$voie=$_GET['voieAdm'];
-}else{
-	$voie="";
-}
-
+//Connexion à la base de données 
 $bdd = new PDO('mysql:host=localhost;dbname=bdd_medicament;charset=utf8', 'root', 'root');
+
+// Requête permettant de savoir les codesCIS les plus mis en favoris dans l'ordre décroissant et limité à 5
 $rep = $bdd->query('SELECT CodeCIS, count(*) as occurence FROM `favoris` GROUP BY CodeCIS ORDER BY occurence DESC LIMIT 5 ');
 
-$datay=array();
-$valx=array();
+$datay=array(); // tableau utilisé pour stocker les occurences d'un CodeCIS mis en favoris
+$valx=array();// tableau utilisé pour stocker les CodeCIS les plus mis en favoris
 		while ($ligne = $rep ->fetch()){
 		array_push($datay, $ligne['occurence']);	
 		array_push($valx, $ligne['CodeCIS']);	

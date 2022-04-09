@@ -21,16 +21,14 @@
 		echo '<div class="menu">';
 		//echo '<img id="log" src="Images/MEDICInfo.png">';
 		if (isset($_SESSION['client'])){
-            //echo "Bonjour M. ".$_SESSION['nom']." ".$_SESSION['prenom'];
-            //echo "<br />";
    		 	echo '<a href="favoris.php" > Favoris </a>';
 			echo "<a href='profil.php'> profil </a>";
 			echo '<a href="deconnexion.php"> Déconnexion </a>';
-			//fait apparaitre les liens favoris, profil et déconnexion lorsque le client et connecter
+			//fait apparaitre les liens favoris, profil et déconnexion lorsque le client est connecté
     	} else {
 			echo "<a 	href='inscription.php' > Inscription </a>";
 			echo '<a 	href="connexion.php" > Connexion </a>'; 
-			//liens qui apparaissent en haut de page lorsque le client n'est pas encore inscrit et connecté
+			//liens qui apparaissent en haut de page lorsque le client n'est pas encore inscrit ou connecté
     	} 
     ?>
 
@@ -44,13 +42,6 @@
 	</h2>
 
 	<p id='bienvenu'> Bienvenu(e) sur notre site ! </p>
-		
-	<?php
-	/*
-	require('graphiqueTopFavoris.php');
-	echo '<div id="imagesIndex"><img src="favoris.png" alt ="graphique" /> </div>';
-	*/
-	?>
 	
 	<div class='liensBas'>
 	<a 	href="quisommenous.php" >Qui sommes-nous ? </a>

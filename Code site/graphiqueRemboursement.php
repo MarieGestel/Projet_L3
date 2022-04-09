@@ -1,8 +1,9 @@
 <?php
-
+//Connexion à la base de données 
 $bdd = new PDO('mysql:host=localhost;dbname=bdd_medicament;charset=utf8', 'root', 'root');
 
 if(isset($_GET['formePhar'])){
+	// Requête permettant de savoir le pourcentage associé aux taux de remboursement selon la forme pharmaceutique entrée en paramètre
 	$voieAdm="";
 	$forme=$_GET['formePhar'];
 	$rep = $bdd->query('SELECT ((count(*)/(SELECT count(*) from presentation, specialite WHERE presentation.CodeCIS=specialite.CodeCIS
@@ -15,6 +16,7 @@ $titre="Pourcentages des médicaments par taux de remboursement pour la forme ph
 	}
 	
 elseif(isset($_GET['voieAdm'])){
+	// Requête permettant de savoir le pourcentage associé aux taux de remboursement selon la voie d'administration entrée en paramètre
 	$forme="";
 	$voieAdm=$_GET['voieAdm'];
 	$rep = $bdd->query('SELECT ((count(*)/(SELECT count(*) from presentation, specialite WHERE presentation.CodeCIS=specialite.CodeCIS
@@ -27,8 +29,9 @@ $titre="Pourcentages des médicaments par taux de remboursement pour la voie d'a
 	}
 
 
-$datay=array();
-$valx=array();
+$datay=array(); // tableau utilisé pour stocker les nombres associés aux taux 
+$valx=array();// tableau utilisé pour stocker les taux
+// récupération des informations de la requête précédente
 		while ($ligne = $rep ->fetch()){
 		array_push($datay, $ligne['Nombre']);	
 		array_push($valx, $ligne['Taux_remboursement']."%");	

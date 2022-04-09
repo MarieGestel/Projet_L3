@@ -1,7 +1,7 @@
 <?php
-	session_start();
- 	require('bd.php');
-	$bdd = getBD() ; 
+session_start();// Permet l'activation de la session du client connecté
+require('bd.php'); // importe le fichier bd.php
+$bdd = getBD() ; // appel la focntion getBD() 
 ?>
 
 <!DOCTYPE html>
@@ -22,12 +22,12 @@
 		echo '<nav>';
 		echo '<div class="menu">';
 		if (isset($_SESSION['client'])){
-            //echo "Bonjour M. ".$_SESSION['nom']." ".$_SESSION['prenom'];
-            //echo "<br />";
+			//Si utilisateur connecté
    		 	echo '<a href="favoris.php" > Favoris </a>';
 			echo "<a href='profil.php'> profil </a>";
 			echo '<a href="deconnexion.php"> Déconnexion </a>';
     	} else {
+			//Si aucun utilisateur connecté
 			echo "<a 	href='inscription.php' > Inscription </a>";
 			echo '<a 	href="connexion.php" > Connexion </a>'; 
     	} 
@@ -118,13 +118,16 @@
 	<input class='recherche' type="submit" value="Rechercher"> 
 	</form>
 	<?php
-	if(isset($_GET['forme']) || isset($_GET['voie'])|| isset($_GET['tableau'])){
+	if(isset($_GET['forme']) || isset($_GET['voie'])){ //Savoir si les variables existent
 		if($_GET['forme'] =="noData" || $_GET['voie']=="noData"){
 			echo "<div class='noData'> <p> Nous ne pouvons pas répondre à votre demande </p> </div>";
 		}else{
+			//récuperation des variables si elles existent 
             $voie=$_GET['voie'];
             $forme=$_GET['forme'];
 			$tableau=array();
+
+			//Requêtes permettant de récupérer les codeCIS associés au graphique
 			$recherche= 'SELECT specialite.CodeCIS as CodeCIS, specialite.denomination_medicament as denomination_medicament from specialite,presentation where specialite.CodeCIS=presentation.CodeCIS';
         	if($voie!=""){
             	$recherche=$recherche." AND specialite.Voie_administration LIKE '%".$voie."%' ";
@@ -135,11 +138,12 @@
         	$recherche=$recherche.' ORDER BY presentation.Taux_remboursement DESC LIMIT 10 ';	
         	$rechercher= $bdd->query($recherche);
 			
+			//insertion de l'image du graphique récupérer dans la page graphique_remboursement_top10
 			echo '<div><img src="remboursement_top10.png" alt ="graphique remboursement" /></div> ';
 			echo "<div id='codecis'>";
 			echo " <h2> liste des médicaments correspondant aux CodeCIS du graphique :
 			</br>(cliquez sur le codeCIS pour accéder à la page du médicament associé)  </h2>" ;
-			while ($ligne = $rechercher ->fetch()){
+			while ($ligne = $rechercher ->fetch()){ //Récupéreation des valeurs de la requetes 
 				echo "<p> <strong> Code CIS : <a href='medicament.php?CodeCIS=".$ligne['CodeCIS']."'>".$ligne['CodeCIS']."</a> |  Nom du médicament : ".$ligne['denomination_medicament']." <strong>  </br> </p>";
 			}
 			echo'</div>';

@@ -1,14 +1,8 @@
 <?php
-	session_start();
-    include('bd.php');  
-?>
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta http-equiv="Content-Type "content="text/html; charset=UTF-8" />
-		<link rel="stylesheet" href="styles.css" type="text/css" media="screen" />
+session_start();// Permet l'activation de la session du client connecté
+require('bd.php'); // importe le fichier bd.php
 
-    <?php
+// Fonction permettant d'envoyer les informations du client dans la table Clients afin de l'inscrire
        function nouvelleIncription($n, $p, $adr,$num,$mail,$mdp,$sexe,$date)
        {
            $seconnecter=getBD();
@@ -86,6 +80,7 @@
             echo '<meta http-equiv="refresh" content="1; url=inscription.php?nom='.$n.'&prenom='.$p.'&adr='.$adr.'&num='.$num.'&mail='.$mail.'"/>';
             echo "Il faut remplir tous les champs";
         } else{
+            // requête permettant de savoir si le client existe déjà
             $client = $bdd->query("select count(*) from Clients where mail='".$mail."' and motdepasse='".$mdp."'");
             $estPresent=0;
             while ($ligne = $client ->fetch()){
@@ -93,10 +88,13 @@
             }
             $client ->closeCursor();
             if($estPresent==0){
+                //S'il n'existe pas, utilisation de la fonction pour enregistrer le client dans la bd
                 nouvelleIncription($n, $p, $adr,$num,$mail,$mdp,$sexe,$date);
 
+                // requête permettant de récupérer les informations du client qui vient d'être inscrit 
                 $rep = $bdd->query('select * from Clients WHERE mail="'.$mail.'" AND motdepasse="'.$mdp.'"');
 
+                // démarrage d'une session associé à ce client
 				while ($client = $rep ->fetch()){
 	 				$_SESSION['id_client']=$client['id_client'];
 	 				$_SESSION['nom']=$client['nom'];

@@ -1,7 +1,7 @@
 <?php
-	session_start();
- 	require('bd.php');
-	$bdd = getBD() ; 
+session_start();// Permet l'activation de la session du client connecté
+require('bd.php'); // importe le fichier bd.php
+$bdd = getBD() ; // appel la focntion getBD() 
 ?>
 
 <!DOCTYPE html>
@@ -22,12 +22,12 @@
 		echo '<nav>';
 		echo '<div class="menu">';
 		if (isset($_SESSION['client'])){
-            //echo "Bonjour M. ".$_SESSION['nom']." ".$_SESSION['prenom'];
-            //echo "<br />";
+			//Si utilisateur connecté
    		 	echo '<a href="favoris.php" > Favoris </a>';
 			echo "<a href='profil.php'> profil </a>";
 			echo '<a href="deconnexion.php"> Déconnexion </a>';
     	} else {
+			//Si aucun utilisateur connecté
 			echo "<a 	href='inscription.php' > Inscription </a>";
 			echo '<a 	href="connexion.php" > Connexion </a>'; 
     	} 
@@ -98,12 +98,14 @@
 
 	<?php
 	if(isset($_GET['voieAdm']) ){
+		//récuperation de la variable voieAdm 
 		if($_GET['voieAdm']!=""){
 			if($_GET['voieAdm']=="noData"){
 				echo"<div class='noData'> <p> Aucune donnée n'est disponible pour votre sélection. </p> </div>";
 			}
 			else{
-			echo '<div><img src="remboursement.png" alt ="graphique" /> </div>';
+				//insertion de l'image du graphique récupérer dans la page graphiqueRemboursement
+				echo '<div><img src="remboursement.png" alt ="graphique" /> </div>';
 			}
 		} 
 	}
@@ -136,11 +138,13 @@
 	
 	<?php
 	if(isset($_GET['forme']) ){
+				//récuperation de la variable forme
 		if($_GET['forme']!=""){
 			if($_GET['forme']=="noData"){
 				echo"<div class='noData'> <p> Aucune donnée n'est disponible pour votre sélection. </p> </div>";
 			}
 			else{
+				//insertion de l'image du graphique récupérer dans la page graphiqueRemboursement
 			echo '<div> <img src="remboursement.png" alt ="graphique" /> </div>';
 			}
 		}

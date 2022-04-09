@@ -1,17 +1,9 @@
 <?php
-	session_start();
- 	require('bd.php');
-	$bdd = getBD() ; 
-?>
+session_start();// Permet l'activation de la session du client connecté
+require('bd.php'); // importe le fichier bd.php
+$bdd = getBD() ; // appel la focntion getBD() 
 
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<link rel="stylesheet" href="styles.css" type="text/css" media="screen" />
-		<title>Medic'Info</title>
-
-    <?php 
+            // Fonction permettant de modifier le mail 
         function modifier_mail($mail,$id){
             $seconnecter=getBD();
             if (!$seconnecter){
@@ -21,6 +13,7 @@
                 $seconnecter->exec($res);
             }
         } 
+            // Fonction permettant de modifier le mot de passe
         function modifier_mdp($mdp,$id){
             $seconnecter=getBDMarie();
                 if (!$seconnecter){
@@ -31,10 +24,10 @@
                 }
         } 
 
-        if(isset($_SESSION['client'])){
-            $id=$_SESSION['id_client'];
+        if(isset($_SESSION['client'])){ //savoir si le clien est connecté
+            $id=$_SESSION['id_client'];  // récupération de l'identifiant du client
 
-            if($_POST['mail1']!="" || $_POST['mail2']!=""){
+            if($_POST['mail1']!="" || $_POST['mail2']!=""){ 
                 $mail=$_POST['mail1'];	
                 $mail2=$_POST['mail2'];	
                 if($mail!=$mail2){
@@ -44,6 +37,7 @@
                     modifier_mail($mail,$id);
                     echo '<meta http-equiv="refresh" content="0; url=profil.php"/>';
                 }
+
             }else if($_POST['mdp1']!="" || $_POST['mdp2']!=""){
                 $mdp=md5($_POST['mdp1']);	
                 $mdp2=md5($_POST['mdp2']);

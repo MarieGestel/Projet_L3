@@ -1,5 +1,5 @@
 <?php
-
+// récupération des données envoyées depuis grapphiqueTop10_remboursement
 if(isset($_GET['forme'])){
 	$forme=$_GET['forme'];
 }else{
@@ -11,9 +11,10 @@ if(isset($_GET['voie'])){
 	$voie="";
 }
 
+//Connexion à la base de données 
 $bdd = new PDO('mysql:host=localhost;dbname=bdd_medicament;charset=utf8', 'root', 'root');
 
-// 1er graphique 
+// Rêquete pemettant de voir le CodeCIS existe dans la jointure faites ci-dessous 
 $compte=0;
 $compter=0;
 if( $voie!="" || $forme!=""){
@@ -26,7 +27,7 @@ if( $voie!="" || $forme!=""){
     }
    $compter=$bdd->query($compte);	
 }
-
+// récupération des informations de la requêtes
 $estpresent=0;
 if($compter!=0){
     while ($ligne = $compter ->fetch()){
@@ -36,11 +37,13 @@ if($compter!=0){
 
 
 if ($estpresent==0){ 
+    // Aucun médicament ne correspond à la demande, permet de renvoyer via l'url les variables correspondant à cette demande 
     $voie="noData" ;
     $forme="noData";
     echo '<meta http-equiv="refresh" content="0; url=graphiqueTop10_remboursement.php?forme='.$forme.'&voie='.$voie.'"/>'; 
 
 }else{
+    // Requête permettant de récupérer le taux de remboursment en odre décroissant afin d'avoir les 10 meilleurs au maximum
     if( $voie!="" || $forme!=""){
         $recherche= 'SELECT presentation.CodeCIS as CodeCIS,presentation.Taux_remboursement as Taux from specialite,presentation where specialite.CodeCIS=presentation.CodeCIS';
         if($voie!=""){
@@ -54,18 +57,19 @@ if ($estpresent==0){
     }
 
 
-    $y=array();
-    $x=array();
+    $y=array(); // tableau utilisé pour stocker les taux
+    $x=array(); // tableau utiliser pour stocker les codesCIS
+    // récupération des informations de la requête précédente
     while ($ligne = $rechercher ->fetch()){
-	    array_push($y, $ligne['Taux']);	
-	    array_push($x, $ligne['CodeCIS']);	
+	    array_push($y, $ligne['Taux']);	 // insertion des données dans le tableau y
+	    array_push($x, $ligne['CodeCIS']);	// insertion des données dans le tableau x
 	}
 
     if($y!="" && $x!=""){
 	    require_once ('jpgraph/src/jpgraph.php');
 	    require_once ('jpgraph/src/jpgraph_bar.php');
 
-	// Create the graph. These two calls are always required
+	// Creation tdu graphique 
 	$graph=new Graph(800,400,'auto');
 	$graph->SetScale("textlin");
 
@@ -80,18 +84,19 @@ if ($estpresent==0){
 	$graph->yaxis->HideLine(false);
 	$graph->yaxis->HideTicks(false,false); 
 
-	// Create the bar plots
+	// Création des bar plots
 	$b3plot = new BarPlot($y);
 
-	// Create the grouped bar plot
+	// Create du groupement des bar plot 
 	$gbplot = new GroupBarPlot(array($b3plot));
-	// ...and add it to the graPH
+	// ...insertion dans le graphe 
 	$graph->Add($gbplot);
 
-	$b3plot->SetColor("white");
-	$b3plot->SetFillColor("#5ca678");
+	$b3plot->SetColor("white"); //couleur de fond
+	$b3plot->SetFillColor("#5ca678"); //couleur des bar plot 
 
      if( $voie!="" || $forme!=""){
+         //création du titre 
         $titre="Top 10 du taux de remboursement selon";
         if( $voie!="" && $forme!=""){
             $titre=$titre." la voie : ".$voie." et la forme : ".$forme ;

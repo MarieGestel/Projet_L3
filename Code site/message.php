@@ -1,18 +1,9 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta http-equiv="Content-Type"
-		content="text/html; charset=UTF-8"/>
-		<link rel="stylesheet" href="styles.css"
-		type="text/css" media="screen" /> 
-		
-		<title>Nous contacter</title>
-	</head>
-
-	<body>
-		<h1> 	<a 	id="contact" href="index.php" > Medic'Info </a>  </h1>
         <?php
-            include('bd.php');
+            include('bd.php');  // importe le fichier bd.php
+            // Fonction permettant de mettre dans la table commentaires de notre base de données les informations envoyées depuis la page contact 
             function enregistrer($n, $p,$mail,$sujet,$comm){
                 $seconnecter=getBD();
                 if (!$seconnecter){
@@ -22,30 +13,32 @@
                     $seconnecter->exec($res);
                 }
             }
+             // Récupération du nom
             if(isset($_POST['n'])){
                 $n=$_POST['n'];
             }else{
                 $n="";
             }
-
+             // Récupération du prénom 
             if(isset($_POST['p'])){
                 $p=$_POST['p'];
             }else{
                 $p="";
             }
 
+            // Récupération du mail
             if(isset($_POST['mail'])){
                 $mail=$_POST['mail'];
             }else{
                 $mail="";
             }
-
+             // Récupération du sujet
             if(isset($_POST['sujet'])){
                 $sujet=$_POST['sujet'];
             }else{
                 $sujet="";
             }
-
+             // Récupération du commentaore
             if(isset($_POST['commentaires'])){
                 $comm=$_POST['commentaires'];
             }else{
@@ -53,20 +46,14 @@
             }
 
             if($n=="" || $p==""|| $mail==""|| $sujet==""|| $comm=="") {  
+                //redirection si toutes les informatiosnn'ont pas été saisi
                 echo '<meta http-equiv="refresh" content="O; url=contact.php?nom='.$n.'&mail='.$mail.'"/>';    
             } else{
+                 // Sinon utilisation de la fonction afin d'enregistrer les informations dans la BDD
                 enregistrer($n, $p,$mail,$sujet,$comm);
                 echo '<p> Votre message a bien été envoyé, nous le traiterons au plus vite.</p>';
                 echo '<meta http-equiv="refresh" content="1; url=index.php"/>';    
             }
         ?>
-        <p id='liensBas'>
-	        <a 	href="quiSommesNous.php" > Qui sommes-nous ? </a>
-	        <a 	href="contact.php" > Contact </a>
-            <a 	href="mentionLegales.php" > Mentions légales</a>
-	        <a 	href="donneesPersonnelles.php" > Données personnelles </a>	
-	        <a 	href="baseDeDonnees.php" > Base de données </a>
-	</p>
-	
-    </body>
+    </head>
 </html>
